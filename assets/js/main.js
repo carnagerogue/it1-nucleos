@@ -412,31 +412,9 @@
     // Initial filter (show all)
     applyFilter("all");
 
-    // === AUTO-CYCLE (pauses on first user click) ===
-    if (cats.length > 1) {
-      let idx = 0;
-      const startIdx = Array.from(cats).findIndex(c => c.classList.contains("active"));
-      if (startIdx >= 0) idx = startIdx;
-      autoCycleTimer = setInterval(() => {
-        if (userInteracted) { clearInterval(autoCycleTimer); return; }
-        cats.forEach(c => c.classList.remove("active"));
-        idx = (idx + 1) % cats.length;
-        cats[idx].classList.add("active");
-        applyFilter(cats[idx].dataset.catFilter || "all");
-      }, 2800);
-    }
-
-    if (apps.length > 1) {
-      let idx = 0;
-      autoAppTimer = setInterval(() => {
-        if (userInteracted) { clearInterval(autoAppTimer); return; }
-        apps.forEach(a => a.classList.remove("live-active"));
-        const visible = Array.from(apps).filter(a => !a.classList.contains("hidden"));
-        if (visible.length === 0) return;
-        visible[idx % visible.length].classList.add("live-active");
-        idx = (idx + 1) % visible.length;
-      }, 1900);
-    }
+    // Auto-cycle disabled — mockup stays static until user interacts.
+    // (Reasons: cycling between categories/apps was distracting and looked broken
+    //  when categories had different app counts.)
 
     // Search field typing animation
     if (search && searchText) {
