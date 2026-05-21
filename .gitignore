@@ -1,0 +1,19 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+
+# Claude Code workspace
+.claude/
+
+# Temporary
+*.tmp
+*.log
+/tmp/
+
+# Large source assets (kept locally, not committed)
+assets/images/nucleos-logo.png

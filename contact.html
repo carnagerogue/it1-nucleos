@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Contact &amp; Demo — iT1 Nucleos</title>
+<meta name="description" content="Request a private Achieve DXP demo or talk to our team about your facility, program, or population." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
+<link rel="stylesheet" href="assets/css/styles.css" />
+<link rel="icon" type="image/png" href="assets/images/nucleos-logo-official.png" />
+</head>
+<body>
+<div class="nav-wrap">
+  <nav class="container nav" aria-label="Primary">
+    <a class="brand" href="index.html" aria-label="iT1 Nucleos">
+      <img class="brand-it1" src="assets/images/it1-logo.png" alt="iT1" />
+      <img class="brand-logo" src="assets/images/nucleos-logo-official.png" alt="Nucleos" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="platform.html">Platform</a></li>
+      <li><a href="solutions.html">Solutions</a></li>
+      <li><a href="security.html">Security</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a class="btn btn-ghost btn-sm" href="contact.html">Talk to us</a>
+      <a class="btn btn-primary btn-sm" href="contact.html#demo">Request demo
+        <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <button class="menu-toggle" data-menu-toggle aria-label="Open menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </nav>
+</div>
+
+<aside class="mobile-panel" data-mobile-panel>
+  <button class="close" data-mobile-close aria-label="Close menu">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
+  <a href="platform.html">Platform</a>
+  <a href="solutions.html">Solutions</a>
+  <a href="security.html">Security</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  <a class="btn btn-primary" href="contact.html#demo">Request demo</a>
+</aside>
+<section class="page-head" id="demo">
+  <div class="container">
+    <span class="eyebrow"><span class="dot"></span> Talk to us</span>
+    <h1 style="margin-top:1.25rem">Let's build the program <span class="teal">your learners deserve</span></h1>
+    <p class="lead">Tell us about your facility, district, or organization. We'll come back within one business day with a walkthrough tailored to your context.</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(2rem, 5vw, 4rem)" class="reveal">
+
+      <div class="card" style="padding:clamp(1.75rem, 4vw, 2.75rem)">
+        <h2 style="font-size:1.6rem;margin-bottom:0.4rem">Request a private demo</h2>
+        <p style="color:var(--ink-soft);margin:0 0 2rem;font-size:0.95rem">All fields required. We respect your inbox.</p>
+
+        <form class="form" data-form novalidate>
+          <div class="form-fields" style="display:grid;gap:1.1rem">
+            <div class="field-row">
+              <div class="field"><label for="fname">First name</label><input id="fname" name="fname" type="text" autocomplete="given-name" required /></div>
+              <div class="field"><label for="lname">Last name</label><input id="lname" name="lname" type="text" autocomplete="family-name" required /></div>
+            </div>
+
+            <div class="field"><label for="email">Work email</label><input id="email" name="email" type="email" autocomplete="email" required /></div>
+            <div class="field"><label for="org">Organization</label><input id="org" name="org" type="text" autocomplete="organization" required /></div>
+
+            <div class="field-row">
+              <div class="field"><label for="role">Role</label><select id="role" name="role" required><option value="">Select&#8230;</option><option>Executive leadership</option><option>Programs &amp; education</option><option>IT &amp; security</option><option>Procurement</option><option>Grants &amp; funding</option><option>Other</option></select></div>
+              <div class="field"><label for="sector">Sector</label><select id="sector" name="sector" required><option value="">Select&#8230;</option><option>Corrections / DOC</option><option>Federal agency</option><option>Workforce board</option><option>K-12</option><option>Higher education</option><option>Employer / talent</option><option>Other</option></select></div>
+            </div>
+
+            <div class="field"><label for="msg">What are you trying to accomplish?</label><textarea id="msg" name="msg" placeholder="A few sentences about your population, goals, or current program." required></textarea></div>
+
+            <button type="submit" class="btn btn-teal btn-lg" style="justify-self:flex-start;margin-top:0.5rem">Request demo <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
+
+            <p style="font-size:0.78rem;color:var(--ink-mute);margin:0.5rem 0 0">By submitting, you agree to our privacy practices. We never share your contact info.</p>
+          </div>
+
+          <div data-form-success style="display:none;text-align:center;padding:2rem 0">
+            <div style="width:64px;height:64px;border-radius:50%;background:rgba(16,185,129,0.12);border:1px solid rgba(16,185,129,0.35);display:grid;place-items:center;margin:0 auto 1.25rem;color:var(--emerald)"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <h3>Got it. Thank you.</h3>
+            <p style="color:var(--ink-soft);margin-top:0.6rem">We'll reach out within one business day with next steps and a calendar link.</p>
+          </div>
+        </form>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:1.25rem">
+        <div class="card" style="padding:1.75rem">
+          <h4 style="margin-bottom:0.6rem">What to expect</h4>
+          <ol style="margin:0;padding:0;list-style:none;display:grid;gap:1rem">
+            <li style="display:grid;grid-template-columns:32px 1fr;gap:0.75rem"><span style="width:28px;height:28px;border-radius:50%;background:var(--brand-teal);display:grid;place-items:center;font-weight:800;font-size:0.85rem;color:white">1</span><div style="font-size:0.95rem;color:var(--ink-soft)"><strong style="color:var(--navy)">Quick reply</strong><div style="color:var(--ink-mute);font-size:0.88rem;margin-top:0.15rem">A human responds within one business day.</div></div></li>
+            <li style="display:grid;grid-template-columns:32px 1fr;gap:0.75rem"><span style="width:28px;height:28px;border-radius:50%;background:var(--brand-teal);display:grid;place-items:center;font-weight:800;font-size:0.85rem;color:white">2</span><div style="font-size:0.95rem;color:var(--ink-soft)"><strong style="color:var(--navy)">30-min walkthrough</strong><div style="color:var(--ink-mute);font-size:0.88rem;margin-top:0.15rem">A live tour scoped to your population and program goals.</div></div></li>
+            <li style="display:grid;grid-template-columns:32px 1fr;gap:0.75rem"><span style="width:28px;height:28px;border-radius:50%;background:var(--brand-teal);display:grid;place-items:center;font-weight:800;font-size:0.85rem;color:white">3</span><div style="font-size:0.95rem;color:var(--ink-soft)"><strong style="color:var(--navy)">Tailored proposal</strong><div style="color:var(--ink-mute);font-size:0.88rem;margin-top:0.15rem">Platform, hardware, services — bundled the way that fits.</div></div></li>
+          </ol>
+        </div>
+
+        <div class="card" style="padding:1.75rem">
+          <h4 style="margin-bottom:0.6rem">Already a partner?</h4>
+          <p style="color:var(--ink-soft);margin:0;font-size:0.95rem">For existing customers and partners, please use your support portal. Need help finding it?</p>
+          <a class="btn btn-ghost btn-sm" href="mailto:support@nucleos.com" style="margin-top:1.25rem">support@nucleos.com</a>
+        </div>
+
+        <div class="card" style="padding:1.75rem">
+          <h4 style="margin-bottom:0.6rem">Headquarters</h4>
+          <p style="color:var(--ink-soft);margin:0;font-size:0.95rem;line-height:1.6">iT1 Nucleos<br/>Tempe, Arizona<br/>United States</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html" aria-label="iT1 Nucleos">
+          <img class="brand-it1" src="assets/images/it1-logo.png" alt="iT1" />
+          <img class="brand-logo" src="assets/images/nucleos-logo-official.png" alt="Nucleos" />
+        </a>
+        <p>Empowering learners. Transforming lives. The secure digital experience platform for education at scale, now part of the iT1 Source family.</p>
+      </div>
+      <div class="footer-col"><h5>Platform</h5><ul><li><a href="platform.html">Achieve DXP overview</a></li><li><a href="platform.html#learner">Learner experience</a></li><li><a href="platform.html#analytics">Analytics</a></li><li><a href="platform.html#integrations">Integrations</a></li></ul></div>
+      <div class="footer-col"><h5>Solutions</h5><ul><li><a href="solutions.html#corrections">Corrections &amp; Reentry</a></li><li><a href="solutions.html#workforce">Workforce Dev</a></li><li><a href="solutions.html#education">K-12 &amp; Higher Ed</a></li><li><a href="solutions.html#government">Government</a></li></ul></div>
+      <div class="footer-col"><h5>Company</h5><ul><li><a href="about.html">About</a></li><li><a href="about.html#manifesto">Manifesto</a></li><li><a href="about.html#partners">Partners</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h5>Trust</h5><ul><li><a href="security.html">Security</a></li><li><a href="security.html#compliance">Compliance</a></li><li><a href="security.html#privacy">Privacy</a></li><li><a href="contact.html#demo">Request demo</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2026 iT1 Nucleos, a public benefit company. All rights reserved.</span><div class="legal"><a href="#">Terms</a><a href="#">Privacy</a><a href="#">Accessibility</a></div></div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
