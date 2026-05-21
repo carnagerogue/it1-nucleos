@@ -2266,3 +2266,506 @@ h4 {
 @media (prefers-reduced-motion: reduce) {
   .marquee-track { animation: none; }
 }
+
+/* =============================================================
+   HIGH-TECH MICRO-INTERACTIONS
+   ============================================================= */
+
+/* Cursor-following spotlight on cards */
+.feature, .sector, .trust-badge, .compliance-badge, .step {
+  background-image: radial-gradient(
+    600px circle at var(--mx, 50%) var(--my, 50%),
+    rgba(0, 153, 184, 0.06),
+    transparent 40%
+  );
+  background-color: white;
+  background-blend-mode: normal;
+}
+
+/* === ICON ANIMATIONS === */
+.f-icon, .card-icon, .sol-icon, .cb-icon, .b-icon, .s-icon {
+  transition: transform 550ms cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 450ms ease,
+              background 400ms ease,
+              color 350ms ease;
+  position: relative;
+}
+
+.feature:hover .f-icon,
+.card:hover .card-icon,
+.compliance-badge:hover .cb-icon,
+.trust-badge:hover .b-icon {
+  transform: scale(1.12) rotate(-8deg);
+  box-shadow: 0 0 0 6px rgba(0, 153, 184, 0.08), 0 14px 28px -8px rgba(0, 153, 184, 0.4);
+}
+
+.sector:hover .s-icon {
+  transform: scale(1.1) rotate(-8deg);
+  box-shadow: 0 0 0 6px rgba(0, 153, 184, 0.12), 0 18px 36px -10px rgba(0, 153, 184, 0.55);
+}
+
+/* Inner SVG rotates opposite to icon container for fun effect */
+.f-icon svg, .card-icon svg, .sol-icon svg, .cb-icon svg, .b-icon svg, .s-icon svg {
+  transition: transform 550ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.feature:hover .f-icon svg,
+.card:hover .card-icon svg,
+.sector:hover .s-icon svg,
+.compliance-badge:hover .cb-icon svg,
+.trust-badge:hover .b-icon svg {
+  transform: rotate(8deg) scale(1.05);
+}
+
+/* Pulse ring expanding from icon on hover */
+.f-icon::after, .card-icon::after, .sol-icon::after, .cb-icon::after, .b-icon::after, .s-icon::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 2px solid var(--teal);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+.feature:hover .f-icon::after,
+.card:hover .card-icon::after,
+.sector:hover .s-icon::after,
+.compliance-badge:hover .cb-icon::after,
+.trust-badge:hover .b-icon::after {
+  animation: icon-pulse-ring 900ms ease-out;
+}
+@keyframes icon-pulse-ring {
+  0% { transform: scale(1); opacity: 0.55; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
+/* === LIGHT SWEEP ACROSS CARDS === */
+.feature::after, .card::after, .sector::after, .compliance-badge::after, .trust-badge::after, .step::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: linear-gradient(120deg, transparent 35%, rgba(45, 212, 229, 0.1) 50%, transparent 65%);
+  transform: translateX(-110%);
+  transition: transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.feature:hover::after,
+.card:hover::after,
+.sector:hover::after,
+.compliance-badge:hover::after,
+.trust-badge:hover::after,
+.step:hover::after {
+  transform: translateX(110%);
+}
+
+/* Card content above the sweep */
+.feature > *, .card > *, .sector > *, .compliance-badge > *, .trust-badge > *, .step > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* === BUTTON SHIMMER === */
+.btn {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.btn-primary::before, .btn-teal::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 30%, rgba(255, 255, 255, 0.3) 50%, transparent 70%);
+  transform: translateX(-110%);
+  transition: transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+  z-index: 0;
+}
+.btn-primary:hover::before, .btn-teal:hover::before {
+  transform: translateX(110%);
+}
+.btn-primary > *, .btn-teal > * { position: relative; z-index: 1; }
+
+/* === STAT NUMBER GLOW === */
+.stat .num, .hero-trust-item .num {
+  transition: text-shadow 450ms ease, transform 450ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.stat:hover .num {
+  text-shadow: 0 0 28px rgba(0, 153, 184, 0.5), 0 0 4px rgba(0, 153, 184, 0.3);
+  transform: scale(1.08);
+}
+.hero-trust-item:hover .num {
+  text-shadow: 0 0 20px rgba(0, 153, 184, 0.45);
+  transform: scale(1.06);
+}
+
+/* === VALUE PROP NUMBER BOUNCE === */
+.value .num {
+  transition: transform 550ms cubic-bezier(0.34, 1.56, 0.64, 1),
+              background 350ms ease,
+              color 300ms,
+              box-shadow 400ms;
+}
+.value:hover .num {
+  transform: scale(1.18) rotate(-10deg);
+  background: var(--teal);
+  color: white;
+  box-shadow: 0 12px 24px -8px rgba(0, 153, 184, 0.45), 0 0 0 6px rgba(0, 153, 184, 0.1);
+}
+
+/* === BRAND LOGO INTERACTIONS === */
+.brand-it1 {
+  transition: transform 700ms cubic-bezier(0.34, 1.56, 0.64, 1),
+              filter 350ms ease;
+}
+.brand:hover .brand-it1 {
+  transform: rotate(20deg) scale(1.08);
+  filter: drop-shadow(0 0 10px rgba(26, 75, 165, 0.5));
+}
+.brand-logo {
+  transition: transform 450ms cubic-bezier(0.34, 1.56, 0.64, 1),
+              filter 350ms;
+}
+.brand:hover .brand-logo {
+  transform: translateX(3px);
+  filter: drop-shadow(0 4px 10px rgba(16, 46, 80, 0.15));
+}
+
+/* Mobile menu / footer keep simpler effects */
+.footer-brand .brand:hover .brand-it1 {
+  filter: brightness(0) invert(1) brightness(0.95) drop-shadow(0 0 10px rgba(255, 255, 255, 0.4));
+}
+
+/* === HERO PHOTO ZOOM === */
+.hero-photo img {
+  transition: transform 7s ease-out;
+  transform: scale(1.02);
+}
+.hero-photo:hover img {
+  transform: scale(1.08);
+}
+.hero-photo-badge {
+  transition: transform 600ms cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 450ms;
+}
+.hero-photo:hover .hero-photo-badge {
+  transform: scale(1.08) rotate(-4deg);
+  box-shadow: 0 30px 60px -16px rgba(16, 46, 80, 0.4);
+}
+.hero-photo-stat {
+  transition: transform 450ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.hero-photo:hover .hero-photo-stat {
+  transform: translateY(-3px);
+}
+
+/* === SPLIT PHOTO ZOOM (DXP showcase) === */
+.split-photo-img img {
+  transition: transform 8s ease-out;
+}
+.split-photo-img:hover img {
+  transform: scale(1.06);
+}
+
+/* === CAROUSEL CARD LOGO BOUNCE === */
+.cs-card:hover .cs-logo img {
+  animation: logo-bounce 700ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+@keyframes logo-bounce {
+  0% { transform: translateY(0) scale(1); }
+  40% { transform: translateY(-6px) scale(1.06); }
+  100% { transform: translateY(0) scale(1); }
+}
+
+/* === LAYERED PROCUREMENT === */
+.layer {
+  transition: background 400ms ease, border-color 400ms, transform 500ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.layer::before {
+  transition: width 400ms ease, box-shadow 400ms ease, top 400ms, bottom 400ms;
+}
+.layer:hover::before {
+  width: 6px;
+  top: 0;
+  bottom: 0;
+  box-shadow: 0 0 24px var(--accent-color, var(--teal-soft));
+}
+.layer-num, .layer-name, .layer-items {
+  transition: color 350ms ease;
+}
+.layer:hover .layer-name { color: white; }
+.layer:hover .layer-items { color: rgba(255, 255, 255, 0.75); }
+
+/* === STEP NUMBER ROTATE === */
+.step .step-num {
+  transition: transform 700ms cubic-bezier(0.34, 1.56, 0.64, 1),
+              background 350ms, color 300ms,
+              box-shadow 400ms;
+}
+.step:hover .step-num {
+  transform: scale(1.18) rotate(360deg);
+  background: var(--teal);
+  color: white;
+  box-shadow: 0 10px 22px -6px rgba(0, 153, 184, 0.5);
+}
+
+/* === ARROW LINK NUDGE === */
+.card-link svg, .s-link svg, .cs-link svg, .pr-link svg {
+  transition: transform 400ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.card:hover .card-link svg,
+.sector:hover .s-link svg,
+.cs-card:hover .cs-link svg {
+  animation: arrow-nudge 1.4s ease-in-out infinite;
+}
+@keyframes arrow-nudge {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(6px); }
+}
+
+/* === CAROUSEL ARROW FILL === */
+.cs-arrow {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.cs-arrow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--teal);
+  border-radius: 50%;
+  transform: scale(0);
+  transition: transform 450ms cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: -1;
+}
+.cs-arrow:hover::before {
+  transform: scale(1);
+}
+
+/* === GRID BACKGROUND PULSE ON HERO === */
+.hero::after {
+  animation: grid-pulse 9s ease-in-out infinite;
+}
+@keyframes grid-pulse {
+  0%, 100% { opacity: 0.55; }
+  50% { opacity: 0.85; }
+}
+
+/* === ACHIEVE DXP REAL LOGO PULSE ON HEADER === */
+.dxp-real-logo {
+  transition: transform 500ms cubic-bezier(0.34, 1.56, 0.64, 1),
+              filter 400ms;
+}
+.dxp-real-logo:hover {
+  transform: scale(1.04);
+  filter: drop-shadow(0 8px 16px rgba(239, 108, 58, 0.25));
+}
+
+/* === MARQUEE TILE PING === */
+.mq-tile {
+  position: relative;
+  isolation: isolate;
+}
+.mq-tile::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 2px solid var(--teal);
+  opacity: 0;
+  pointer-events: none;
+}
+.mq-tile:hover::after {
+  animation: tile-ping 700ms ease-out;
+}
+@keyframes tile-ping {
+  0% { transform: scale(1); opacity: 0.5; }
+  100% { transform: scale(1.25); opacity: 0; }
+}
+
+/* === SECTION EYEBROW DOT EXTRA PULSE === */
+.eyebrow {
+  transition: background 300ms, border-color 300ms, transform 350ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.section-head:hover .eyebrow {
+  transform: translateY(-2px) scale(1.03);
+}
+
+/* === HUMAN TECH ROBOT EXTRA INTERACTIVITY === */
+.humantech-robot img {
+  transition: filter 500ms, transform 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.humantech-robot:hover img {
+  filter: drop-shadow(0 30px 80px rgba(45, 212, 229, 0.65));
+  transform: scale(1.05);
+}
+
+/* === RICH PARTNER CARD LOGO TILT === */
+.partner-rich .pr-logo img {
+  transition: transform 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.partner-rich:hover .pr-logo img {
+  transform: translateY(-3px) scale(1.04);
+}
+
+/* === RESPECT REDUCED MOTION === */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* =============================================================
+   REENTRY BRIDGE — "The story doesn't end at release"
+   ============================================================= */
+.reentry-panel {
+  position: relative;
+  padding: clamp(2.5rem, 5vw, 4.5rem);
+  border-radius: var(--r-2xl);
+  background: linear-gradient(135deg, #fdf6f1 0%, #ffffff 45%, #ecfeff 100%);
+  border: 1px solid var(--line);
+  overflow: hidden;
+}
+
+.reentry-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 0% 0%, rgba(239, 108, 58, 0.10), transparent 55%),
+              radial-gradient(ellipse at 100% 100%, rgba(0, 153, 184, 0.10), transparent 55%);
+  pointer-events: none;
+}
+
+.reentry-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+  position: relative;
+}
+
+@media (max-width: 960px) {
+  .reentry-grid { grid-template-columns: 1fr; }
+}
+
+/* Bridge visual */
+.bridge-visual {
+  position: relative;
+  display: grid;
+  gap: 1.25rem;
+}
+
+.bridge-line {
+  position: absolute;
+  left: 40px;
+  top: 36px;
+  bottom: 36px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--dxp-orange) 0%, var(--amber) 35%, var(--teal) 70%, var(--teal-deep) 100%);
+  border-radius: 2px;
+  z-index: 0;
+}
+
+.bridge-stage {
+  position: relative;
+  display: grid;
+  grid-template-columns: 64px 1fr auto;
+  gap: 1rem;
+  align-items: center;
+  padding: 1.1rem 1.4rem 1.1rem 0;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-sm);
+  z-index: 1;
+  transition: transform 400ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 400ms, border-color 400ms;
+}
+
+.bridge-stage:hover {
+  transform: translateX(6px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--teal);
+}
+
+.bridge-stage .bs-icon {
+  width: 64px;
+  height: 100%;
+  min-height: 70px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--r-lg) 0 0 var(--r-lg);
+  color: white;
+  flex-shrink: 0;
+  margin-left: 0;
+}
+
+.stage-1 .bs-icon { background: linear-gradient(135deg, var(--dxp-orange), var(--dxp-orange-soft)); }
+.stage-2 .bs-icon { background: linear-gradient(135deg, var(--amber), var(--dxp-orange-soft)); }
+.stage-3 .bs-icon { background: linear-gradient(135deg, var(--teal-soft), var(--teal)); }
+
+.bridge-stage .bs-icon svg {
+  transition: transform 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.bridge-stage:hover .bs-icon svg {
+  transform: rotate(-8deg) scale(1.1);
+}
+
+.bs-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.bs-label {
+  font-size: 0.7rem;
+  color: var(--teal-deep);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+}
+
+.stage-1 .bs-label { color: var(--dxp-orange); }
+.stage-2 .bs-label { color: var(--amber); }
+
+.bs-text {
+  font-weight: 700;
+  font-size: 0.96rem;
+  color: var(--navy);
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+}
+
+.bs-tags {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+}
+
+.bs-tags span {
+  font-size: 0.65rem;
+  padding: 0.25rem 0.55rem;
+  background: var(--bg-soft);
+  color: var(--ink-soft);
+  border-radius: 999px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border: 1px solid var(--line);
+  white-space: nowrap;
+}
+
+.stage-1 .bs-tags span { background: rgba(239, 108, 58, 0.08); color: var(--dxp-orange); border-color: rgba(239, 108, 58, 0.2); }
+.stage-3 .bs-tags span { background: rgba(0, 153, 184, 0.08); color: var(--teal-deep); border-color: rgba(0, 153, 184, 0.2); }
+
+@media (max-width: 600px) {
+  .bridge-stage { grid-template-columns: 56px 1fr; }
+  .bs-tags { grid-column: 1 / -1; flex-direction: row; flex-wrap: wrap; align-items: flex-start; padding: 0 1.4rem 0 80px; }
+  .bridge-stage .bs-icon { width: 56px; min-height: 56px; }
+  .bridge-line { left: 28px; }
+}

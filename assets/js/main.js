@@ -194,6 +194,41 @@
   });
 
   // ============================================================
+  // CURSOR SPOTLIGHT — radial highlight follows cursor on cards
+  // ============================================================
+  const spotlightSelector = ".feature, .sector, .compliance-badge, .trust-badge, .step, .value";
+  document.querySelectorAll(spotlightSelector).forEach((card) => {
+    card.addEventListener("mousemove", (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      card.style.setProperty("--mx", x + "%");
+      card.style.setProperty("--my", y + "%");
+    }, { passive: true });
+  });
+
+  // ============================================================
+  // SUBTLE 3D TILT on key cards
+  // ============================================================
+  const tiltSelector = ".value, .step, .cs-card, .compliance-badge";
+  document.querySelectorAll(tiltSelector).forEach((card) => {
+    let raf = null;
+    card.addEventListener("mousemove", (e) => {
+      if (raf) return;
+      raf = requestAnimationFrame(() => {
+        const rect = card.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+        card.style.transform = `perspective(1000px) rotateY(${x * 4}deg) rotateX(${-y * 4}deg) translateY(-4px)`;
+        raf = null;
+      });
+    }, { passive: true });
+    card.addEventListener("mouseleave", () => {
+      card.style.transform = "";
+    });
+  });
+
+  // ============================================================
   // NAV SHADOW ON SCROLL
   // ============================================================
   const navWrap = document.querySelector(".nav-wrap");
