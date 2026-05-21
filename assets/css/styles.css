@@ -410,7 +410,15 @@ h4 {
   align-items: center;
 }
 
-.hero-copy h1 { margin-top: 1.25rem; margin-bottom: 1.5rem; }
+.hero-copy h1 {
+  margin-top: 1.25rem;
+  margin-bottom: 1.5rem;
+  font-size: clamp(2.8rem, 7.5vw, 5.6rem);
+  letter-spacing: -0.045em;
+  line-height: 0.98;
+  font-weight: 800;
+}
+.hero-copy .lead { font-size: clamp(1.12rem, 1.55vw, 1.32rem); max-width: 56ch; }
 .hero-actions {
   display: flex;
   gap: 0.75rem;
@@ -1008,8 +1016,8 @@ h4 {
 }
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
-  gap: 3rem;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 2.5rem;
   margin-bottom: 3rem;
 }
 @media (max-width: 800px) {

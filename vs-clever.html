@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Achieve DXP vs. Clever &amp; ClassLink — iT1 Nucleos</title>
+<meta name="description" content="A side-by-side comparison of Achieve DXP versus identity-only platforms like Clever and ClassLink — identity, rostering, content, audit-grade security, and outcomes in one unified system." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Nunito:wght@600;700;800&display=swap" />
+<link rel="stylesheet" href="assets/css/styles.css" />
+<link rel="icon" type="image/png" href="assets/images/nucleos-logo-official.png" />
+<style>
+  .vs-hero{
+    padding-top:clamp(3rem,6vw,5rem);
+    padding-bottom:clamp(3rem,6vw,5rem);
+    background:linear-gradient(180deg, #f8fafc 0%, white 100%);
+    text-align:center;
+  }
+  .vs-hero h1{
+    font-size:clamp(2.4rem, 6vw, 4.4rem);
+    letter-spacing:-.04em;line-height:1;
+    margin:1rem 0;
+  }
+  .vs-hero h1 .vs{
+    display:inline-block;margin:0 .5rem;
+    color:var(--ink-mute);font-weight:600;
+    transform:translateY(-.05em);
+  }
+  .vs-hero h1 .us{color:var(--teal-deep);}
+  .vs-hero h1 .them{color:var(--ink-soft);}
+  .vs-hero .lead{margin:1.5rem auto 0;max-width:62ch;}
+
+  /* COMPARISON GRID */
+  .vs-matrix{
+    max-width:1080px;margin:0 auto;
+    background:white;border:1px solid var(--line);
+    border-radius:18px;overflow:hidden;
+    box-shadow:0 30px 70px rgba(16,46,80,.06);
+  }
+  .vs-row{
+    display:grid;
+    grid-template-columns:1.4fr 1fr 1fr;
+    border-bottom:1px solid var(--line);
+  }
+  .vs-row:last-child{border-bottom:none;}
+  .vs-cell{padding:1.1rem 1.4rem;display:flex;align-items:center;font-size:.95rem;}
+  .vs-row.vs-head .vs-cell{
+    padding:1.5rem 1.4rem;
+    background:#f8fafc;
+    font-weight:800;font-size:.85rem;letter-spacing:.04em;
+    text-transform:uppercase;color:var(--ink-mute);
+  }
+  .vs-row.vs-head .vs-cell-us{
+    background:linear-gradient(180deg, rgba(0,151,145,.08), rgba(0,151,145,.04));
+    color:var(--teal-deep);
+  }
+  .vs-cell-feature{font-weight:700;color:var(--navy);}
+  .vs-cell-them{color:var(--ink-soft);font-weight:600;}
+  .vs-cell-us{
+    color:var(--teal-deep);font-weight:800;
+    background:rgba(0,151,145,.04);
+    border-left:3px solid var(--teal);
+  }
+  .vs-check{
+    display:inline-flex;align-items:center;gap:.4rem;
+    color:var(--teal-deep);font-weight:800;
+  }
+  .vs-check::before{
+    content:"✓";display:inline-grid;place-items:center;
+    width:18px;height:18px;border-radius:50%;
+    background:var(--teal);color:white;font-size:.7rem;font-weight:800;
+  }
+  .vs-x{
+    display:inline-flex;align-items:center;gap:.4rem;
+    color:var(--ink-mute);font-weight:600;
+  }
+  .vs-x::before{
+    content:"—";display:inline-grid;place-items:center;
+    width:18px;height:18px;border-radius:50%;
+    background:#eef1f6;color:var(--ink-mute);font-size:.85rem;font-weight:800;
+  }
+  .vs-partial{
+    display:inline-flex;align-items:center;gap:.4rem;
+    color:#a16207;font-weight:700;
+  }
+  .vs-partial::before{
+    content:"~";display:inline-grid;place-items:center;
+    width:18px;height:18px;border-radius:50%;
+    background:#fef3c7;color:#a16207;font-size:.85rem;font-weight:800;
+  }
+  .vs-section-label{
+    grid-column: 1 / -1;
+    padding:1rem 1.4rem;
+    background:linear-gradient(180deg, #0a1f37, #102e50);
+    color:#fff;
+    font-weight:800;font-size:.8rem;letter-spacing:.08em;
+    text-transform:uppercase;
+  }
+  @media (max-width: 720px){
+    .vs-row{grid-template-columns:1fr;}
+    .vs-cell{padding:.9rem 1.1rem;border-bottom:1px solid var(--line);}
+    .vs-cell:last-child{border-bottom:none;}
+    .vs-cell-feature{background:#f8fafc;font-weight:800;}
+    .vs-cell-us{border-left:none;border-top:3px solid var(--teal);}
+  }
+
+  /* WHY-IT-MATTERS BLOCKS */
+  .vs-why-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;
+    max-width:1080px;margin:3rem auto 0;
+  }
+  @media (max-width: 860px){ .vs-why-grid{grid-template-columns:1fr;} }
+  .vs-why{
+    padding:1.75rem;border-radius:16px;
+    background:white;border:1px solid var(--line);
+  }
+  .vs-why-num{
+    font-size:2.4rem;font-weight:800;line-height:1;
+    color:var(--teal);letter-spacing:-.02em;
+  }
+  .vs-why h3{margin:.75rem 0 .5rem;color:var(--navy);}
+  .vs-why p{color:var(--ink-soft);font-size:.95rem;line-height:1.55;margin:0;}
+</style>
+</head>
+<body>
+<div class="nav-wrap">
+  <nav class="container nav" aria-label="Primary">
+    <a class="brand" href="index.html" aria-label="iT1 Nucleos">
+      <img class="brand-it1" src="assets/images/it1-logo.png" alt="iT1" />
+      <img class="brand-logo" src="assets/images/nucleos-logo-official.png" alt="Nucleos" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="platform.html">Platform</a></li>
+      <li><a href="solutions.html">Solutions</a></li>
+      <li><a href="security.html">Security</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a class="btn btn-ghost btn-sm" href="contact.html">Talk to us</a>
+      <a class="btn btn-primary btn-sm" href="contact.html#demo">Request demo
+        <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <button class="menu-toggle" data-menu-toggle aria-label="Open menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </nav>
+</div>
+
+<aside class="mobile-panel" data-mobile-panel>
+  <button class="close" data-mobile-close aria-label="Close menu">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
+  <a href="platform.html">Platform</a>
+  <a href="solutions.html">Solutions</a>
+  <a href="security.html">Security</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  <a class="btn btn-primary" href="contact.html#demo">Request demo</a>
+</aside>
+
+<section class="vs-hero">
+  <div class="container">
+    <span class="eyebrow"><span class="dot"></span> Side-by-side comparison</span>
+    <h1><span class="us">Achieve DXP</span> <span class="vs">vs.</span><br/><span class="them">Clever &amp; ClassLink</span></h1>
+    <p class="lead">Identity and rostering are the floor — not the ceiling. Here's what an audit-grade learning platform looks like next to an identity-only one.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="vs-matrix">
+      <div class="vs-row vs-head">
+        <div class="vs-cell">Capability</div>
+        <div class="vs-cell">Clever / ClassLink</div>
+        <div class="vs-cell vs-cell-us">Achieve DXP</div>
+      </div>
+
+      <div class="vs-section-label">Identity &amp; rostering — what they do well</div>
+
+      <div class="vs-row">
+        <div class="vs-cell vs-cell-feature">Single sign-on (SAML 2.0 / OAuth)</div>
+        <div class="vs-cell vs-cell-them"><span class="vs-check">Yes</span></div>
+        <div class="vs-cell vs-cell-us"><span class="vs-check">Yes</span></div>
+      </div>
+      <div class="vs-row">
+        <div class="vs-cell vs-cell-feature">OneRoster &amp; SIS auto-rostering</div>
+        <div class="vs-cell vs-cell-them"><span class="vs-check">Yes</span></div>
+        <div class="vs-cell vs-cell-us"><span class="vs-check">Yes</span></div>
+      </div>
+      <div class="vs-row">
+        <div class="vs-cell vs-cell-feature">App launchpad / library</div>
+        <div class="vs-cell vs-cell-them"><span class="vs-check">6,000+ SAML tiles</span></div>
+        <div class="vs-cell vs-cell-us"><span class="vs-check">100+ deeply integrated + generic SAML</span></div>
+      </div>
+      <div class="vs-row">
+        <div class="vs-cell vs-cell-feature">Multi-factor authentication</div>
+        <div class="vs-cell vs-cell-them"><span class="vs-check">Yes</span></div>
+        <div class="vs-cell vs-cell-us"><span class="vs-check">Yes</span></div>
+      </div>
+
+      <div class="vs-section-label">Where audit-grade environments need more</div>
+
+      <div class="vs-row">
+        <div class="vs-cell vs-cell-feature">Curated content catalogs (not just app tiles)</div>
+        <div class="vs-cell vs-cell-them"><span class="vs-x">No</span></div>
+        <div class="vs-cell vs-cell-us"><span class="vs-check">Pre-built pathways by program</span></div>
+      </div>
+      <div class="vs-row">
+        <div class="vs-cell vs-cell-feature">Audit-grade activity logging (every interaction)</div>
+        <div class="vs-cell vs-cell-them"><span class="vs-partial">Partial — login events only</span></div>
+        <div class="vs-cell vs-cell-us"><span class="vs-check">End-to-end, encrypted, immutable</span></div>
+      </div>
+      <div class="vs-row">
+        <div class="vs-cell vs-cell-feature">Allowlist-controlled network access</div>
+        <div class="vs-cell vs-cell-them"><span class="vs-x">No</span></div>
+        <div class="vs-cell vs-cell-us"><span class="vs-check">End-to-end</span></div>
+      </div>
+      <div class="vs-row">
+        <div class="vs-cell vs-cell-feature">Content moderation &amp; message review</div>
+        <div class="vs-cell vs-cell-them"><span class="vs-x">No</span></div>
+        <div class="vs-cell vs-cell-us"><span class="vs-check">Built-in, configurable</span></div>
+      </div>
+      <div class="vs-row">
+        <div class="vs-cell vs-cell-feature">FedRAMP-aligned hosting</div>
+        <div class="vs-cell vs-cell-them"><span class="vs-partial">Limited</span></div>
+        <div class="vs-cell vs-cell-us"><span class="vs-check">Azure FedRAMP High inheritance</span></div>
+      </div>
+      <div class="vs-row">
+        <div class="vs-cell vs-cell-feature">FIPS 140-2/-3 validated cryptography</div>
+        <div class="vs-cell vs-cell-them"><span class="vs-x">Not standard</span></div>
+        <div class="vs-cell vs-cell-us"><span class="vs-check">Default</span></div>
+      </div>
+
+      <div class="vs-section-label">Outcome reporting &amp; learner records</div>
+
+      <div class="vs-row">
+        <div class="vs-cell vs-cell-feature">Multi-funder reporting (state, federal, grant)</div>
+        <div class="vs-cell vs-cell-them"><span class="vs-x">No</span></div>
+        <div class="vs-cell vs-cell-us"><span class="vs-check">Configurable</span></div>
+      </div>
+      <div class="vs-row">
+        <div class="vs-cell vs-cell-feature">Credential tracking across vendors</div>
+        <div class="vs-cell vs-cell-them"><span class="vs-x">No</span></div>
+        <div class="vs-cell vs-cell-us"><span class="vs-check">Unified learner file</span></div>
+      </div>
+      <div class="vs-row">
+        <div class="vs-cell vs-cell-feature">Post-release continuity / portable records</div>
+        <div class="vs-cell vs-cell-them"><span class="vs-x">No</span></div>
+        <div class="vs-cell vs-cell-us"><span class="vs-check">Built-in</span></div>
+      </div>
+
+      <div class="vs-section-label">Deployment &amp; accountability</div>
+
+      <div class="vs-row">
+        <div class="vs-cell vs-cell-feature">Turnkey hardware, network, &amp; managed services</div>
+        <div class="vs-cell vs-cell-them"><span class="vs-x">No</span></div>
+        <div class="vs-cell vs-cell-us"><span class="vs-check">Via iT1 Source</span></div>
+      </div>
+      <div class="vs-row">
+        <div class="vs-cell vs-cell-feature">Single accountable vendor (software + services)</div>
+        <div class="vs-cell vs-cell-them"><span class="vs-x">Software only</span></div>
+        <div class="vs-cell vs-cell-us"><span class="vs-check">One contract</span></div>
+      </div>
+      <div class="vs-row">
+        <div class="vs-cell vs-cell-feature">Procurement vehicles</div>
+        <div class="vs-cell vs-cell-them"><span class="vs-partial">Direct</span></div>
+        <div class="vs-cell vs-cell-us"><span class="vs-check">GSA · NASPO · Carahsoft · iT1 direct</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-soft">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow"><span class="dot"></span> Why this matters</span>
+      <h2 style="margin-top:1.25rem">Three reasons districts switch to Achieve DXP.</h2>
+    </div>
+    <div class="vs-why-grid">
+      <div class="vs-why">
+        <div class="vs-why-num">01</div>
+        <h3>One platform vs. three</h3>
+        <p>You don't have to bolt a content vendor, a compliance dashboard, and a hardware contract onto your identity layer. Achieve DXP is identity, content, audit, and outcomes — in one accountable platform delivered by one team.</p>
+      </div>
+      <div class="vs-why">
+        <div class="vs-why-num">02</div>
+        <h3>Audit-grade by default</h3>
+        <p>Identity platforms log who signed in. Achieve DXP logs what every learner did inside every app — encrypted, immutable, and exportable in the formats your federal Title funders and accreditors actually require.</p>
+      </div>
+      <div class="vs-why">
+        <div class="vs-why-num">03</div>
+        <h3>The credentials follow the learner</h3>
+        <p>Identity tiles end at graduation. Achieve DXP delivers a portable, verifiable learner record that lives beyond enrollment — backed by employer and reentry coalitions ready on the other side.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="cta-banner">
+      <span class="eyebrow"><span class="dot"></span> See the comparison live</span>
+      <h2 style="margin-top:1.25rem">Walk through Achieve DXP with our team.</h2>
+      <p class="lead">A 30-minute private demo tailored to your district, with side-by-side comparisons against your current identity-only platform.</p>
+      <div class="cta-actions">
+        <a class="btn btn-primary btn-lg" href="contact.html#demo">Request a private demo
+          <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a class="btn btn-ghost btn-lg" href="vs-viapath.html">Compare against corrections-tablet vendors →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html" aria-label="iT1 Nucleos">
+          <img class="brand-it1" src="assets/images/it1-logo.png" alt="iT1" />
+          <img class="brand-logo" src="assets/images/nucleos-logo-official.png" alt="Nucleos" />
+        </a>
+        <p>Empowering learners. Transforming lives. The secure digital experience platform for education at scale, now part of the iT1 Source family.</p>
+      </div>
+      <div class="footer-col"><h5>Platform</h5><ul><li><a href="platform.html">Achieve DXP overview</a></li><li><a href="platform.html#learner">Learner experience</a></li><li><a href="platform.html#analytics">Analytics</a></li><li><a href="platform.html">Integrations</a></li></ul></div>
+      <div class="footer-col"><h5>Solutions</h5><ul><li><a href="solutions.html#corrections">Corrections &amp; Reentry</a></li><li><a href="solutions.html#workforce">Workforce Dev</a></li><li><a href="solutions.html#education">K-12 &amp; Higher Ed</a></li><li><a href="solutions.html#government">Government</a></li></ul></div>
+      <div class="footer-col"><h5>Compare</h5><ul><li><a href="vs-clever.html">vs. Clever &amp; ClassLink</a></li><li><a href="vs-viapath.html">vs. ViaPath / Securus</a></li><li><a href="platform.html#truth">Capability matrix</a></li></ul></div>
+      <div class="footer-col"><h5>Trust</h5><ul><li><a href="security.html">Security</a></li><li><a href="security.html#compliance">Compliance</a></li><li><a href="security.html#privacy">Privacy</a></li><li><a href="contact.html#demo">Request demo</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2026 iT1 Nucleos, a public benefit company. All rights reserved.</span><div class="legal"><a href="#">Terms</a><a href="#">Privacy</a><a href="#">Accessibility</a></div></div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
