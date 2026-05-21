@@ -416,50 +416,13 @@
     // (Reasons: cycling between categories/apps was distracting and looked broken
     //  when categories had different app counts.)
 
-    // Search field typing animation
+    // Search field typing disabled — caused perception of "constant cycling"
     if (search && searchText) {
-      const phrases = ["coursera", "GED math prep", "HVAC certification", "JSTOR", "reentry skills", "Khan Academy"];
-      let pi = 0, ci = 0, deleting = false;
-
-      function tick() {
-        const phrase = phrases[pi];
-        if (!deleting) {
-          if (ci < phrase.length) {
-            searchText.textContent = phrase.slice(0, ci + 1);
-            ci++;
-            search.classList.add("live-typing");
-            setTimeout(tick, 70 + Math.random() * 60);
-          } else {
-            setTimeout(() => { deleting = true; tick(); }, 1400);
-          }
-        } else {
-          if (ci > 0) {
-            searchText.textContent = phrase.slice(0, ci - 1);
-            ci--;
-            setTimeout(tick, 35);
-          } else {
-            deleting = false;
-            pi = (pi + 1) % phrases.length;
-            search.classList.remove("live-typing");
-            searchText.textContent = "Search";
-            setTimeout(() => { searchText.textContent = ""; tick(); }, 900);
-          }
-        }
-      }
-      // Start when shot enters viewport
-      const obs = new IntersectionObserver((ents) => {
-        ents.forEach(e => {
-          if (e.isIntersecting) {
-            setTimeout(tick, 800);
-            obs.unobserve(shot);
-          }
-        });
-      }, { threshold: 0.3 });
-      obs.observe(shot);
+      searchText.textContent = "Search";
     }
 
     // Toast notifications — cycle through messages
-    if (toast) {
+    if (false && toast) {
       const titleEl = toast.querySelector("[data-toast-title]");
       const textEl = toast.querySelector("[data-toast-text]");
       const msgs = [
