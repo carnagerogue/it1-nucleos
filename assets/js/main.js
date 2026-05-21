@@ -463,4 +463,80 @@
     window.addEventListener("scroll", updateNavShadow, { passive: true });
     updateNavShadow();
   }
+
+  // ============================================================
+  // COOKIE CONSENT BANNER
+  // Stores preference in localStorage under "nuc_consent".
+  // Values: "accepted" | "rejected"
+  // Footer "Cookie preferences" link (data-cookie-prefs) reopens banner.
+  // ============================================================
+  const CONSENT_KEY = "nuc_consent";
+
+  function getConsent() {
+    try { return localStorage.getItem(CONSENT_KEY); } catch (e) { return null; }
+  }
+  function setConsent(value) {
+    try { localStorage.setItem(CONSENT_KEY, value); } catch (e) {}
+    // Hook for downstream analytics initialization.
+    // window.dataLayer = window.dataLayer || [];
+    // if (value === "accepted") window.dataLayer.push({ event: "cookie_consent_granted" });
+    document.documentElement.dataset.cookieConsent = value;
+  }
+
+  function buildBanner() {
+    const banner = document.createElement("div");
+    banner.className = "cookie-banner";
+    banner.setAttribute("role", "dialog");
+    banner.setAttribute("aria-label", "Cookie consent");
+    banner.innerHTML = ''
+      + '<div class="cookie-banner-inner">'
+      +   '<div class="cookie-banner-body">'
+      +     '<div class="cookie-banner-title">We value your privacy</div>'
+      +     '<p class="cookie-banner-text">We use cookies to make this site work, measure how it performs, and (with your permission) personalize what you see. You can change your choice at any time from the footer.</p>'
+      +     '<a class="cookie-banner-link" href="cookies.html">Learn more</a>'
+      +   '</div>'
+      +   '<div class="cookie-banner-actions">'
+      +     '<button class="cookie-btn cookie-btn-reject" type="button" data-consent="rejected">Reject all</button>'
+      +     '<button class="cookie-btn cookie-btn-accept" type="button" data-consent="accepted">Accept all</button>'
+      +   '</div>'
+      + '</div>';
+    return banner;
+  }
+
+  function showBanner() {
+    if (document.querySelector(".cookie-banner")) return;
+    const banner = buildBanner();
+    document.body.appendChild(banner);
+    requestAnimationFrame(() => banner.classList.add("cookie-banner--visible"));
+    banner.querySelectorAll("[data-consent]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        setConsent(btn.dataset.consent);
+        hideBanner(banner);
+      });
+    });
+  }
+  function hideBanner(banner) {
+    banner.classList.remove("cookie-banner--visible");
+    setTimeout(() => banner.remove(), 350);
+  }
+
+  // Restore stored preference on each page load (for downstream hooks)
+  const existing = getConsent();
+  if (existing) {
+    document.documentElement.dataset.cookieConsent = existing;
+  } else {
+    // First-time visitor: show after a tick so it doesn't fight the page paint
+    setTimeout(showBanner, 600);
+  }
+
+  // Footer "Cookie preferences" link reopens the banner
+  document.querySelectorAll("[data-cookie-prefs]").forEach((el) => {
+    el.addEventListener("click", (e) => {
+      e.preventDefault();
+      // Wipe existing choice so the buttons feel fresh
+      try { localStorage.removeItem(CONSENT_KEY); } catch (err) {}
+      delete document.documentElement.dataset.cookieConsent;
+      showBanner();
+    });
+  });
 })();
