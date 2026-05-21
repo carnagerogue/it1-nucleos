@@ -794,11 +794,17 @@ h4 {
    COMPLIANCE GRID
    ============================================================= */
 .compliance-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem;
+  max-width: 1080px;
+  margin: 0 auto;
 }
 .compliance-badge {
+  flex: 1 1 calc((100% - 3rem) / 4);
+  min-width: 180px;
+  max-width: 240px;
   padding: 1.5rem 1.2rem;
   border: 1px solid var(--line);
   border-radius: var(--r-md);
@@ -4505,8 +4511,8 @@ h4 {
   .sector { padding: 1.5rem 1.35rem; min-height: 0; }
 
   /* === COMPLIANCE === */
-  .compliance-grid { grid-template-columns: 1fr 1fr; gap: 0.6rem; }
-  .compliance-badge { padding: 1.1rem 0.85rem; }
+  .compliance-grid { gap: 0.6rem; }
+  .compliance-badge { flex-basis: calc((100% - 0.6rem) / 2); max-width: none; padding: 1.1rem 0.85rem; }
   .compliance-badge .cb-name { font-size: 0.88rem; }
   .compliance-badge .cb-desc { font-size: 0.7rem; }
 
@@ -4591,7 +4597,7 @@ h4 {
   .hero-trust-item { flex: 1 1 100px; }
   .hero-trust-item .num { font-size: 1.15rem; }
   .stats { grid-template-columns: 1fr; }
-  .compliance-grid { grid-template-columns: 1fr; }
+  .compliance-badge { flex-basis: 100%; }
   .ps-apps { grid-template-columns: 1fr !important; }
   .nav-cta { gap: 0.25rem; }
   .nav-cta .btn-sm { padding: 0.5rem 0.75rem; font-size: 0.78rem; }
