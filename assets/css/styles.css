@@ -4324,3 +4324,277 @@ h4 {
 @media (prefers-reduced-motion: reduce) {
   .lc-track { animation: none; }
 }
+
+/* =============================================================
+   MOBILE RESPONSIVENESS PASS
+   Critical: grid children need min-width: 0 to allow shrinking
+   ============================================================= */
+
+/* Universal grid-child min-width fix */
+.hero-grid > *, .split > *, .dxp-showcase-grid > *,
+.showcase-grid > *, .reentry-grid > *, .humantech-grid > *,
+.layered-head > *, .footer-grid > *, .cards > *, .features > *,
+.sectors > *, .values > * {
+  min-width: 0;
+}
+
+/* MOBILE — 768px and below */
+@media (max-width: 768px) {
+  :root {
+    --pad: 1.1rem;
+  }
+
+  /* Headings shrink */
+  h1 { font-size: 2.4rem; }
+  h2 { font-size: 1.85rem; }
+  h3 { font-size: 1.15rem; }
+
+  /* Tighter section padding */
+  .section { padding-block: 3rem; }
+  .section-tight { padding-block: 2rem; }
+
+  /* === NAV === */
+  .nav { height: 60px; gap: 0.5rem; }
+  .brand-it1 { height: 30px; width: 30px; }
+  .brand-logo { height: 26px; }
+  .nav-cta { gap: 0.4rem; }
+  .nav-cta .btn-ghost { display: none; }
+  .menu-toggle { width: 40px; height: 40px; }
+
+  /* === HERO === */
+  .hero {
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+  }
+  .hero-copy h1 { font-size: clamp(2rem, 9vw, 2.6rem); line-height: 1.05; }
+  .hero-copy .lead { font-size: 0.98rem; }
+  .hero-actions { gap: 0.5rem; }
+  .hero-actions .btn { padding: 0.85rem 1.25rem; font-size: 0.9rem; }
+  .hero-actions .btn-lg { padding: 0.9rem 1.35rem; font-size: 0.95rem; }
+  .hero-trust {
+    gap: 1rem;
+    margin-top: 1.75rem;
+    padding-top: 1.5rem;
+  }
+  .hero-trust-item .num { font-size: 1.3rem; }
+  .hero-trust-item .lbl { font-size: 0.7rem; }
+
+  /* === PRODUCT-ONLY HERO === */
+  .hero-visual {
+    aspect-ratio: auto !important;
+    min-height: 0 !important;
+    max-width: 100% !important;
+    margin: 1.5rem 0 0 !important;
+  }
+  .hv-product-only {
+    min-height: 0 !important;
+    padding-block: 1rem;
+  }
+  .hv-product-only::before { display: none; }
+
+  .hv-card-large {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 1.1rem 1.15rem !important;
+  }
+  .hv-card-apps-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 0.4rem !important;
+  }
+  .hv-card-large .hv-card-title { font-size: 0.95rem; }
+  .hv-card-large .hv-card-logo { height: 22px; }
+  .hv-app { padding: 0.45rem 0.55rem !important; }
+  .hv-app img { height: 16px; max-width: 30px; }
+  .hv-app span { font-size: 0.72rem; }
+
+  /* Floating notif/record cards reposition on mobile — sit between hero and product card */
+  .hv-product-only .hv-notif,
+  .hv-product-only .hv-record {
+    position: relative !important;
+    inset: auto !important;
+    margin-bottom: 0.65rem;
+    animation: none !important;
+    min-width: 0;
+  }
+  .hv-notif { padding: 0.6rem 0.85rem; }
+  .hv-notif-title { font-size: 0.78rem; }
+  .hv-notif-sub { font-size: 0.66rem; }
+  .hv-record { min-width: 0 !important; padding: 0.7rem 0.85rem; }
+
+  /* === LOGO CAROUSEL === */
+  .logo-carousel { padding-block: 1.75rem 1rem; }
+  .ls-tile { width: 110px; height: 60px; padding: 0.65rem 0.75rem; }
+  .ls-tile img { max-height: 34px; }
+  .lc-track { gap: 0.55rem; animation-duration: 50s; }
+
+  /* === VALUE PROP === */
+  .values { gap: 0.85rem; }
+  .value { padding: 1.5rem 1.35rem; }
+  .value .num { width: 36px; height: 36px; font-size: 0.85rem; }
+
+  /* === DXP SHOWCASE === */
+  .dxp-showcase {
+    padding: 1.75rem 1.35rem;
+    border-radius: 18px;
+  }
+  .dxp-showcase-grid { gap: 1.5rem; }
+  .dxp-product-logo { height: 42px; margin-bottom: 1rem; }
+
+  /* === DARK LAYERED PANEL === */
+  .layered-panel {
+    padding: 1.75rem 1.25rem;
+    border-radius: 18px;
+  }
+  .layered-head h2 { font-size: 1.05rem; line-height: 1.4; }
+  .layered-eyebrow { font-size: 0.68rem; }
+  .layer {
+    grid-template-columns: 1fr !important;
+    gap: 0.4rem;
+    padding: 1rem 1.15rem 1rem 1.4rem;
+  }
+  .layer-name { font-size: 1rem; }
+  .layer-items { font-size: 0.72rem; text-align: left !important; }
+  .layered-ribbon {
+    font-size: 0.66rem;
+    padding: 0.85rem 1rem;
+    letter-spacing: 0.12em;
+  }
+
+  /* === CAPABILITIES === */
+  .features { gap: 0.85rem; }
+  .feature { padding: 1.75rem 1.4rem; }
+
+  /* === STATS === */
+  .stats { grid-template-columns: 1fr 1fr; }
+  .stat { padding: 1.5rem 1rem; }
+  .stat .num { font-size: 1.5rem; }
+  .stat .lbl { font-size: 0.82rem; margin-top: 0.5rem; }
+
+  /* === REENTRY BRIDGE === */
+  .reentry-panel { padding: 1.75rem 1.25rem; border-radius: 18px; }
+  .reentry-grid { gap: 1.5rem; }
+  .bridge-stage {
+    grid-template-columns: 48px 1fr;
+    padding: 0.85rem 1rem 0.85rem 0;
+    gap: 0.7rem;
+  }
+  .bridge-stage .bs-icon {
+    width: 48px;
+    min-height: 56px;
+    border-radius: 10px 0 0 10px;
+  }
+  .bridge-stage .bs-icon svg { width: 22px; height: 22px; }
+  .bs-text { font-size: 0.86rem; line-height: 1.3; }
+  .bs-tags { grid-column: 1 / -1; flex-direction: row; flex-wrap: wrap; padding: 0 0 0 60px; align-items: flex-start; }
+  .bs-tags span { font-size: 0.6rem; padding: 0.18rem 0.45rem; }
+  .bridge-line { left: 22px; }
+
+  /* === HUMAN TECH === */
+  .humantech {
+    padding: 1.75rem 1.25rem;
+    border-radius: 18px;
+  }
+  .humantech-grid { gap: 1.5rem; text-align: center; }
+  .humantech-robot img { max-width: 180px; }
+  .humantech-quote { font-size: 1.05rem; }
+  .quote-marks { font-size: 2.5rem; }
+
+  /* === SECTORS === */
+  .sectors { gap: 0.85rem; }
+  .sector { padding: 1.5rem 1.35rem; min-height: 0; }
+
+  /* === COMPLIANCE === */
+  .compliance-grid { grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+  .compliance-badge { padding: 1.1rem 0.85rem; }
+  .compliance-badge .cb-name { font-size: 0.88rem; }
+  .compliance-badge .cb-desc { font-size: 0.7rem; }
+
+  /* === QUOTE === */
+  .quote { padding: 1.75rem 1.25rem; border-radius: 18px; }
+  .quote blockquote { font-size: 1.05rem; line-height: 1.5; }
+
+  /* === CTA BANNER === */
+  .cta-banner { padding: 1.75rem 1.25rem; border-radius: 18px; }
+  .cta-actions { flex-direction: column; gap: 0.5rem; width: 100%; }
+  .cta-actions .btn { width: 100%; justify-content: center; }
+
+  /* === FOOTER === */
+  .footer { padding-block: 2.5rem 1.25rem; }
+  .footer-grid { gap: 1.75rem; margin-bottom: 1.75rem; }
+  .footer-bottom { font-size: 0.78rem; }
+  .footer-bottom .legal { gap: 1rem; }
+
+  /* === PLATFORM PAGE MOCKUP === */
+  .ps-frame { display: none; }  /* Hide browser chrome on mobile */
+  .ps-app { grid-template-columns: 1fr; }
+  .ps-side { display: none; }
+  .ps-main { padding: 1rem; }
+  .ps-h { font-size: 1.05rem; }
+  .ps-search { display: none; }
+  .ps-cats { gap: 0.85rem; padding-bottom: 0.85rem; margin-bottom: 1rem; }
+  .ps-cat { font-size: 0.7rem; }
+  .ps-cat .ps-cat-i { font-size: 0.95rem; }
+  .ps-apps {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 0.5rem;
+  }
+  .ps-app-card { padding: 0.8rem 0.7rem; }
+  .ps-app-name { font-size: 0.82rem; }
+  .ps-app-desc { font-size: 0.7rem; line-height: 1.35; }
+  .ps-app-logo { height: 28px; max-width: 90px; }
+
+  /* iframe overlay on mobile */
+  .ps-iframe-bar { padding: 0.5rem 0.6rem; gap: 0.4rem; }
+  .ps-iframe-back { padding: 0.4rem 0.6rem 0.4rem 0.5rem; font-size: 0.75rem; }
+  .ps-iframe-external { padding: 0.4rem 0.65rem; font-size: 0.72rem; }
+  .ps-iframe-name { font-size: 0.85rem; }
+  .ps-iframe-logo { max-height: 22px; max-width: 80px; }
+  .ps-iframe-blocked { padding: 1.5rem 1.25rem; gap: 0.85rem; }
+  .ps-iframe-blocked h4 { font-size: 1.15rem; }
+  .ps-iframe-blocked-logo { max-height: 50px; }
+  .ps-iframe-blocked p { font-size: 0.85rem; }
+
+  /* Records table on mobile becomes cards */
+  .ps-tr {
+    grid-template-columns: 1fr !important;
+    gap: 0.35rem;
+    padding: 0.85rem 0.85rem;
+    font-size: 0.78rem;
+  }
+  .ps-tr.ps-th { display: none; }
+
+  /* Chart on platform page mobile */
+  .ps-bars { gap: 0.3rem; }
+  .ps-bar-lbl { font-size: 0.52rem; }
+  .ps-y { font-size: 0.6rem; }
+  .ps-bar-col::before, .ps-bar-col::after { display: none; }
+
+  /* Messenger view */
+  .ps-msg { max-width: 90%; }
+  .ps-bubble { font-size: 0.82rem; padding: 0.55rem 0.75rem; }
+
+  /* Form */
+  .field-row { grid-template-columns: 1fr !important; }
+
+  /* Page head */
+  .page-head { padding-top: 2rem; padding-bottom: 2rem; }
+
+  /* Stop horizontal overflow globally */
+  html, body { overflow-x: hidden; max-width: 100vw; }
+}
+
+/* PHONE — 480px and below */
+@media (max-width: 480px) {
+  h1 { font-size: 2rem; }
+  .hero-trust { gap: 0.75rem; }
+  .hero-trust-item { flex: 1 1 100px; }
+  .hero-trust-item .num { font-size: 1.15rem; }
+  .stats { grid-template-columns: 1fr; }
+  .compliance-grid { grid-template-columns: 1fr; }
+  .ps-apps { grid-template-columns: 1fr !important; }
+  .nav-cta { gap: 0.25rem; }
+  .nav-cta .btn-sm { padding: 0.5rem 0.75rem; font-size: 0.78rem; }
+  .brand-it1 { height: 26px; width: 26px; }
+  .brand-logo { height: 22px; }
+}
