@@ -229,6 +229,133 @@
   });
 
   // ============================================================
+  // LIVE PRODUCT DEMO — make mockups feel interactive
+  // ============================================================
+  document.querySelectorAll(".product-shot").forEach((shot) => {
+    const cats = shot.querySelectorAll(".ps-cat");
+    const apps = shot.querySelectorAll(".ps-app-card");
+    const search = shot.querySelector("[data-search]");
+    const searchText = shot.querySelector("[data-search-text]");
+    const toast = shot.querySelector("[data-toast]");
+    const chart = shot.querySelector(".ps-chart");
+
+    // Auto-cycle categories
+    if (cats.length > 1) {
+      let idx = 0;
+      const startIdx = Array.from(cats).findIndex(c => c.classList.contains("active"));
+      if (startIdx >= 0) idx = startIdx;
+      setInterval(() => {
+        cats.forEach(c => c.classList.remove("active"));
+        idx = (idx + 1) % cats.length;
+        cats[idx].classList.add("active");
+      }, 2400);
+    }
+
+    // Auto-rotate "Recently opened" badge between app cards
+    if (apps.length > 1) {
+      let idx = 0;
+      setInterval(() => {
+        apps.forEach(a => a.classList.remove("live-active"));
+        apps[idx].classList.add("live-active");
+        idx = (idx + 1) % apps.length;
+      }, 1800);
+    }
+
+    // Search field typing animation
+    if (search && searchText) {
+      const phrases = ["coursera", "GED math prep", "HVAC certification", "JSTOR", "reentry skills", "Khan Academy"];
+      let pi = 0, ci = 0, deleting = false;
+
+      function tick() {
+        const phrase = phrases[pi];
+        if (!deleting) {
+          if (ci < phrase.length) {
+            searchText.textContent = phrase.slice(0, ci + 1);
+            ci++;
+            search.classList.add("live-typing");
+            setTimeout(tick, 70 + Math.random() * 60);
+          } else {
+            setTimeout(() => { deleting = true; tick(); }, 1400);
+          }
+        } else {
+          if (ci > 0) {
+            searchText.textContent = phrase.slice(0, ci - 1);
+            ci--;
+            setTimeout(tick, 35);
+          } else {
+            deleting = false;
+            pi = (pi + 1) % phrases.length;
+            search.classList.remove("live-typing");
+            searchText.textContent = "Search";
+            setTimeout(() => { searchText.textContent = ""; tick(); }, 900);
+          }
+        }
+      }
+      // Start when shot enters viewport
+      const obs = new IntersectionObserver((ents) => {
+        ents.forEach(e => {
+          if (e.isIntersecting) {
+            setTimeout(tick, 800);
+            obs.unobserve(shot);
+          }
+        });
+      }, { threshold: 0.3 });
+      obs.observe(shot);
+    }
+
+    // Toast notifications — cycle through messages
+    if (toast) {
+      const titleEl = toast.querySelector("[data-toast-title]");
+      const textEl = toast.querySelector("[data-toast-text]");
+      const msgs = [
+        ["HVAC Module 4 complete", "Marcus J. earned the credential just now."],
+        ["GED Math passing score", "Sarah W. crossed the threshold."],
+        ["Coursera quiz submitted", "Mike R. scored 92% on Customer Service."],
+        ["Honest Jobs match", "3 fair-chance roles matched to recent graduates."],
+        ["Canvas course assigned", "Pre-release cohort enrolled in Networking I."],
+      ];
+      let mi = 0;
+      function showToast() {
+        const [t, x] = msgs[mi];
+        titleEl.textContent = t;
+        textEl.textContent = x;
+        toast.classList.add("show");
+        setTimeout(() => {
+          toast.classList.remove("show");
+          mi = (mi + 1) % msgs.length;
+          setTimeout(showToast, 1100);
+        }, 3200);
+      }
+      const obs2 = new IntersectionObserver((ents) => {
+        ents.forEach(e => {
+          if (e.isIntersecting) {
+            setTimeout(showToast, 1400);
+            obs2.unobserve(shot);
+          }
+        });
+      }, { threshold: 0.4 });
+      obs2.observe(shot);
+    }
+
+    // Animate chart bars when chart enters viewport
+    if (chart) {
+      const obs3 = new IntersectionObserver((ents) => {
+        ents.forEach(e => {
+          if (e.isIntersecting) {
+            const bars = chart.querySelectorAll(".bs");
+            bars.forEach((b, i) => {
+              b.style.animationDelay = `${i * 25}ms`;
+            });
+            chart.classList.add("live-animate");
+            obs3.unobserve(chart);
+          }
+        });
+      }, { threshold: 0.3 });
+      obs3.observe(chart);
+    }
+  });
+
+  // ============================================================
   // NAV SHADOW ON SCROLL
   // ============================================================
   const navWrap = document.querySelector(".nav-wrap");

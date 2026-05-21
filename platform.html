@@ -644,7 +644,7 @@
         <main class="ps-main">
           <div class="ps-topbar">
             <h3 class="ps-h">Course &amp; Content Library</h3>
-            <div class="ps-search"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> Search</div>
+            <div class="ps-search" data-search><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> <span class="ps-search-text" data-search-text>Search</span></div>
           </div>
           <div class="ps-cats">
             <div class="ps-cat active"><span class="ps-cat-i">▥</span>All</div>
@@ -688,6 +688,16 @@
               <div class="ps-app-desc">Fair-chance hiring platform for verifiable post-release matches.</div>
             </div>
           </div>
+        
+          <div class="ps-toast" data-toast>
+            <div class="ps-toast-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div class="ps-toast-body">
+              <span class="ps-toast-title" data-toast-title>HVAC Module 4 complete</span>
+              <span class="ps-toast-text" data-toast-text>Marcus J. earned the credential just now.</span>
+            </div>
+          </div>
         </main>
       </div>
     </div>
@@ -723,7 +733,7 @@
               <span>6.0K</span><span>4.5K</span><span>3.0K</span><span>1.5K</span><span>0</span>
             </div>
             <div class="ps-bars">
-              <div class="ps-bar-col">
+              <div class="ps-bar-col" data-total="3,250 min">
                 <div class="ps-bar">
                   <span class="bs" style="height:2%;background:#facc15"></span>
                   <span class="bs" style="height:7%;background:#10b981"></span>
@@ -732,7 +742,7 @@
                 </div>
                 <span class="ps-bar-lbl">30 Mar–5 Apr</span>
               </div>
-              <div class="ps-bar-col">
+              <div class="ps-bar-col" data-total="3,020 min">
                 <div class="ps-bar">
                   <span class="bs" style="height:4%;background:#facc15"></span>
                   <span class="bs" style="height:8%;background:#10b981"></span>
@@ -742,7 +752,7 @@
                 </div>
                 <span class="ps-bar-lbl">6–12 Apr</span>
               </div>
-              <div class="ps-bar-col">
+              <div class="ps-bar-col" data-total="2,990 min">
                 <div class="ps-bar">
                   <span class="bs" style="height:5%;background:#facc15"></span>
                   <span class="bs" style="height:3%;background:#10b981"></span>
@@ -751,7 +761,7 @@
                 </div>
                 <span class="ps-bar-lbl">13–19 Apr</span>
               </div>
-              <div class="ps-bar-col">
+              <div class="ps-bar-col" data-total="3,030 min">
                 <div class="ps-bar">
                   <span class="bs" style="height:5%;background:#facc15"></span>
                   <span class="bs" style="height:5%;background:#10b981"></span>
@@ -760,7 +770,7 @@
                 </div>
                 <span class="ps-bar-lbl">20–26 Apr</span>
               </div>
-              <div class="ps-bar-col">
+              <div class="ps-bar-col" data-total="3,360 min">
                 <div class="ps-bar">
                   <span class="bs" style="height:8%;background:#facc15"></span>
                   <span class="bs" style="height:10%;background:#10b981"></span>
@@ -770,7 +780,7 @@
                 </div>
                 <span class="ps-bar-lbl">27 Apr–3 May</span>
               </div>
-              <div class="ps-bar-col">
+              <div class="ps-bar-col" data-total="4,510 min">
                 <div class="ps-bar">
                   <span class="bs" style="height:5%;background:#facc15"></span>
                   <span class="bs" style="height:18%;background:#10b981"></span>
@@ -781,7 +791,7 @@
                 </div>
                 <span class="ps-bar-lbl">4–10 May</span>
               </div>
-              <div class="ps-bar-col">
+              <div class="ps-bar-col" data-total="4,460 min">
                 <div class="ps-bar">
                   <span class="bs" style="height:7%;background:#facc15"></span>
                   <span class="bs" style="height:13%;background:#10b981"></span>
@@ -791,7 +801,7 @@
                 </div>
                 <span class="ps-bar-lbl">11–17 May</span>
               </div>
-              <div class="ps-bar-col">
+              <div class="ps-bar-col" data-total="1,820 min">
                 <div class="ps-bar">
                   <span class="bs" style="height:3%;background:#10b981"></span>
                   <span class="bs" style="height:10%;background:#ef4444"></span>

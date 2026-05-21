@@ -3129,3 +3129,242 @@ h4 {
 .mq-tile.mq-text:hover span {
   color: var(--teal-deep);
 }
+
+/* =============================================================
+   LIVE PRODUCT DEMO — animated mockup states
+   ============================================================= */
+
+/* "Recently opened" floating badge on active app card */
+.ps-app-card {
+  position: relative;
+  transition: border-color 350ms, box-shadow 400ms, transform 400ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.ps-app-card.live-active {
+  border-color: var(--teal);
+  box-shadow: 0 0 0 4px rgba(0, 153, 184, 0.1), 0 12px 24px -8px rgba(0, 153, 184, 0.25);
+  transform: translateY(-4px);
+  z-index: 2;
+}
+.ps-app-card.live-active::after {
+  content: "● Recently opened";
+  position: absolute;
+  top: -10px;
+  right: 12px;
+  font-size: 0.62rem;
+  background: var(--teal);
+  color: white;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  animation: badge-in 350ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 4px 10px -2px rgba(0, 153, 184, 0.45);
+}
+@keyframes badge-in {
+  from { opacity: 0; transform: translateY(6px) scale(0.85); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Sidebar item hover ripple */
+.ps-nav-item {
+  position: relative;
+  overflow: hidden;
+}
+.ps-nav-item::after {
+  content: "";
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent);
+  transition: left 0.6s ease;
+  pointer-events: none;
+}
+.ps-nav-item:hover::after { left: 100%; }
+
+/* Search field that "types" — text rendered by JS */
+.ps-search {
+  transition: border-color 250ms, background 250ms, box-shadow 250ms;
+}
+.ps-search.live-typing {
+  border-color: var(--teal);
+  background: white;
+  box-shadow: 0 0 0 3px rgba(0, 153, 184, 0.12);
+}
+.ps-search-text {
+  color: var(--ink);
+  font-weight: 500;
+  font-size: 0.8rem;
+  letter-spacing: -0.005em;
+}
+.ps-search-text::after {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 11px;
+  background: var(--teal);
+  margin-left: 1px;
+  vertical-align: middle;
+  animation: cursor-blink 1s steps(2, end) infinite;
+}
+@keyframes cursor-blink {
+  to { opacity: 0; }
+}
+
+/* Category auto-cycle indicator */
+.ps-cat {
+  transition: color 350ms;
+  cursor: pointer;
+}
+.ps-cat .ps-cat-i {
+  transition: transform 400ms cubic-bezier(0.34, 1.56, 0.64, 1), filter 250ms;
+}
+.ps-cat:hover .ps-cat-i {
+  transform: scale(1.18) rotate(-4deg);
+  filter: grayscale(0);
+}
+.ps-cat.active .ps-cat-i {
+  filter: grayscale(0);
+}
+.ps-cat.active::after {
+  animation: cat-underline-in 350ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+@keyframes cat-underline-in {
+  from { transform: scaleX(0); opacity: 0; }
+  to { transform: scaleX(1); opacity: 1; }
+}
+
+/* Chart bar growth */
+.ps-chart .bs {
+  transform-origin: bottom;
+  transition: filter 250ms, opacity 250ms;
+}
+.ps-chart.live-animate .bs {
+  animation: bar-grow 0.9s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+@keyframes bar-grow {
+  from { transform: scaleY(0); }
+  to { transform: scaleY(1); }
+}
+
+/* Chart bar hover — entire column glows */
+.ps-bar-col {
+  cursor: pointer;
+  transition: filter 250ms;
+}
+.ps-bar-col:hover .bs {
+  filter: brightness(1.15) saturate(1.2);
+}
+.ps-bar-col:hover .ps-bar-lbl {
+  color: var(--navy);
+  font-weight: 700;
+}
+
+/* Tooltip that follows hovered bar column */
+.ps-bar-col {
+  position: relative;
+}
+.ps-bar-col::before {
+  content: attr(data-total);
+  position: absolute;
+  top: -32px;
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: var(--navy);
+  color: white;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 220ms, transform 220ms;
+  z-index: 4;
+}
+.ps-bar-col::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: var(--navy);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 220ms;
+}
+.ps-bar-col:hover::before {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+.ps-bar-col:hover::after { opacity: 1; }
+
+/* Floating notification toast inside mockup */
+.ps-toast {
+  position: absolute;
+  bottom: 1.2rem;
+  right: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.85rem 1rem 0.85rem 0.85rem;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: 0 18px 38px -10px rgba(15, 23, 42, 0.2);
+  z-index: 5;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 400ms, transform 400ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  max-width: 280px;
+}
+.ps-toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.ps-toast-icon {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: var(--teal);
+  color: white;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+.ps-toast-body { display: flex; flex-direction: column; gap: 0.1rem; line-height: 1.2; }
+.ps-toast-title {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--navy);
+}
+.ps-toast-text {
+  font-size: 0.74rem;
+  color: var(--ink-soft);
+}
+
+/* Sidebar active item — small pulse */
+.ps-nav-item.active {
+  animation: side-active-glow 3s ease-in-out infinite;
+}
+@keyframes side-active-glow {
+  0%, 100% { box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); }
+  50% { box-shadow: 0 4px 14px rgba(0, 153, 184, 0.25); }
+}
+
+/* Make mockup feel interactive: lift slightly on container hover */
+.product-shot {
+  position: relative;
+  transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 500ms;
+}
+.product-shot:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 50px 95px -25px rgba(16, 46, 80, 0.4);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ps-app-card.live-active,
+  .ps-chart.live-animate .bs,
+  .ps-nav-item.active,
+  .ps-toast { animation: none !important; transition: none !important; }
+}
