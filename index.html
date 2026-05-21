@@ -517,17 +517,25 @@
         </div>
       </div>
 
-      <!-- Glimpse of a learner record — appears next to the Achieve DXP mark during the record close-up -->
+      <!-- Glimpse of a learner record — appears to the RIGHT of the Achieve DXP mark during the close-up -->
       <div class="learner-record" aria-hidden="true">
         <div class="lr-head">
-          <div class="lr-avatar">MJ</div>
+          <div class="lr-avatar">L</div>
           <div class="lr-head-text">
-            <div class="lr-name">Marcus Johnson</div>
-            <div class="lr-meta">Learner ID · L-4827</div>
+            <div class="lr-name">Learner · L-4827</div>
+            <div class="lr-meta">Active · Reentry Workforce Pathway</div>
           </div>
           <div class="lr-badge">✓ Verified</div>
         </div>
-        <div class="lr-section">Credentials earned</div>
+
+        <div class="lr-section">Pathway progress</div>
+        <div class="lr-pathway">
+          <span class="lr-pathway-label">Reentry Workforce</span>
+          <span class="lr-pathway-pct">68%</span>
+        </div>
+        <div class="lr-pathway-bar"><div class="lr-pathway-fill"></div></div>
+
+        <div class="lr-section">Credentials earned <span class="lr-section-count">4 of 6</span></div>
         <div class="lr-row">
           <span class="lr-check"></span>
           <span class="lr-row-title">Customer Service Foundations</span>
@@ -543,11 +551,35 @@
           <span class="lr-row-title">Business Foundations</span>
           <span class="lr-row-src">WGU</span>
         </div>
+        <div class="lr-row">
+          <span class="lr-check"></span>
+          <span class="lr-row-title">GED · Math &amp; Reading</span>
+          <span class="lr-row-src">GED Testing</span>
+        </div>
+
         <div class="lr-section">Hours logged</div>
         <div class="lr-progress">
           <div class="lr-progress-bar"><div class="lr-progress-fill"></div></div>
           <span class="lr-progress-text">342 hrs</span>
         </div>
+
+        <div class="lr-section">Recent activity</div>
+        <div class="lr-activity">
+          <span class="lr-act-dot"></span>
+          <span class="lr-act-text">Completed module · HVAC Refrigerants</span>
+          <span class="lr-act-time">2h</span>
+        </div>
+        <div class="lr-activity">
+          <span class="lr-act-dot"></span>
+          <span class="lr-act-text">Earned cert · Customer Service</span>
+          <span class="lr-act-time">1d</span>
+        </div>
+        <div class="lr-activity">
+          <span class="lr-act-dot"></span>
+          <span class="lr-act-text">Logged 4.5 hrs · Business Foundations</span>
+          <span class="lr-act-time">2d</span>
+        </div>
+
         <div class="lr-footer">
           <span class="lr-status"><span class="lr-status-dot"></span>Audit-ready</span>
           <span class="lr-stamp">Synced just now</span>
@@ -982,16 +1014,17 @@
      ============================================================ */
   .learner-record{
     position:absolute;
-    left:72%;top:50%;
-    transform: translate(calc(-50% + 40px), -50%);
-    width:280px;
-    padding:14px 16px 12px;
+    left:107%;top:50%;
+    transform: translate(-50%, -50%);
+    width:340px;
+    padding:16px 18px 14px;
     background:#fff;
-    border-radius:14px;
+    border-radius:16px;
     box-shadow:
-      0 22px 60px rgba(0,0,0,.5),
-      0 0 0 1px rgba(0,151,145,.18),
-      0 0 32px rgba(0,151,145,.3);
+      0 28px 70px rgba(0,0,0,.55),
+      0 0 0 1px rgba(0,151,145,.2),
+      0 0 40px rgba(0,151,145,.35),
+      0 0 60px rgba(255,182,76,.18);
     font-family:'Nunito','Nunito Sans',Inter,system-ui,sans-serif;
     color:#102e50;
     font-size:13px;
@@ -1029,10 +1062,61 @@
   }
 
   .lr-section{
+    display:flex;justify-content:space-between;align-items:baseline;
     text-transform:uppercase;
     font-size:9.5px;font-weight:800;
     color:#8092a8;letter-spacing:.1em;
-    margin:11px 0 5px;
+    margin:11px 0 6px;
+  }
+  .lr-section-count{
+    text-transform:none;
+    letter-spacing:0;
+    font-size:10px;
+    color:#009791;
+    font-weight:800;
+  }
+
+  /* Pathway progress section */
+  .lr-pathway{
+    display:flex;justify-content:space-between;align-items:center;
+    font-size:13px;font-weight:700;color:#102e50;
+  }
+  .lr-pathway-pct{color:#009791;font-weight:800;font-size:14px;}
+  .lr-pathway-bar{
+    height:6px;background:rgba(0,151,145,.15);
+    border-radius:999px;overflow:hidden;
+    margin-top:5px;
+  }
+  .lr-pathway-fill{
+    width:0;height:100%;
+    background:linear-gradient(90deg, #009791, #5fd9d4);
+    border-radius:999px;
+    animation:lr-pathway-fill 22s ease-in-out infinite;
+    box-shadow:0 0 6px rgba(0,151,145,.4);
+  }
+  @keyframes lr-pathway-fill{
+    0%, 78%   { width: 0; }
+    88%, 100% { width: 68%; }
+  }
+
+  /* Recent activity section */
+  .lr-activity{
+    display:grid;grid-template-columns:8px 1fr auto;gap:9px;
+    align-items:center;
+    padding:4px 0;
+    font-size:11.5px;
+  }
+  .lr-act-dot{
+    width:7px;height:7px;border-radius:50%;
+    background:#FFB64C;
+    box-shadow:0 0 6px rgba(255,182,76,.55);
+  }
+  .lr-act-text{font-weight:600;color:#102e50;}
+  .lr-act-time{
+    font-size:10px;color:#009791;font-weight:800;
+    background:rgba(0,151,145,.1);
+    padding:2px 6px;border-radius:6px;
+    letter-spacing:.02em;
   }
 
   .lr-row{
@@ -1107,11 +1191,13 @@
   }
   .lr-stamp{font-size:10px;color:#8092a8;font-weight:600;}
 
-  /* Card cycle — synced to the camera reaching the record close-up */
+  /* Card cycle — synced to the camera reaching the record close-up.
+     Slides in from the right (outside the viewport, beyond the hub),
+     settles to its resting position to the right of the Achieve mark. */
   @keyframes lr-cycle{
-    0%,  74%  { opacity:0; transform: translate(calc(-50% + 50px), -50%); filter: blur(10px); }
+    0%,  74%  { opacity:0; transform: translate(calc(-50% + 60px), -50%); filter: blur(10px); }
     82%, 92%  { opacity:1; transform: translate(-50%, -50%);              filter: blur(0); }
-    96%, 100% { opacity:0; transform: translate(calc(-50% + 30px), calc(-50% - 8px)); filter: blur(8px); }
+    96%, 100% { opacity:0; transform: translate(calc(-50% + 40px), calc(-50% - 8px)); filter: blur(8px); }
   }
 
   /* Mobile */
