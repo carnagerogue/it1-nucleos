@@ -4235,3 +4235,92 @@ h4 {
   .hv-card-large { width: 86% !important; }
   .hv-record { right: -2%; min-width: 180px; }
 }
+
+/* =============================================================
+   HOMEPAGE LOGO CAROUSEL — infinite scrolling rows of partner logos
+   ============================================================= */
+.logo-carousel {
+  overflow: hidden;
+  position: relative;
+  padding-block: 2.5rem 1.5rem;
+  background: white;
+}
+
+.lc-row {
+  display: flex;
+  overflow: hidden;
+  padding: 0.6rem 0;
+  mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+}
+
+.lc-track {
+  display: flex;
+  gap: 0.85rem;
+  flex-shrink: 0;
+  animation: marquee-left 70s linear infinite;
+  will-change: transform;
+}
+.lc-track-left {
+  animation-name: marquee-left;
+}
+.lc-track-right {
+  animation-name: marquee-right;
+  animation-duration: 80s;
+}
+
+@keyframes marquee-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes marquee-right {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+
+.logo-carousel:hover .lc-track {
+  animation-play-state: paused;
+}
+
+.ls-tile {
+  flex: 0 0 auto;
+  width: 140px;
+  height: 72px;
+  padding: 0.95rem 1.1rem;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 220ms, box-shadow 220ms, transform 220ms;
+  text-decoration: none;
+}
+
+.ls-tile:hover {
+  border-color: var(--teal);
+  box-shadow: var(--shadow);
+  transform: translateY(-2px) scale(1.04);
+  z-index: 2;
+  position: relative;
+}
+
+.ls-tile img {
+  max-height: 42px;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(35%);
+  opacity: 0.9;
+  transition: filter 250ms, opacity 250ms;
+}
+
+.ls-tile:hover img {
+  filter: grayscale(0);
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lc-track { animation: none; }
+}
