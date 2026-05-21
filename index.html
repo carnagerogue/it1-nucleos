@@ -83,21 +83,15 @@
       </div>
     </div>
 
-    <div class="hero-visual" data-parallax="0.08">
-      <!-- Layered: photo behind, product card in front -->
-      <div class="hv-photo">
-        <img src="assets/images/hero-learners.webp" alt="Learners engaged on the Nucleos Achieve DXP platform" />
-        <div class="hv-photo-gradient"></div>
-      </div>
-
-      <!-- Floating product card — mirrors the real Achieve DXP library UI -->
-      <div class="hv-card">
+    <div class="hero-visual hv-product-only" data-parallax="0.05">
+      <!-- Main product card — Achieve DXP library UI -->
+      <div class="hv-card hv-card-large">
         <div class="hv-card-head">
           <img src="assets/images/achievedxp-logo.png" alt="Achieve DXP" class="hv-card-logo" />
           <span class="hv-card-pill">Live</span>
         </div>
         <div class="hv-card-title">Course &amp; Content Library</div>
-        <div class="hv-card-apps">
+        <div class="hv-card-apps hv-card-apps-grid">
           <div class="hv-app">
             <img src="assets/images/partners/coursera.png" alt="Coursera" />
             <span>Coursera</span>
@@ -109,6 +103,14 @@
           <div class="hv-app">
             <img src="assets/images/partners/western-governors-university.jpg" alt="WGU" />
             <span>WGU</span>
+          </div>
+          <div class="hv-app">
+            <img src="assets/images/partners/khan-academy.png" alt="Khan Academy" />
+            <span>Khan Academy</span>
+          </div>
+          <div class="hv-app">
+            <img src="assets/images/partners/jstor.png" alt="JSTOR" />
+            <span>JSTOR</span>
           </div>
           <div class="hv-app">
             <img src="assets/images/partners/honest-jobs.png" alt="Honest Jobs" />
@@ -132,13 +134,16 @@
         </div>
       </div>
 
-      <!-- Floating Azure badge (clean, in a designed position) -->
-      <div class="hv-azure">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12c0 6-4 10-10 10S2 18 2 12 6 2 12 2s10 4 10 10z"/><path d="M16 8L8 16"/><path d="M12 6v6h6"/></svg>
-        <div class="hv-azure-body">
-          <div class="hv-azure-title">SaaS on Microsoft Azure</div>
-          <div class="hv-azure-sub">FedRAMP-aligned · US-only</div>
+      <!-- Floating learner-record card -->
+      <div class="hv-record">
+        <div class="hv-record-head">
+          <span class="hv-record-label">Learner record</span>
+          <span class="hv-record-status">Active</span>
         </div>
+        <div class="hv-record-name">Sarah W.</div>
+        <div class="hv-record-course">GED Math · Algebra II</div>
+        <div class="hv-record-bar"><i style="width:92%"></i></div>
+        <div class="hv-record-meta"><span>92% complete</span><span>· 15 min ago</span></div>
       </div>
     </div>
   </div>
@@ -199,7 +204,7 @@
             <li><span><strong>100+ integrated apps</strong> &amp; content providers (Coursera, Canvas, JSTOR, WGU&hellip;)</span></li>
             <li><span><strong>Identity federation</strong> via SAML 2.0 and OAuth 2.0 with your existing IdP</span></li>
             <li><span><strong>Audit-grade logging</strong> for every learner interaction</span></li>
-            <li><span><strong>Hosted on Microsoft Azure</strong>, inheriting Azure FedRAMP High</span></li>
+            <li><span><strong>Hosted in a FedRAMP-aligned commercial cloud</strong> with US-only data residency</span></li>
           </ul>
           <div style="margin-top:2rem;display:flex;gap:0.75rem;flex-wrap:wrap">
             <a class="btn btn-teal" href="platform.html">
@@ -317,7 +322,7 @@
           </svg>
         </div>
         <h3>Security &amp; compliance</h3>
-        <p>FIPS-validated cryptography. TLS 1.2+ in transit. Azure FedRAMP High inheritance. Audit-ready by design.</p>
+        <p>FIPS-validated cryptography. TLS 1.2+ in transit. FedRAMP-aligned commercial cloud. Audit-ready by design.</p>
       </article>
 
       <article class="feature">
@@ -590,7 +595,7 @@
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 010 20"/><path d="M12 2a15 15 0 000 20"/></svg>
         </div>
         <div class="cb-name">FedRAMP-aligned</div>
-        <div class="cb-desc">Azure High inheritance</div>
+        <div class="cb-desc">Federal-grade control framework</div>
       </div>
       <div class="compliance-badge">
         <div class="cb-icon">
@@ -623,7 +628,7 @@
     </div>
 
     <p style="text-align:center;margin-top:2.5rem;color:var(--ink-soft);font-size:0.95rem">
-      Hosted on <strong style="color:var(--navy)">Microsoft Azure</strong> commercial cloud with TLS 1.2+ encryption end-to-end. All data resides in the continental United States. <a href="security.html">Read the full security brief →</a>
+      Hosted in a <strong style="color:var(--navy)">FedRAMP-aligned commercial cloud</strong> with TLS 1.2+ encryption end-to-end. All data resides in the continental United States. <a href="security.html">Read the full security brief →</a>
     </p>
   </div>
 </section>
