@@ -531,7 +531,7 @@
   .flow-tunnel{
     position:absolute;inset:0;z-index:1;pointer-events:none;
     perspective:520px;
-    perspective-origin:12% 50%;
+    perspective-origin:50% 50%;
     opacity:0;
     animation: flow-tunnel-fade 14s linear infinite;
     transform-style:preserve-3d;
@@ -543,7 +543,7 @@
 
   /* Glowing vanishing-point at the tunnel mouth */
   .ft-core{
-    position:absolute;left:12%;top:50%;
+    position:absolute;left:50%;top:50%;
     width:80px;height:80px;margin:-40px 0 0 -40px;
     border-radius:50%;
     background:radial-gradient(circle,
@@ -561,7 +561,7 @@
 
   /* Octagonal neon ring — built as two stacked clipped layers (outer color + inner punch-out) */
   .ft-ring{
-    position:absolute;left:12%;top:50%;
+    position:absolute;left:50%;top:50%;
     width:260px;height:260px;margin:-130px 0 0 -130px;
     transform: translateZ(-2200px);
     animation: ft-ring-fly 2.6s linear infinite var(--td, 0s);
@@ -603,7 +603,7 @@
 
   /* Radial warp streaks — speed lines firing out of the tunnel mouth */
   .ft-streak{
-    position:absolute;left:12%;top:50%;
+    position:absolute;left:50%;top:50%;
     width:500px;height:2.5px;
     background:linear-gradient(90deg,
       transparent 0%,
@@ -624,7 +624,7 @@
 
   /* Brand logos flying past the camera during POV phase */
   .ft-flyby-wrap{
-    position:absolute;left:12%;top:50%;
+    position:absolute;left:50%;top:50%;
     transform: translate3d(var(--fx,0), var(--fy,0), 0);
     transform-style: preserve-3d;
   }
