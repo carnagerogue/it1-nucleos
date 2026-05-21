@@ -9,6 +9,171 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
 <link rel="stylesheet" href="assets/css/styles.css" />
+<style>
+  /* ============================================================
+     TRUST POSTURE — cinematic security panel
+     ============================================================ */
+  .trust-stage{
+    position:relative;
+    aspect-ratio: 1200 / 500;
+    width:100%;
+    border-radius:28px;
+    overflow:hidden;
+    background:
+      radial-gradient(60% 80% at 50% 50%, rgba(45,212,229,.22), transparent 60%),
+      linear-gradient(180deg, #0a1f37 0%, #102e50 55%, #07172b 100%);
+    box-shadow:
+      0 30px 80px rgba(7,23,43,.45),
+      inset 0 1px 0 rgba(255,255,255,.06);
+    isolation:isolate;
+  }
+  .trust-stage::before{
+    content:"";position:absolute;inset:0;
+    background-image: radial-gradient(rgba(255,255,255,.07) 1px, transparent 1px);
+    background-size: 22px 22px;
+    mask-image: radial-gradient(120% 80% at 50% 50%, #000 40%, transparent 80%);
+    pointer-events:none;z-index:0;
+  }
+  .trust-bg{position:absolute;inset:0;z-index:0;pointer-events:none;}
+  .trust-bg-glow{
+    position:absolute;top:50%;left:50%;width:520px;height:520px;
+    border-radius:50%;filter:blur(80px);
+    transform:translate(-50%,-50%);
+    background:radial-gradient(circle, rgba(0,153,184,.55), transparent 65%);
+    animation: trust-pulse-glow 5s ease-in-out infinite;
+  }
+  @keyframes trust-pulse-glow{
+    0%,100%{opacity:.55;transform:translate(-50%,-50%) scale(1);}
+    50%    {opacity:.9; transform:translate(-50%,-50%) scale(1.1);}
+  }
+  .trust-sweep{
+    position:absolute;inset:-20% -40%;pointer-events:none;
+    background:linear-gradient(115deg,
+      transparent 38%,
+      rgba(45,212,229,.10) 47%,
+      rgba(255,255,255,.06) 50%,
+      rgba(45,212,229,.10) 53%,
+      transparent 62%);
+    filter:blur(8px);
+    animation:trust-sweep-x 12s linear infinite;
+    mix-blend-mode:screen;
+  }
+  @keyframes trust-sweep-x{
+    0%   { transform: translateX(-30%); }
+    100% { transform: translateX(30%); }
+  }
+  .trust-vignette{
+    position:absolute;inset:0;pointer-events:none;
+    background:radial-gradient(120% 90% at 50% 50%, transparent 55%, rgba(0,0,0,.55) 100%);
+  }
+
+  /* Scene captions */
+  .trust-caption{
+    position:absolute;top:1.5rem;left:50%;transform:translateX(-50%);
+    height:1.2rem;z-index:4;pointer-events:none;
+  }
+  .trust-caption span{
+    position:absolute;left:50%;top:0;transform:translateX(-50%);
+    white-space:nowrap;opacity:0;
+    font-size:.78rem;font-weight:700;letter-spacing:.22em;
+    text-transform:uppercase;color:#fff;
+    text-shadow:0 0 14px rgba(45,212,229,.5), 0 1px 2px rgba(0,0,0,.6);
+    animation:trust-caption-cycle 12s ease-in-out infinite;
+  }
+  .trust-caption span[data-act="1"]{animation-delay:0s;}
+  .trust-caption span[data-act="2"]{animation-delay:3s;}
+  .trust-caption span[data-act="3"]{animation-delay:6s;}
+  .trust-caption span[data-act="4"]{animation-delay:9s;}
+  @keyframes trust-caption-cycle{
+    0%,  1.7%   { opacity:0; transform:translate(-50%, 10px); filter:blur(6px) }
+    8%,  22%    { opacity:1; transform:translate(-50%, 0);    filter:blur(0) }
+    27%, 100%   { opacity:0; transform:translate(-50%, -10px); filter:blur(6px) }
+  }
+
+  /* SVG layer */
+  .trust-svg{
+    position:absolute;inset:0;width:100%;height:100%;
+    pointer-events:none;z-index:1;
+  }
+
+  /* Concentric rings — pulse outward from shield */
+  .t-ring{
+    transform-origin:center;transform-box:fill-box;
+    animation:t-ring-pulse 3s ease-out infinite;
+  }
+  .t-ring.r2{animation-delay:1s;}
+  .t-ring.r3{animation-delay:2s;}
+  @keyframes t-ring-pulse{
+    0%  {transform:scale(.55);opacity:.9;}
+    100%{transform:scale(2);   opacity:0;}
+  }
+
+  /* Animated checkmark draw-in */
+  .t-check{
+    stroke-dasharray:90;
+    stroke-dashoffset:90;
+    animation:t-check-draw 4s ease-out infinite;
+  }
+  @keyframes t-check-draw{
+    0%  {stroke-dashoffset:90;opacity:.3;}
+    35% {stroke-dashoffset:0; opacity:1;}
+    80% {stroke-dashoffset:0; opacity:1;}
+    95% {stroke-dashoffset:0; opacity:0;}
+    100%{stroke-dashoffset:90;opacity:0;}
+  }
+
+  /* Orbiting satellite badges (HTML chips) */
+  .trust-orbit{position:absolute;inset:0;z-index:2;pointer-events:none;}
+  .t-sat{
+    position:absolute;left:var(--ox);top:var(--oy);
+    transform:translate(-50%,-50%);
+    display:flex;align-items:center;gap:.5rem;
+    padding:.5rem .85rem;border-radius:999px;
+    font-size:.78rem;font-weight:700;letter-spacing:.01em;color:#fff;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.18);
+    backdrop-filter:blur(14px) saturate(140%);
+    -webkit-backdrop-filter:blur(14px) saturate(140%);
+    box-shadow:
+      0 8px 24px rgba(0,0,0,.35),
+      inset 0 1px 0 rgba(255,255,255,.12);
+    white-space:nowrap;
+    animation: t-sat-float 6s ease-in-out infinite, t-sat-fade-in 1s ease both;
+    animation-delay: var(--d,0s), var(--d,0s);
+  }
+  .t-sat svg{color:#2dd4e5;filter:drop-shadow(0 0 6px rgba(45,212,229,.6));}
+  @keyframes t-sat-float{
+    0%,100%{transform:translate(-50%,-50%);}
+    50%    {transform:translate(-50%,calc(-50% - 5px));}
+  }
+  @keyframes t-sat-fade-in{
+    from{opacity:0;transform:translate(-50%,calc(-50% + 14px));filter:blur(6px);}
+    to  {opacity:1;filter:blur(0);}
+  }
+
+  /* Stat strip — bottom of the panel */
+  .trust-stats{
+    position:absolute;left:0;right:0;bottom:1.25rem;z-index:3;
+    display:flex;justify-content:center;gap:2rem;
+    color:rgba(255,255,255,.85);font-size:.8rem;
+    pointer-events:none;
+  }
+  .trust-stats b{color:#fff;font-weight:800;letter-spacing:.01em;}
+
+  /* Responsive */
+  @media (max-width: 860px){
+    .trust-stage{aspect-ratio: 5 / 6;}
+    .t-sat{font-size:.66rem;padding:.35rem .6rem;gap:.3rem;}
+    .t-sat svg{width:11px;height:11px;}
+    .trust-stats{flex-direction:column;gap:.35rem;text-align:center;bottom:.85rem;font-size:.72rem;}
+    .trust-caption span{font-size:.66rem;letter-spacing:.16em;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .t-sat, .trust-bg-glow, .trust-sweep, .t-ring, .t-check { animation: none !important; }
+    .t-check{stroke-dashoffset:0;}
+    .trust-svg animateMotion{display:none;}
+  }
+</style>
 <link rel="icon" type="image/png" href="assets/images/nucleos-logo-official.png" />
 </head>
 <body>
@@ -52,6 +217,141 @@
     <span class="eyebrow"><span class="dot"></span> Security &amp; Trust</span>
     <h1 style="margin-top:1.25rem">Security <span class="teal">isn't a feature.</span><br/>It's the foundation.</h1>
     <p class="lead">We're trusted to deliver education inside facilities where most software simply cannot operate. Here's how.</p>
+  </div>
+</section>
+
+<!-- CINEMATIC TRUST POSTURE PANEL -->
+<section class="section">
+  <div class="container">
+    <div class="trust-stage" data-reveal="up" aria-label="A central security shield protected by eight compliance frameworks orbiting it: NIST 800-53, FIPS 140-2/-3, FedRAMP, FERPA, SAML 2.0, TLS 1.2+, WCAG 2.1 AA, AES-256.">
+      <div class="trust-bg" aria-hidden="true">
+        <div class="trust-bg-glow"></div>
+        <div class="trust-sweep"></div>
+        <div class="trust-vignette"></div>
+      </div>
+
+      <div class="trust-caption" aria-hidden="true">
+        <span data-act="1">Audit-grade.</span>
+        <span data-act="2">Validated cryptography.</span>
+        <span data-act="3">End-to-end encrypted.</span>
+        <span data-act="4">Every action — logged.</span>
+      </div>
+
+      <!-- Central shield SVG -->
+      <svg class="trust-svg" viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+        <defs>
+          <filter id="trust-glow" x="-100%" y="-100%" width="300%" height="300%">
+            <feGaussianBlur stdDeviation="4" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <radialGradient id="shield-grad" cx=".5" cy=".4" r=".6">
+            <stop offset="0%"  stop-color="#5ff3ff"/>
+            <stop offset="50%" stop-color="#0099b8"/>
+            <stop offset="100%" stop-color="#003a45"/>
+          </radialGradient>
+          <linearGradient id="shield-rim" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0%" stop-color="#fff" stop-opacity=".6"/>
+            <stop offset="100%" stop-color="#fff" stop-opacity=".1"/>
+          </linearGradient>
+
+          <!-- 8 inbound paths from orbit positions toward the shield center (600,250) -->
+          <path id="t1" d="M380 130 C 480 180, 540 220, 600 250"/>
+          <path id="t2" d="M600 90  C 600 150, 600 200, 600 250"/>
+          <path id="t3" d="M820 130 C 720 180, 660 220, 600 250"/>
+          <path id="t4" d="M900 250 C 800 250, 700 250, 600 250"/>
+          <path id="t5" d="M820 370 C 720 320, 660 280, 600 250"/>
+          <path id="t6" d="M600 410 C 600 350, 600 300, 600 250"/>
+          <path id="t7" d="M380 370 C 480 320, 540 280, 600 250"/>
+          <path id="t8" d="M300 250 C 400 250, 500 250, 600 250"/>
+        </defs>
+
+        <!-- Faint guide paths -->
+        <g stroke="rgba(45,212,229,.18)" stroke-width="1.2" fill="none">
+          <use href="#t1"/><use href="#t2"/><use href="#t3"/><use href="#t4"/>
+          <use href="#t5"/><use href="#t6"/><use href="#t7"/><use href="#t8"/>
+        </g>
+
+        <!-- Inbound particles (compliance protecting the core) -->
+        <g filter="url(#trust-glow)">
+          <circle r="4" fill="#2dd4e5"><animateMotion dur="3s" repeatCount="indefinite" begin="0s"  ><mpath href="#t1"/></animateMotion></circle>
+          <circle r="2.5" fill="#2dd4e5" opacity=".55"><animateMotion dur="3s" repeatCount="indefinite" begin=".2s"><mpath href="#t1"/></animateMotion></circle>
+          <circle r="4" fill="#2dd4e5"><animateMotion dur="3s" repeatCount="indefinite" begin=".4s"><mpath href="#t2"/></animateMotion></circle>
+          <circle r="2.5" fill="#2dd4e5" opacity=".55"><animateMotion dur="3s" repeatCount="indefinite" begin=".6s"><mpath href="#t2"/></animateMotion></circle>
+          <circle r="4" fill="#2dd4e5"><animateMotion dur="3s" repeatCount="indefinite" begin=".8s"><mpath href="#t3"/></animateMotion></circle>
+          <circle r="2.5" fill="#2dd4e5" opacity=".55"><animateMotion dur="3s" repeatCount="indefinite" begin="1.0s"><mpath href="#t3"/></animateMotion></circle>
+          <circle r="4" fill="#2dd4e5"><animateMotion dur="3s" repeatCount="indefinite" begin="1.2s"><mpath href="#t4"/></animateMotion></circle>
+          <circle r="2.5" fill="#2dd4e5" opacity=".55"><animateMotion dur="3s" repeatCount="indefinite" begin="1.4s"><mpath href="#t4"/></animateMotion></circle>
+          <circle r="4" fill="#2dd4e5"><animateMotion dur="3s" repeatCount="indefinite" begin="1.6s"><mpath href="#t5"/></animateMotion></circle>
+          <circle r="2.5" fill="#2dd4e5" opacity=".55"><animateMotion dur="3s" repeatCount="indefinite" begin="1.8s"><mpath href="#t5"/></animateMotion></circle>
+          <circle r="4" fill="#2dd4e5"><animateMotion dur="3s" repeatCount="indefinite" begin="2.0s"><mpath href="#t6"/></animateMotion></circle>
+          <circle r="2.5" fill="#2dd4e5" opacity=".55"><animateMotion dur="3s" repeatCount="indefinite" begin="2.2s"><mpath href="#t6"/></animateMotion></circle>
+          <circle r="4" fill="#2dd4e5"><animateMotion dur="3s" repeatCount="indefinite" begin="2.4s"><mpath href="#t7"/></animateMotion></circle>
+          <circle r="2.5" fill="#2dd4e5" opacity=".55"><animateMotion dur="3s" repeatCount="indefinite" begin="2.6s"><mpath href="#t7"/></animateMotion></circle>
+          <circle r="4" fill="#2dd4e5"><animateMotion dur="3s" repeatCount="indefinite" begin="2.8s"><mpath href="#t8"/></animateMotion></circle>
+          <circle r="2.5" fill="#2dd4e5" opacity=".55"><animateMotion dur="3s" repeatCount="indefinite" begin="3.0s"><mpath href="#t8"/></animateMotion></circle>
+        </g>
+
+        <!-- Concentric rings around shield -->
+        <g transform="translate(600 250)" filter="url(#trust-glow)">
+          <circle class="t-ring r1" r="90" fill="none" stroke="rgba(45,212,229,.55)" stroke-width="1.5"/>
+          <circle class="t-ring r2" r="90" fill="none" stroke="rgba(45,212,229,.45)" stroke-width="1.5"/>
+          <circle class="t-ring r3" r="90" fill="none" stroke="rgba(45,212,229,.35)" stroke-width="1.5"/>
+        </g>
+
+        <!-- Central shield -->
+        <g transform="translate(600 250)" filter="url(#trust-glow)">
+          <!-- Shield body -->
+          <path d="M 0 -70 L 60 -45 L 60 25 C 60 55, 35 80, 0 95 C -35 80, -60 55, -60 25 L -60 -45 Z"
+                fill="url(#shield-grad)" stroke="url(#shield-rim)" stroke-width="2"/>
+          <!-- Draw-in checkmark -->
+          <path class="t-check" d="M -22 5 L -6 22 L 26 -16"
+                fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+      </svg>
+
+      <!-- Orbiting compliance satellites (HTML for crisp text) -->
+      <div class="trust-orbit" aria-hidden="true">
+        <div class="t-sat" style="--ox:31.7%;--oy:26%;--d:0s">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          NIST 800-53
+        </div>
+        <div class="t-sat" style="--ox:50%;--oy:18%;--d:.4s">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+          FIPS 140-2/-3
+        </div>
+        <div class="t-sat" style="--ox:68.3%;--oy:26%;--d:.8s">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 010 20"/><path d="M12 2a15 15 0 000 20"/></svg>
+          FedRAMP
+        </div>
+        <div class="t-sat" style="--ox:75%;--oy:50%;--d:1.2s">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          FERPA &amp; COPPA
+        </div>
+        <div class="t-sat" style="--ox:68.3%;--oy:74%;--d:1.6s">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 12h12"/></svg>
+          TLS 1.2+
+        </div>
+        <div class="t-sat" style="--ox:50%;--oy:82%;--d:2s">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          SAML / OAuth
+        </div>
+        <div class="t-sat" style="--ox:31.7%;--oy:74%;--d:2.4s">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L4 7v7c0 4.4 3.4 8 8 9 4.6-1 8-4.6 8-9V7l-8-5z"/></svg>
+          AES-256
+        </div>
+        <div class="t-sat" style="--ox:25%;--oy:50%;--d:2.8s">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 010 20"/></svg>
+          WCAG 2.1 AA
+        </div>
+      </div>
+
+      <!-- Footer stat strip -->
+      <div class="trust-stats" aria-hidden="true">
+        <div><b>24×7</b> SOC monitoring</div>
+        <div><b>99.99%</b> uptime SLA</div>
+        <div><b>Annual</b> third-party pen tests</div>
+      </div>
+    </div>
   </div>
 </section>
 

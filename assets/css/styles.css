@@ -1457,11 +1457,17 @@ h4 {
 
 /* Trust badges */
 .trust-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem;
+  max-width: 1080px;
+  margin: 0 auto;
 }
 .trust-badge {
+  flex: 1 1 calc((100% - 3rem) / 4);
+  min-width: 180px;
+  max-width: 240px;
   padding: 1.5rem;
   border: 1px solid var(--line);
   border-radius: var(--r-md);
