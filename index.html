@@ -222,37 +222,51 @@
         <!-- Glowing vanishing-point at the tunnel mouth -->
         <div class="ft-core"></div>
 
-        <!-- 16 octagonal neon rings receding to vanishing point, alternating cyan / magenta -->
-        <div class="ft-ring ft-cyan"    style="--td:0s"></div>
-        <div class="ft-ring ft-magenta" style="--td:.15s"></div>
-        <div class="ft-ring ft-cyan"    style="--td:.3s"></div>
-        <div class="ft-ring ft-magenta" style="--td:.45s"></div>
-        <div class="ft-ring ft-cyan"    style="--td:.6s"></div>
-        <div class="ft-ring ft-magenta" style="--td:.75s"></div>
-        <div class="ft-ring ft-cyan"    style="--td:.9s"></div>
-        <div class="ft-ring ft-magenta" style="--td:1.05s"></div>
-        <div class="ft-ring ft-cyan"    style="--td:1.2s"></div>
-        <div class="ft-ring ft-magenta" style="--td:1.35s"></div>
-        <div class="ft-ring ft-cyan"    style="--td:1.5s"></div>
-        <div class="ft-ring ft-magenta" style="--td:1.65s"></div>
-        <div class="ft-ring ft-cyan"    style="--td:1.8s"></div>
-        <div class="ft-ring ft-magenta" style="--td:1.95s"></div>
-        <div class="ft-ring ft-cyan"    style="--td:2.1s"></div>
-        <div class="ft-ring ft-magenta" style="--td:2.25s"></div>
+        <!-- 8 perspective spokes — static wireframe structure that defines the corridor -->
+        <div class="ft-spoke" style="--a:  0deg"></div>
+        <div class="ft-spoke" style="--a: 45deg"></div>
+        <div class="ft-spoke" style="--a: 90deg"></div>
+        <div class="ft-spoke" style="--a:135deg"></div>
+        <div class="ft-spoke" style="--a:180deg"></div>
+        <div class="ft-spoke" style="--a:225deg"></div>
+        <div class="ft-spoke" style="--a:270deg"></div>
+        <div class="ft-spoke" style="--a:315deg"></div>
 
-        <!-- 12 radial warp streaks — speed lines emanating from the tunnel mouth -->
-        <div class="ft-streak" style="--a:  0deg;--sd:0s"></div>
-        <div class="ft-streak" style="--a: 30deg;--sd:.1s"></div>
-        <div class="ft-streak" style="--a: 60deg;--sd:.2s"></div>
-        <div class="ft-streak" style="--a: 90deg;--sd:.3s"></div>
-        <div class="ft-streak" style="--a:120deg;--sd:.4s"></div>
-        <div class="ft-streak" style="--a:150deg;--sd:.5s"></div>
-        <div class="ft-streak" style="--a:180deg;--sd:.6s"></div>
-        <div class="ft-streak" style="--a:210deg;--sd:.7s"></div>
-        <div class="ft-streak" style="--a:240deg;--sd:.8s"></div>
-        <div class="ft-streak" style="--a:270deg;--sd:.9s"></div>
-        <div class="ft-streak" style="--a:300deg;--sd:1.0s"></div>
-        <div class="ft-streak" style="--a:330deg;--sd:1.1s"></div>
+        <!-- 24 wireframe circular rings — tunnel cross-sections receding to vanishing point -->
+        <div class="ft-ring ft-cyan"    style="--td:0s"></div>
+        <div class="ft-ring ft-magenta" style="--td:.125s"></div>
+        <div class="ft-ring ft-cyan"    style="--td:.25s"></div>
+        <div class="ft-ring ft-magenta" style="--td:.375s"></div>
+        <div class="ft-ring ft-cyan"    style="--td:.5s"></div>
+        <div class="ft-ring ft-magenta" style="--td:.625s"></div>
+        <div class="ft-ring ft-cyan"    style="--td:.75s"></div>
+        <div class="ft-ring ft-magenta" style="--td:.875s"></div>
+        <div class="ft-ring ft-cyan"    style="--td:1s"></div>
+        <div class="ft-ring ft-magenta" style="--td:1.125s"></div>
+        <div class="ft-ring ft-cyan"    style="--td:1.25s"></div>
+        <div class="ft-ring ft-magenta" style="--td:1.375s"></div>
+        <div class="ft-ring ft-cyan"    style="--td:1.5s"></div>
+        <div class="ft-ring ft-magenta" style="--td:1.625s"></div>
+        <div class="ft-ring ft-cyan"    style="--td:1.75s"></div>
+        <div class="ft-ring ft-magenta" style="--td:1.875s"></div>
+        <div class="ft-ring ft-cyan"    style="--td:2s"></div>
+        <div class="ft-ring ft-magenta" style="--td:2.125s"></div>
+        <div class="ft-ring ft-cyan"    style="--td:2.25s"></div>
+        <div class="ft-ring ft-magenta" style="--td:2.375s"></div>
+        <div class="ft-ring ft-cyan"    style="--td:2.5s"></div>
+        <div class="ft-ring ft-magenta" style="--td:2.625s"></div>
+        <div class="ft-ring ft-cyan"    style="--td:2.75s"></div>
+        <div class="ft-ring ft-magenta" style="--td:2.875s"></div>
+
+        <!-- 8 warp streaks for speed motion -->
+        <div class="ft-streak" style="--a: 22deg;--sd:0s"></div>
+        <div class="ft-streak" style="--a: 67deg;--sd:.15s"></div>
+        <div class="ft-streak" style="--a:112deg;--sd:.3s"></div>
+        <div class="ft-streak" style="--a:157deg;--sd:.45s"></div>
+        <div class="ft-streak" style="--a:202deg;--sd:.6s"></div>
+        <div class="ft-streak" style="--a:247deg;--sd:.75s"></div>
+        <div class="ft-streak" style="--a:292deg;--sd:.9s"></div>
+        <div class="ft-streak" style="--a:337deg;--sd:1.05s"></div>
 
         <!-- Brand logos flying past the camera as we travel through the network -->
         <div class="ft-flyby-wrap" style="--fx:-230px;--fy:-110px;--td:0s">
@@ -559,46 +573,49 @@
     50%     { transform:scale(1.15); opacity:1; }
   }
 
-  /* Octagonal neon ring — built as two stacked clipped layers (outer color + inner punch-out) */
+  /* Static perspective spokes — radial wireframe structure of the corridor */
+  .ft-spoke{
+    position:absolute;left:50%;top:50%;
+    width:720px;height:1.5px;
+    margin-top:-0.75px;
+    background:linear-gradient(90deg,
+      rgba(255,255,255,.7) 0%,
+      rgba(45,212,229,.85) 6%,
+      rgba(45,212,229,.5)  26%,
+      rgba(45,212,229,.2)  55%,
+      transparent 100%);
+    transform-origin:0 50%;
+    transform:rotate(var(--a));
+    filter:drop-shadow(0 0 5px rgba(45,212,229,.85)) drop-shadow(0 0 10px rgba(45,212,229,.4));
+    pointer-events:none;
+  }
+
+  /* Circular wireframe rings — tunnel cross-sections receding to vanishing point */
   .ft-ring{
     position:absolute;left:50%;top:50%;
-    width:260px;height:260px;margin:-130px 0 0 -130px;
-    transform: translateZ(-2200px);
-    animation: ft-ring-fly 2.6s linear infinite var(--td, 0s);
+    width:520px;height:520px;margin:-260px 0 0 -260px;
+    border:3px solid currentColor;
+    border-radius:50%;
+    background:transparent;
+    box-shadow:
+      0 0 10px currentColor,
+      0 0 22px currentColor,
+      0 0 44px currentColor,
+      inset 0 0 14px currentColor,
+      inset 0 0 28px rgba(255,255,255,.06);
+    transform: translateZ(-3500px);
+    animation: ft-ring-fly 3s linear infinite var(--td, 0s);
     pointer-events:none;
-    /* Use color to drive the neon glow per ring */
-  }
-  .ft-ring::before,
-  .ft-ring::after{
-    content:"";
-    position:absolute;
-    clip-path: polygon(
-      30% 0%, 70% 0%,
-      100% 30%, 100% 70%,
-      70% 100%, 30% 100%,
-      0% 70%, 0% 30%
-    );
-  }
-  .ft-ring::before{
-    inset:0;
-    background:currentColor;
-    filter:
-      drop-shadow(0 0 8px currentColor)
-      drop-shadow(0 0 22px currentColor)
-      drop-shadow(0 0 38px currentColor);
-  }
-  .ft-ring::after{
-    inset:7px;
-    background:#04101f;
   }
   .ft-cyan    { color:#2dd4e5; }
-  .ft-magenta { color:#f472b6; }
+  .ft-magenta { color:#ec4899; }
 
   @keyframes ft-ring-fly{
-    0%   { transform: translateZ(-2200px); opacity:0; }
-    15%  { opacity:.55; }
-    50%  { opacity:1; }
-    100% { transform: translateZ(420px); opacity:0; }
+    0%   { transform: translateZ(-3500px); opacity:0; }
+    8%   { opacity:.4; }
+    35%  { opacity:.95; }
+    80%  { opacity:.85; }
+    100% { transform: translateZ(440px); opacity:0; }
   }
 
   /* Radial warp streaks — speed lines firing out of the tunnel mouth */
@@ -629,33 +646,33 @@
     transform-style: preserve-3d;
   }
   .ft-flyby{
-    margin:-22px 0 0 -100px;
-    width:200px;
-    display:flex;align-items:center;justify-content:center;gap:.6rem;
-    padding:.6rem 1rem;border-radius:999px;
-    background:rgba(7,23,43,.4);
-    border:1.5px solid rgba(45,212,229,.65);
+    margin:-30px 0 0 -140px;
+    width:280px;
+    display:flex;align-items:center;justify-content:center;gap:.8rem;
+    padding:.85rem 1.35rem;border-radius:16px;
+    background:rgba(7,23,43,.55);
+    border:2px solid rgba(45,212,229,.8);
     box-shadow:
-      0 0 22px rgba(45,212,229,.5),
-      0 0 44px rgba(45,212,229,.25),
-      inset 0 1px 0 rgba(255,255,255,.18);
-    color:#fff;font-weight:700;font-size:.95rem;
-    white-space:nowrap;letter-spacing:.01em;
-    backdrop-filter:blur(10px);
-    -webkit-backdrop-filter:blur(10px);
+      0 0 28px rgba(45,212,229,.7),
+      0 0 58px rgba(45,212,229,.35),
+      inset 0 1px 0 rgba(255,255,255,.22);
+    color:#fff;font-weight:700;font-size:1.05rem;
+    white-space:nowrap;letter-spacing:.02em;
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
     transform: translateZ(-3500px);
     animation: ft-flyby-fly 3s linear infinite var(--td, 0s);
   }
   .ft-flyby img{
-    width:20px;height:20px;flex:none;
-    filter:drop-shadow(0 0 6px rgba(255,255,255,.5));
+    width:26px;height:26px;flex:none;
+    filter:drop-shadow(0 0 8px rgba(255,255,255,.55));
   }
   @keyframes ft-flyby-fly{
     0%   { transform: translateZ(-3500px); opacity:0; }
     8%   { opacity:.4; }
-    35%  { opacity:1; }
-    78%  { opacity:1; }
-    100% { transform: translateZ(900px); opacity:0; }
+    40%  { opacity:1; }
+    80%  { opacity:1; }
+    100% { transform: translateZ(460px); opacity:0; }
   }
 
   /* Fade-to-black overlay covers the camera reset on loop */
