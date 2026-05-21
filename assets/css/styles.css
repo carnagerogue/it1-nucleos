@@ -514,15 +514,15 @@ h4 {
   margin-top: 0.3rem;
 }
 
-/* Floating DXP badge over photo */
+/* Floating DXP badge over photo — positioned inside to avoid clipping */
 .hero-photo-badge {
   position: absolute;
-  top: -22px;
-  right: -22px;
+  top: 1.25rem;
+  left: 1.25rem;
   background: white;
-  border-radius: 16px;
+  border-radius: 14px;
   box-shadow: var(--shadow-lg);
-  padding: 0.85rem 1rem;
+  padding: 0.7rem 0.95rem;
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
