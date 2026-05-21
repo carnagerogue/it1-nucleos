@@ -9,7 +9,7 @@
 <meta property="og:description" content="The secure digital experience platform powering education, credentialing, and reentry." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Nunito:wght@600;700;800&display=swap" />
 <link rel="stylesheet" href="assets/css/styles.css" />
 <link rel="icon" type="image/png" href="assets/images/nucleos-logo-official.png" />
 </head>
@@ -215,7 +215,7 @@
         <span data-act="2">Routing through 100+ integrations.</span>
         <span data-act="3">Coursera. Canvas. JSTOR. WGU. Cisco…</span>
         <span data-act="4">Every credential. Every transcript. Every hour.</span>
-        <span data-act="5">One unified, audit-ready record.</span>
+        <span data-act="5">Live in Achieve DXP — one auditable learner file.</span>
       </div>
 
       <!-- Cinematic data tunnel — visible during POV phase (camera flying through the network) -->
@@ -323,11 +323,20 @@
             <stop offset="60%" stop-color="#0099b8"/>
             <stop offset="100%" stop-color="#007891"/>
           </radialGradient>
-          <radialGradient id="rec-grad" cx=".5" cy=".5" r=".5">
-            <stop offset="0%"  stop-color="#5fa8d3"/>
-            <stop offset="60%" stop-color="#1c3f6b"/>
-            <stop offset="100%" stop-color="#0a1f37"/>
+          <radialGradient id="rec-grad" cx=".5" cy=".4" r=".6">
+            <stop offset="0%"  stop-color="#5fd9d4"/>
+            <stop offset="55%" stop-color="#009791"/>
+            <stop offset="100%" stop-color="#003a45"/>
           </radialGradient>
+          <!-- Achieve DXP brand-mark gradients (red → gold) -->
+          <linearGradient id="dxp-grad1" x1="1.818" y1="36" x2="45.002" y2="13.788" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#F54141"/>
+            <stop offset="1" stop-color="#FFB64C"/>
+          </linearGradient>
+          <linearGradient id="dxp-grad2" x1="8.223" y1="23.924" x2="28.645" y2="5.177" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#F54141"/>
+            <stop offset="1" stop-color="#FFB64C"/>
+          </linearGradient>
 
           <!-- Outbound curves: hub (140,300) -> app -->
           <path id="o1"  d="M140 300 C 280 260, 280 160, 360 120"/>
@@ -402,32 +411,32 @@
 
         <!-- Inbound particles (gold = credentials coming home) -->
         <g filter="url(#flow-glow)">
-          <circle r="4"   fill="#fbbf24" opacity=".95"><animateMotion dur="3.4s" repeatCount="indefinite" begin="1.0s"><mpath href="#i1"/></animateMotion></circle>
-          <circle r="2.5" fill="#fbbf24" opacity=".55"><animateMotion dur="3.4s" repeatCount="indefinite" begin="1.18s"><mpath href="#i1"/></animateMotion></circle>
-          <circle r="4"   fill="#fbbf24" opacity=".95"><animateMotion dur="3.4s" repeatCount="indefinite" begin="1.2s"><mpath href="#i2"/></animateMotion></circle>
-          <circle r="2.5" fill="#fbbf24" opacity=".55"><animateMotion dur="3.4s" repeatCount="indefinite" begin="1.38s"><mpath href="#i2"/></animateMotion></circle>
-          <circle r="4"   fill="#fbbf24" opacity=".95"><animateMotion dur="3.4s" repeatCount="indefinite" begin="1.4s"><mpath href="#i3"/></animateMotion></circle>
-          <circle r="2.5" fill="#fbbf24" opacity=".55"><animateMotion dur="3.4s" repeatCount="indefinite" begin="1.58s"><mpath href="#i3"/></animateMotion></circle>
-          <circle r="4"   fill="#fbbf24" opacity=".95"><animateMotion dur="3.4s" repeatCount="indefinite" begin="1.6s"><mpath href="#i4"/></animateMotion></circle>
-          <circle r="2.5" fill="#fbbf24" opacity=".55"><animateMotion dur="3.4s" repeatCount="indefinite" begin="1.78s"><mpath href="#i4"/></animateMotion></circle>
-          <circle r="4"   fill="#fbbf24" opacity=".95"><animateMotion dur="3.4s" repeatCount="indefinite" begin="1.8s"><mpath href="#i5"/></animateMotion></circle>
-          <circle r="2.5" fill="#fbbf24" opacity=".55"><animateMotion dur="3.4s" repeatCount="indefinite" begin="1.98s"><mpath href="#i5"/></animateMotion></circle>
-          <circle r="4"   fill="#fbbf24" opacity=".95"><animateMotion dur="3.4s" repeatCount="indefinite" begin="2.0s"><mpath href="#i6"/></animateMotion></circle>
-          <circle r="2.5" fill="#fbbf24" opacity=".55"><animateMotion dur="3.4s" repeatCount="indefinite" begin="2.18s"><mpath href="#i6"/></animateMotion></circle>
-          <circle r="4"   fill="#fbbf24" opacity=".95"><animateMotion dur="3.4s" repeatCount="indefinite" begin="2.2s"><mpath href="#i7"/></animateMotion></circle>
-          <circle r="2.5" fill="#fbbf24" opacity=".55"><animateMotion dur="3.4s" repeatCount="indefinite" begin="2.38s"><mpath href="#i7"/></animateMotion></circle>
-          <circle r="4"   fill="#fbbf24" opacity=".95"><animateMotion dur="3.4s" repeatCount="indefinite" begin="2.4s"><mpath href="#i8"/></animateMotion></circle>
-          <circle r="2.5" fill="#fbbf24" opacity=".55"><animateMotion dur="3.4s" repeatCount="indefinite" begin="2.58s"><mpath href="#i8"/></animateMotion></circle>
-          <circle r="4"   fill="#fbbf24" opacity=".95"><animateMotion dur="3.4s" repeatCount="indefinite" begin="2.6s"><mpath href="#i9"/></animateMotion></circle>
-          <circle r="2.5" fill="#fbbf24" opacity=".55"><animateMotion dur="3.4s" repeatCount="indefinite" begin="2.78s"><mpath href="#i9"/></animateMotion></circle>
-          <circle r="4"   fill="#fbbf24" opacity=".95"><animateMotion dur="3.4s" repeatCount="indefinite" begin="2.8s"><mpath href="#i10"/></animateMotion></circle>
-          <circle r="2.5" fill="#fbbf24" opacity=".55"><animateMotion dur="3.4s" repeatCount="indefinite" begin="2.98s"><mpath href="#i10"/></animateMotion></circle>
-          <circle r="4"   fill="#fbbf24" opacity=".95"><animateMotion dur="3.4s" repeatCount="indefinite" begin="3.0s"><mpath href="#i11"/></animateMotion></circle>
-          <circle r="2.5" fill="#fbbf24" opacity=".55"><animateMotion dur="3.4s" repeatCount="indefinite" begin="3.18s"><mpath href="#i11"/></animateMotion></circle>
-          <circle r="4"   fill="#fbbf24" opacity=".95"><animateMotion dur="3.4s" repeatCount="indefinite" begin="3.2s"><mpath href="#i12"/></animateMotion></circle>
-          <circle r="2.5" fill="#fbbf24" opacity=".55"><animateMotion dur="3.4s" repeatCount="indefinite" begin="3.38s"><mpath href="#i12"/></animateMotion></circle>
-          <circle r="4"   fill="#fbbf24" opacity=".95"><animateMotion dur="3.4s" repeatCount="indefinite" begin="3.4s"><mpath href="#i13"/></animateMotion></circle>
-          <circle r="2.5" fill="#fbbf24" opacity=".55"><animateMotion dur="3.4s" repeatCount="indefinite" begin="3.58s"><mpath href="#i13"/></animateMotion></circle>
+          <circle r="4"   fill="#FFB64C" opacity=".95"><animateMotion dur="3.4s" repeatCount="indefinite" begin="1.0s"><mpath href="#i1"/></animateMotion></circle>
+          <circle r="2.5" fill="#FFB64C" opacity=".55"><animateMotion dur="3.4s" repeatCount="indefinite" begin="1.18s"><mpath href="#i1"/></animateMotion></circle>
+          <circle r="4"   fill="#FFB64C" opacity=".95"><animateMotion dur="3.4s" repeatCount="indefinite" begin="1.2s"><mpath href="#i2"/></animateMotion></circle>
+          <circle r="2.5" fill="#FFB64C" opacity=".55"><animateMotion dur="3.4s" repeatCount="indefinite" begin="1.38s"><mpath href="#i2"/></animateMotion></circle>
+          <circle r="4"   fill="#FFB64C" opacity=".95"><animateMotion dur="3.4s" repeatCount="indefinite" begin="1.4s"><mpath href="#i3"/></animateMotion></circle>
+          <circle r="2.5" fill="#FFB64C" opacity=".55"><animateMotion dur="3.4s" repeatCount="indefinite" begin="1.58s"><mpath href="#i3"/></animateMotion></circle>
+          <circle r="4"   fill="#FFB64C" opacity=".95"><animateMotion dur="3.4s" repeatCount="indefinite" begin="1.6s"><mpath href="#i4"/></animateMotion></circle>
+          <circle r="2.5" fill="#FFB64C" opacity=".55"><animateMotion dur="3.4s" repeatCount="indefinite" begin="1.78s"><mpath href="#i4"/></animateMotion></circle>
+          <circle r="4"   fill="#FFB64C" opacity=".95"><animateMotion dur="3.4s" repeatCount="indefinite" begin="1.8s"><mpath href="#i5"/></animateMotion></circle>
+          <circle r="2.5" fill="#FFB64C" opacity=".55"><animateMotion dur="3.4s" repeatCount="indefinite" begin="1.98s"><mpath href="#i5"/></animateMotion></circle>
+          <circle r="4"   fill="#FFB64C" opacity=".95"><animateMotion dur="3.4s" repeatCount="indefinite" begin="2.0s"><mpath href="#i6"/></animateMotion></circle>
+          <circle r="2.5" fill="#FFB64C" opacity=".55"><animateMotion dur="3.4s" repeatCount="indefinite" begin="2.18s"><mpath href="#i6"/></animateMotion></circle>
+          <circle r="4"   fill="#FFB64C" opacity=".95"><animateMotion dur="3.4s" repeatCount="indefinite" begin="2.2s"><mpath href="#i7"/></animateMotion></circle>
+          <circle r="2.5" fill="#FFB64C" opacity=".55"><animateMotion dur="3.4s" repeatCount="indefinite" begin="2.38s"><mpath href="#i7"/></animateMotion></circle>
+          <circle r="4"   fill="#FFB64C" opacity=".95"><animateMotion dur="3.4s" repeatCount="indefinite" begin="2.4s"><mpath href="#i8"/></animateMotion></circle>
+          <circle r="2.5" fill="#FFB64C" opacity=".55"><animateMotion dur="3.4s" repeatCount="indefinite" begin="2.58s"><mpath href="#i8"/></animateMotion></circle>
+          <circle r="4"   fill="#FFB64C" opacity=".95"><animateMotion dur="3.4s" repeatCount="indefinite" begin="2.6s"><mpath href="#i9"/></animateMotion></circle>
+          <circle r="2.5" fill="#FFB64C" opacity=".55"><animateMotion dur="3.4s" repeatCount="indefinite" begin="2.78s"><mpath href="#i9"/></animateMotion></circle>
+          <circle r="4"   fill="#FFB64C" opacity=".95"><animateMotion dur="3.4s" repeatCount="indefinite" begin="2.8s"><mpath href="#i10"/></animateMotion></circle>
+          <circle r="2.5" fill="#FFB64C" opacity=".55"><animateMotion dur="3.4s" repeatCount="indefinite" begin="2.98s"><mpath href="#i10"/></animateMotion></circle>
+          <circle r="4"   fill="#FFB64C" opacity=".95"><animateMotion dur="3.4s" repeatCount="indefinite" begin="3.0s"><mpath href="#i11"/></animateMotion></circle>
+          <circle r="2.5" fill="#FFB64C" opacity=".55"><animateMotion dur="3.4s" repeatCount="indefinite" begin="3.18s"><mpath href="#i11"/></animateMotion></circle>
+          <circle r="4"   fill="#FFB64C" opacity=".95"><animateMotion dur="3.4s" repeatCount="indefinite" begin="3.2s"><mpath href="#i12"/></animateMotion></circle>
+          <circle r="2.5" fill="#FFB64C" opacity=".55"><animateMotion dur="3.4s" repeatCount="indefinite" begin="3.38s"><mpath href="#i12"/></animateMotion></circle>
+          <circle r="4"   fill="#FFB64C" opacity=".95"><animateMotion dur="3.4s" repeatCount="indefinite" begin="3.4s"><mpath href="#i13"/></animateMotion></circle>
+          <circle r="2.5" fill="#FFB64C" opacity=".55"><animateMotion dur="3.4s" repeatCount="indefinite" begin="3.58s"><mpath href="#i13"/></animateMotion></circle>
         </g>
 
         <!-- HUB (left) -->
@@ -443,14 +452,17 @@
           </g>
         </g>
 
-        <!-- RECORD HUB (right) -->
+        <!-- RECORD HUB (right) — culminates as the Achieve DXP product brand mark -->
         <g class="rec-group" transform="translate(1060 300)" filter="url(#flow-glow)">
-          <circle class="rec-ring" r="46"/>
-          <circle r="46" fill="url(#rec-grad)" stroke="rgba(255,255,255,.25)" stroke-width="1.5"/>
-          <g transform="translate(-13 -13)" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 4 H17 L22 9 V24 a2 2 0 01-2 2 H4 a2 2 0 01-2 -2 V6 a2 2 0 012 -2z"/>
-            <path d="M17 4 V9 H22"/>
-            <path d="M7 14 H19 M7 19 H15"/>
+          <circle class="rec-ring" r="50"/>
+          <circle class="rec-ring rec-ring-2" r="50"/>
+          <circle r="50" fill="url(#rec-grad)" stroke="rgba(255,255,255,.4)" stroke-width="1.8"/>
+          <!-- Achieve DXP brand mark, scaled and centered inside the hub -->
+          <g transform="translate(-23.5 -18) scale(1)">
+            <path d="M20.4388 0.605906C20.9049 -0.201354 22.07 -0.201385 22.5361 0.60585L31.3331 15.8428C24.2018 15.8598 17.0952 16.8039 10.1494 18.4223L10.7477 17.3937L20.4388 0.605906ZM34.157 20.7319L41.9253 34.1815C42.3916 34.9887 41.809 35.9979 40.8769 35.9979H31.6609C30.7956 35.9979 29.996 35.5362 29.5635 34.7867L23.4177 24.1375C26.9078 22.7801 30.4904 21.634 34.1654 20.7319H34.157ZM18.3177 26.3042L13.4194 34.7876C12.9869 35.5368 12.1874 35.9983 11.3223 35.9983H1.91406C7.13201 32.2049 12.5944 28.9511 18.3181 26.3042H18.3177Z" fill="#ffffff"/>
+            <path d="M6.04412 25.5302C2.01471 32.5099 0 35.9996 0 35.9996C12.9819 26.2719 26.9664 20.2867 41.946 18.0361C30.7094 17.7073 18.7476 20.2112 6.04412 25.5382V25.5302Z" fill="url(#dxp-grad1)"/>
+            <path d="M6.9707 23.9241C14.3043 20.9398 21.4865 18.8916 28.5168 17.7875C30.8094 17.3912 33.2629 17.1552 35.8759 17.0963C27.4207 16.6325 18.5782 17.5261 9.36476 19.7767C7.7714 22.5416 6.9707 23.9241 6.9707 23.9241Z" fill="url(#dxp-grad2)"/>
+            <path d="M46.3372 18.328L43.6567 20.0563L41.3721 21.5317C41.1697 21.6581 40.9253 21.6496 40.7399 21.5062C40.5544 21.3628 40.4365 21.1014 40.5544 20.8994L42.0969 18.2945C42.2148 18.1005 42.1978 17.8731 42.0629 17.6877L40.2676 15.2516C40.1242 15.0577 40.2171 14.7963 40.394 14.6279C40.5625 14.4679 40.8069 14.434 41.0178 14.5349L43.4373 15.774L46.2782 17.2324C46.4806 17.3338 46.607 17.5273 46.6155 17.7632C46.624 17.9906 46.523 18.193 46.3291 18.3195L46.3376 18.328H46.3372Z" fill="#FFB64C"/>
           </g>
         </g>
       </svg>
@@ -480,9 +492,25 @@
         <div class="fe-meta">SAML 2.0 · SSO · Auto-roster · RBAC</div>
       </div>
       <div class="flow-endpoint flow-endpoint-r">
-        <div class="fe-eyebrow">1 unified record</div>
-        <div class="fe-title">Reports everywhere</div>
-        <div class="fe-meta">Credentials · Hours · Transcripts · Audit log</div>
+        <div class="fe-eyebrow">Culminates in</div>
+        <div class="fe-brand">
+          <svg class="fe-brand-mark" viewBox="0 0 47 36" aria-hidden="true">
+            <defs>
+              <linearGradient id="fe-grad-a" x1="1.818" y1="36" x2="45.002" y2="13.788" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#F54141"/><stop offset="1" stop-color="#FFB64C"/>
+              </linearGradient>
+              <linearGradient id="fe-grad-b" x1="8.223" y1="23.924" x2="28.645" y2="5.177" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#F54141"/><stop offset="1" stop-color="#FFB64C"/>
+              </linearGradient>
+            </defs>
+            <path d="M20.4388 0.605906C20.9049 -0.201354 22.07 -0.201385 22.5361 0.60585L31.3331 15.8428C24.2018 15.8598 17.0952 16.8039 10.1494 18.4223L10.7477 17.3937L20.4388 0.605906ZM34.157 20.7319L41.9253 34.1815C42.3916 34.9887 41.809 35.9979 40.8769 35.9979H31.6609C30.7956 35.9979 29.996 35.5362 29.5635 34.7867L23.4177 24.1375C26.9078 22.7801 30.4904 21.634 34.1654 20.7319H34.157ZM18.3177 26.3042L13.4194 34.7876C12.9869 35.5368 12.1874 35.9983 11.3223 35.9983H1.91406C7.13201 32.2049 12.5944 28.9511 18.3181 26.3042H18.3177Z" fill="#009791"/>
+            <path d="M6.04412 25.5302C2.01471 32.5099 0 35.9996 0 35.9996C12.9819 26.2719 26.9664 20.2867 41.946 18.0361C30.7094 17.7073 18.7476 20.2112 6.04412 25.5382V25.5302Z" fill="url(#fe-grad-a)"/>
+            <path d="M6.9707 23.9241C14.3043 20.9398 21.4865 18.8916 28.5168 17.7875C30.8094 17.3912 33.2629 17.1552 35.8759 17.0963C27.4207 16.6325 18.5782 17.5261 9.36476 19.7767C7.7714 22.5416 6.9707 23.9241 6.9707 23.9241Z" fill="url(#fe-grad-b)"/>
+            <path d="M46.3372 18.328L43.6567 20.0563L41.3721 21.5317C41.1697 21.6581 40.9253 21.6496 40.7399 21.5062C40.5544 21.3628 40.4365 21.1014 40.5544 20.8994L42.0969 18.2945C42.2148 18.1005 42.1978 17.8731 42.0629 17.6877L40.2676 15.2516C40.1242 15.0577 40.2171 14.7963 40.394 14.6279C40.5625 14.4679 40.8069 14.434 41.0178 14.5349L43.4373 15.774L46.2782 17.2324C46.4806 17.3338 46.607 17.5273 46.6155 17.7632C46.624 17.9906 46.523 18.193 46.3291 18.3195L46.3376 18.328H46.3372Z" fill="#FFB64C"/>
+          </svg>
+          <span class="fe-brand-word">Achieve <b>DXP</b></span>
+        </div>
+        <div class="fe-meta">Every credential, transcript, and learner hour — in one auditable file.</div>
         <div class="fe-stats">
           <span><b>+1,247</b> credentials</span>
           <span><b>98.6%</b> audit-ready</span>
@@ -507,7 +535,7 @@
     overflow:hidden;
     background:
       radial-gradient(120% 80% at 8% 50%, rgba(0,153,184,.22), transparent 55%),
-      radial-gradient(120% 80% at 92% 50%, rgba(251,191,36,.16), transparent 55%),
+      radial-gradient(120% 80% at 92% 50%, rgba(255,182,76,.16), transparent 55%),
       linear-gradient(180deg, #0a1f37 0%, #102e50 55%, #07172b 100%);
     box-shadow:
       0 30px 80px rgba(7,23,43,.45),
@@ -529,7 +557,7 @@
     animation: flow-pulse-glow 6s ease-in-out infinite;
   }
   .flow-bg-glow-l{left:-60px;background:radial-gradient(circle, #0099b8, transparent 65%);}
-  .flow-bg-glow-r{right:-60px;background:radial-gradient(circle, #fbbf24, transparent 65%);animation-delay:3s;}
+  .flow-bg-glow-r{right:-60px;background:radial-gradient(circle, #009791, transparent 50%, #FFB64C, transparent 80%);animation-delay:3s;}
   @keyframes flow-pulse-glow{
     0%,100%{opacity:.4;transform:translateY(-50%) scale(1);}
     50%    {opacity:.7;transform:translateY(-50%) scale(1.1);}
@@ -726,7 +754,7 @@
       transparent 38%,
       rgba(45,212,229,.10) 47%,
       rgba(255,255,255,.06) 50%,
-      rgba(251,191,36,.10) 53%,
+      rgba(255,182,76,.10) 53%,
       transparent 62%);
     filter:blur(8px);
     animation:flow-sweep-x 22s linear infinite;
@@ -760,8 +788,8 @@
   .flow-caption span[data-act="1"]{animation-delay:0s;}
   .flow-caption span[data-act="2"]{animation-delay:4.5s;}
   .flow-caption span[data-act="3"]{animation-delay:9.5s;}
-  .flow-caption span[data-act="4"]{animation-delay:14s;color:#fff;text-shadow:0 0 14px rgba(251,191,36,.5),0 1px 2px rgba(0,0,0,.6);}
-  .flow-caption span[data-act="5"]{animation-delay:18s;color:#fff;text-shadow:0 0 14px rgba(251,191,36,.5),0 1px 2px rgba(0,0,0,.6);}
+  .flow-caption span[data-act="4"]{animation-delay:14s;color:#fff;text-shadow:0 0 14px rgba(255,182,76,.5),0 1px 2px rgba(0,0,0,.6);}
+  .flow-caption span[data-act="5"]{animation-delay:18s;color:#fff;text-shadow:0 0 14px rgba(255,182,76,.5),0 1px 2px rgba(0,0,0,.6);}
   @keyframes caption-cycle{
     0%,  1%     { opacity:0; transform:translate(-50%, 10px); filter:blur(6px) }
     4%,  17%    { opacity:1; transform:translate(-50%, 0);    filter:blur(0) }
@@ -798,7 +826,7 @@
   .flow-paths use{
     fill:none;stroke:rgba(45,212,229,.18);stroke-width:1.2;
   }
-  .flow-paths use.in{stroke:rgba(251,191,36,.18);}
+  .flow-paths use.in{stroke:rgba(255,182,76,.18);}
 
   /* Hub rings — three concentric rings expanding outward */
   .hub-group .hub-ring,
@@ -806,11 +834,13 @@
     fill:none;stroke:rgba(45,212,229,.6);stroke-width:1.5;
     transform-origin:center;transform-box:fill-box;
   }
-  .rec-group .rec-ring{stroke:rgba(251,191,36,.55);}
+  .rec-group .rec-ring{stroke:rgba(255,182,76,.7);fill:none;stroke-width:1.5;}
+  .rec-group .rec-ring-2{stroke:rgba(0,151,145,.55);}
   .hub-group .r1{animation:hub-ring 2.8s ease-out infinite;}
   .hub-group .r2{animation:hub-ring 2.8s ease-out infinite;animation-delay:.93s;}
   .hub-group .r3{animation:hub-ring 2.8s ease-out infinite;animation-delay:1.86s;}
   .rec-group .rec-ring{animation:hub-ring 3.2s ease-out infinite;}
+  .rec-group .rec-ring-2{animation:hub-ring 3.2s ease-out infinite;animation-delay:1.6s;}
   @keyframes hub-ring{
     0%  {transform:scale(.6);opacity:.9;}
     100%{transform:scale(2.4);opacity:0;}
@@ -854,7 +884,7 @@
     box-shadow:0 0 10px currentColor, 0 0 0 2px rgba(255,255,255,.08);
   }
   .fapp-more{
-    background:linear-gradient(135deg, rgba(45,212,229,.18), rgba(251,191,36,.18));
+    background:linear-gradient(135deg, rgba(45,212,229,.18), rgba(255,182,76,.18));
     border-color:rgba(255,255,255,.28);
     font-weight:700;
   }
@@ -884,11 +914,31 @@
     font-size:.66rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
     color:#2dd4e5;margin-bottom:.25rem;
   }
-  .flow-endpoint-r .fe-eyebrow{color:#fbbf24;}
+  .flow-endpoint-r{
+    border-color:rgba(0,151,145,.45);
+    background:linear-gradient(180deg, rgba(0,151,145,.18), rgba(7,23,43,.6) 60%);
+    box-shadow:0 10px 30px rgba(0,0,0,.45), 0 0 24px rgba(255,182,76,.15);
+  }
+  .flow-endpoint-r .fe-eyebrow{color:#FFB64C;}
   .fe-title{font-weight:700;font-size:1rem;color:#fff;}
   .fe-meta{font-size:.78rem;color:rgba(255,255,255,.7);margin-top:.25rem;line-height:1.45;}
   .fe-stats{display:flex;gap:.85rem;margin-top:.6rem;font-size:.72rem;color:rgba(255,255,255,.8);}
   .fe-stats b{color:#fff;font-weight:700;}
+
+  /* Achieve DXP brand block inside the right endpoint */
+  .fe-brand{
+    display:flex;align-items:center;gap:.55rem;
+    margin:.15rem 0 .4rem;
+  }
+  .fe-brand-mark{
+    height:24px;width:auto;flex:none;
+    filter:drop-shadow(0 0 8px rgba(255,182,76,.55));
+  }
+  .fe-brand-word{
+    font-weight:600;font-size:1.05rem;letter-spacing:.005em;color:#fff;
+    font-family:'Nunito','Nunito Sans',Inter,system-ui,sans-serif;
+  }
+  .fe-brand-word b{font-weight:800;color:#FFB64C;}
 
   /* Mobile */
   @media (max-width: 760px){
