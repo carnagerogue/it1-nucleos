@@ -3093,3 +3093,39 @@ h4 {
   .ps-bar-lbl { font-size: 0.55rem; }
   .ps-cats { gap: 1rem; }
 }
+
+/* =============================================================
+   TEXT-ONLY MARQUEE TILES (apps without logos)
+   ============================================================= */
+.mq-tile.mq-text {
+  background: linear-gradient(135deg, var(--bg-soft) 0%, white 100%);
+  border: 1px solid var(--line);
+  padding: 0.65rem 0.95rem;
+  position: relative;
+}
+
+.mq-tile.mq-text span {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--navy);
+  text-align: center;
+  letter-spacing: -0.005em;
+  line-height: 1.2;
+  max-width: 100%;
+  white-space: normal;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.mq-tile.mq-text:hover {
+  background: white;
+  border-color: var(--teal);
+}
+
+.mq-tile.mq-text:hover span {
+  color: var(--teal-deep);
+}
