@@ -2022,3 +2022,247 @@ h4 {
   filter: grayscale(0);
   opacity: 1;
 }
+
+/* =============================================================
+   STRATEGIC PARTNER CAROUSEL
+   ============================================================= */
+.carousel {
+  position: relative;
+  margin: 0 calc(var(--pad) * -1);
+  padding: 0 var(--pad);
+}
+
+.carousel-track {
+  display: flex;
+  gap: 1.25rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 0.5rem 0 2rem;
+  /* Hide scrollbar visually but keep accessibility */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.carousel-track::-webkit-scrollbar { display: none; }
+
+.cs-card {
+  flex: 0 0 320px;
+  scroll-snap-align: start;
+  display: grid;
+  grid-template-rows: 70px auto 1fr auto;
+  gap: 0.85rem;
+  padding: 1.75rem;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  text-decoration: none;
+  color: var(--ink);
+  transition: border-color 250ms, box-shadow 250ms, transform 250ms;
+}
+.cs-card:hover {
+  border-color: var(--teal);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+  color: var(--ink);
+}
+
+.cs-logo {
+  height: 56px;
+  display: flex;
+  align-items: center;
+}
+.cs-logo img {
+  max-height: 56px;
+  max-width: 180px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.cs-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.cs-cat {
+  font-size: 0.7rem;
+  color: var(--teal-deep);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+}
+.cs-name {
+  font-weight: 800;
+  font-size: 1.1rem;
+  letter-spacing: -0.015em;
+  color: var(--navy);
+  line-height: 1.2;
+}
+.cs-desc {
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+  margin: 0;
+}
+.cs-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--teal);
+}
+.cs-link svg { transition: transform 250ms; }
+.cs-card:hover .cs-link { color: var(--teal-deep); }
+.cs-card:hover .cs-link svg { transform: translateX(3px); }
+
+/* Carousel arrows */
+.carousel-controls {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+  padding-right: 4px;
+}
+.cs-arrow {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: white;
+  border: 1px solid var(--line);
+  color: var(--navy);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: border-color 220ms, background 220ms, transform 220ms, color 220ms;
+}
+.cs-arrow:hover {
+  border-color: var(--teal);
+  background: var(--teal);
+  color: white;
+  transform: translateY(-1px);
+}
+.cs-arrow:active { transform: translateY(0); }
+.cs-arrow[disabled] {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.cs-arrow[disabled]:hover {
+  border-color: var(--line);
+  background: white;
+  color: var(--navy);
+  transform: none;
+}
+
+/* Progress bar */
+.carousel-progress {
+  height: 3px;
+  background: var(--line);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-top: 0.5rem;
+}
+.cs-bar {
+  height: 100%;
+  width: 20%;
+  background: var(--teal);
+  border-radius: 999px;
+  transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1), width 300ms;
+}
+
+/* =============================================================
+   APP MARQUEE — infinite scroll
+   ============================================================= */
+.marquee-wrap {
+  margin-inline: calc(var(--pad) * -1);
+  overflow: hidden;
+  position: relative;
+}
+
+.marquee-head {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 0 var(--pad);
+}
+
+.marquee-row {
+  display: flex;
+  overflow: hidden;
+  padding: 0.6rem 0;
+  mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+}
+
+.marquee-track {
+  display: flex;
+  gap: 0.85rem;
+  flex-shrink: 0;
+  /* Animation: translateX from 0 to -50% (because we duplicate content) */
+  animation: marquee-scroll 60s linear infinite;
+  will-change: transform;
+}
+
+.marquee-track-left {
+  animation-name: marquee-left;
+}
+
+.marquee-track-right {
+  animation-name: marquee-right;
+}
+
+@keyframes marquee-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes marquee-right {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+
+/* Pause when hovering anywhere in marquee-wrap */
+.marquee-wrap:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+.mq-tile {
+  flex: 0 0 auto;
+  width: 130px;
+  height: 70px;
+  padding: 0.85rem 1rem;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 220ms, box-shadow 220ms, transform 220ms;
+}
+
+.mq-tile:hover {
+  border-color: var(--teal);
+  box-shadow: var(--shadow);
+  transform: translateY(-2px) scale(1.04);
+  z-index: 2;
+  position: relative;
+}
+
+.mq-tile img {
+  max-height: 42px;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(35%);
+  opacity: 0.85;
+  transition: filter 220ms, opacity 220ms;
+}
+
+.mq-tile:hover img {
+  filter: grayscale(0);
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
+}

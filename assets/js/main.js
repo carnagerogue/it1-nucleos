@@ -140,6 +140,60 @@
   });
 
   // ============================================================
+  // PARTNER CAROUSEL
+  // ============================================================
+  document.querySelectorAll(".carousel").forEach((wrap) => {
+    const track = wrap.querySelector("[data-carousel]");
+    const prev = wrap.querySelector(".cs-prev");
+    const next = wrap.querySelector(".cs-next");
+    const bar = wrap.querySelector("[data-carousel-bar]");
+    if (!track) return;
+
+    function cardStep() {
+      const card = track.querySelector(".cs-card");
+      if (!card) return 320;
+      const cs = window.getComputedStyle(track);
+      const gap = parseFloat(cs.gap) || 16;
+      return card.getBoundingClientRect().width + gap;
+    }
+
+    function visibleCards() {
+      return Math.max(1, Math.floor(track.clientWidth / cardStep()));
+    }
+
+    function updateState() {
+      const max = track.scrollWidth - track.clientWidth;
+      const pct = max > 0 ? track.scrollLeft / max : 0;
+      // Bar fills proportional to scrolled distance + visible window
+      if (bar) {
+        const visiblePct = track.clientWidth / track.scrollWidth;
+        bar.style.width = (visiblePct * 100) + "%";
+        const travel = (1 - visiblePct) * 100;
+        bar.style.transform = `translateX(${pct * travel * (track.clientWidth / bar.parentElement.clientWidth)}%)`;
+      }
+      if (prev) prev.toggleAttribute("disabled", track.scrollLeft <= 4);
+      if (next) next.toggleAttribute("disabled", track.scrollLeft >= max - 4);
+    }
+
+    if (prev) prev.addEventListener("click", () => {
+      track.scrollBy({ left: -cardStep() * Math.max(1, visibleCards() - 1), behavior: "smooth" });
+    });
+    if (next) next.addEventListener("click", () => {
+      track.scrollBy({ left: cardStep() * Math.max(1, visibleCards() - 1), behavior: "smooth" });
+    });
+    track.addEventListener("scroll", updateState, { passive: true });
+    window.addEventListener("resize", updateState, { passive: true });
+    updateState();
+
+    // Keyboard support — arrow keys when carousel is focused/in view
+    track.tabIndex = 0;
+    track.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowRight") { e.preventDefault(); next && next.click(); }
+      if (e.key === "ArrowLeft") { e.preventDefault(); prev && prev.click(); }
+    });
+  });
+
+  // ============================================================
   // NAV SHADOW ON SCROLL
   // ============================================================
   const navWrap = document.querySelector(".nav-wrap");
