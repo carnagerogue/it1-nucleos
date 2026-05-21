@@ -83,20 +83,61 @@
       </div>
     </div>
 
-    <div class="hero-photo" data-parallax="0.08">
-      <span class="hero-photo-badge">
-        <img src="assets/images/achievedxp-logo.png" alt="Achieve DXP" />
-      </span>
-      <img src="assets/images/nucleos-in-use-clean.webp" alt="Learners using the Nucleos Achieve DXP platform" />
-      <span class="hero-photo-overlay"></span>
-      <div class="hero-photo-caption">
-        <div>
-          <div class="h">Learning in session</div>
-          <div class="s">Real classroom. Real outcomes.</div>
+    <div class="hero-visual" data-parallax="0.08">
+      <!-- Layered: photo behind, product card in front -->
+      <div class="hv-photo">
+        <img src="assets/images/nucleos-in-use-clean.webp" alt="Learners engaged on the Nucleos Achieve DXP platform" />
+        <div class="hv-photo-gradient"></div>
+      </div>
+
+      <!-- Floating product card — mirrors the real Achieve DXP library UI -->
+      <div class="hv-card">
+        <div class="hv-card-head">
+          <img src="assets/images/achievedxp-logo.png" alt="Achieve DXP" class="hv-card-logo" />
+          <span class="hv-card-pill">Live</span>
         </div>
-        <div class="hero-photo-stat">
-          <div class="num">SaaS</div>
-          <div class="lbl">on Microsoft Azure</div>
+        <div class="hv-card-title">Course &amp; Content Library</div>
+        <div class="hv-card-apps">
+          <div class="hv-app">
+            <img src="assets/images/partners/coursera.png" alt="Coursera" />
+            <span>Coursera</span>
+          </div>
+          <div class="hv-app">
+            <img src="assets/images/partners/canvas-instructure.png" alt="Canvas" />
+            <span>Canvas</span>
+          </div>
+          <div class="hv-app">
+            <img src="assets/images/partners/western-governors-university.jpg" alt="WGU" />
+            <span>WGU</span>
+          </div>
+          <div class="hv-app">
+            <img src="assets/images/partners/honest-jobs.png" alt="Honest Jobs" />
+            <span>Honest Jobs</span>
+          </div>
+        </div>
+        <div class="hv-card-foot">
+          <span class="hv-count">+ 136 more</span>
+          <a href="#see-it" class="hv-explore">Tour the library
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Floating credential notification -->
+      <div class="hv-notif">
+        <div class="hv-notif-dot"></div>
+        <div class="hv-notif-body">
+          <div class="hv-notif-title">HVAC Certification earned</div>
+          <div class="hv-notif-sub">Marcus J. · just now</div>
+        </div>
+      </div>
+
+      <!-- Floating Azure badge (clean, in a designed position) -->
+      <div class="hv-azure">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12c0 6-4 10-10 10S2 18 2 12 6 2 12 2s10 4 10 10z"/><path d="M16 8L8 16"/><path d="M12 6v6h6"/></svg>
+        <div class="hv-azure-body">
+          <div class="hv-azure-title">SaaS on Microsoft Azure</div>
+          <div class="hv-azure-sub">FedRAMP-aligned · US-only</div>
         </div>
       </div>
     </div>
