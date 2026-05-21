@@ -273,6 +273,9 @@
         if (autoCycleTimer) clearInterval(autoCycleTimer);
         if (autoAppTimer) clearInterval(autoAppTimer);
         apps.forEach(a => a.classList.remove("live-active"));
+        // Close iframe overlay if open
+        const ov = shot.querySelector("[data-iframe-overlay]");
+        if (ov) ov.classList.remove("open");
         showView(item.dataset.view);
       });
     });
@@ -285,6 +288,103 @@
         if (autoAppTimer) clearInterval(autoAppTimer);
         apps.forEach(a => a.classList.remove("live-active"));
         showView(card.dataset.go);
+      });
+    });
+
+    // === IFRAME OVERLAY: clicking an app card opens its site ===
+    const overlay = shot.querySelector("[data-iframe-overlay]");
+    const iframeEl = shot.querySelector("[data-iframe-el]");
+    const loader = shot.querySelector("[data-iframe-loader]");
+    const blocked = shot.querySelector("[data-iframe-blocked]");
+    const backBtn = shot.querySelector("[data-iframe-back]");
+    const externalLink = shot.querySelector("[data-iframe-external]");
+    const blockedLink = shot.querySelector("[data-iframe-blocked-link]");
+    const iframeLogo = shot.querySelector("[data-iframe-logo]");
+    const iframeName = shot.querySelector("[data-iframe-name]");
+    const loaderName = shot.querySelector("[data-iframe-loader-name]");
+    const blockedLogo = shot.querySelector("[data-iframe-blocked-logo]");
+    const blockedName = shot.querySelector("[data-iframe-blocked-name]");
+    const blockedName2 = shot.querySelector("[data-iframe-blocked-name2]");
+
+    function openApp(url, name, logo) {
+      if (!overlay) return;
+      userInteracted = true;
+      if (autoCycleTimer) clearInterval(autoCycleTimer);
+      if (autoAppTimer) clearInterval(autoAppTimer);
+
+      // Reset states
+      iframeEl.classList.remove("loaded");
+      if (blocked) blocked.classList.remove("show");
+      if (loader) loader.classList.remove("hide");
+
+      // Set chrome
+      if (iframeName) iframeName.textContent = name;
+      if (loaderName) loaderName.textContent = name;
+      if (blockedName) blockedName.textContent = name;
+      if (blockedName2) blockedName2.textContent = name;
+      if (iframeLogo) {
+        if (logo) {
+          iframeLogo.src = logo;
+          iframeLogo.style.display = "";
+        } else {
+          iframeLogo.style.display = "none";
+        }
+      }
+      if (blockedLogo) {
+        if (logo) {
+          blockedLogo.src = logo;
+          blockedLogo.style.display = "";
+        } else {
+          blockedLogo.style.display = "none";
+        }
+      }
+      if (externalLink) externalLink.href = url || "#";
+      if (blockedLink) blockedLink.href = url || "#";
+
+      overlay.classList.add("open");
+
+      // Try to load the iframe
+      let loaded = false;
+      let blockedTimer = null;
+
+      function showBlocked() {
+        if (loaded) return;
+        if (loader) loader.classList.add("hide");
+        if (blocked) blocked.classList.add("show");
+      }
+
+      iframeEl.onload = () => {
+        loaded = true;
+        if (blockedTimer) clearTimeout(blockedTimer);
+        if (loader) loader.classList.add("hide");
+        iframeEl.classList.add("loaded");
+      };
+      iframeEl.onerror = showBlocked;
+
+      // After 4 seconds, if iframe hasn't loaded, assume blocked
+      blockedTimer = setTimeout(showBlocked, 4500);
+
+      iframeEl.src = url || "about:blank";
+    }
+
+    function closeOverlay() {
+      if (!overlay) return;
+      overlay.classList.remove("open");
+      iframeEl.src = "about:blank";
+      iframeEl.classList.remove("loaded");
+      if (loader) loader.classList.remove("hide");
+      if (blocked) blocked.classList.remove("show");
+    }
+
+    if (backBtn) backBtn.addEventListener("click", closeOverlay);
+
+    apps.forEach(card => {
+      card.addEventListener("click", (e) => {
+        const url = card.dataset.url;
+        const name = card.dataset.name || "App";
+        const logo = card.dataset.logo || "";
+        if (!url) return;
+        openApp(url, name, logo);
       });
     });
 

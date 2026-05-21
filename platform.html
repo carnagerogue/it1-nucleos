@@ -631,52 +631,14 @@
         <aside class="ps-side">
           <img src="assets/images/achievedxp-logo.png" alt="Achieve DXP" class="ps-side-logo" />
           <div class="ps-nav">
-            <div class="ps-nav-item" data-view="home"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> Home</div>
             <div class="ps-nav-item active" data-view="library"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg> Course &amp; Content Library</div>
             <div class="ps-nav-item" data-view="records"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> Learner Records</div>
             <div class="ps-nav-item" data-view="toolset"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/></svg> Investigative Toolset</div>
             <div class="ps-nav-item" data-view="messenger"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg> Messenger</div>
-            <div class="ps-nav-divider"></div>
-            <div class="ps-nav-item" data-view="users"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-3-3.87"/><path d="M4 21v-2a4 4 0 014-4h6a4 4 0 014 4v2"/><circle cx="11" cy="7" r="4"/></svg> Users &amp; Groups</div>
-            <div class="ps-nav-item" data-view="settings"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33"/></svg> Account Settings</div>
           </div>
         </aside>
         <main class="ps-main">
-          <!-- HOME VIEW -->
-          <div class="ps-view" data-view-panel="home">
-            <div class="ps-topbar">
-              <h3 class="ps-h">Welcome, admin <span style="font-size:1.4rem">👋</span></h3>
-              <span class="ps-chip">Last logged in: May 20, 2026</span>
-            </div>
-            <div class="ps-home-grid">
-              <a class="ps-home-card" data-go="library">
-                <div class="ps-home-icon" style="background:#cffafe;color:#007891"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div>
-                <span>Course &amp; Content Library</span>
-              </a>
-              <a class="ps-home-card" data-go="users">
-                <div class="ps-home-icon" style="background:#dbeafe;color:#1e40af"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-3-3.87"/><path d="M4 21v-2a4 4 0 014-4h6a4 4 0 014 4v2"/><circle cx="11" cy="7" r="4"/></svg></div>
-                <span>View Users &amp; Groups</span>
-              </a>
-              <a class="ps-home-card" data-go="records">
-                <div class="ps-home-icon" style="background:#fef3c7;color:#92400e"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
-                <span>Learner Records</span>
-              </a>
-              <a class="ps-home-card" data-go="toolset">
-                <div class="ps-home-icon" style="background:#fce7f3;color:#9d174d"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg></div>
-                <span>Investigative Toolset</span>
-              </a>
-              <a class="ps-home-card" data-go="settings">
-                <div class="ps-home-icon" style="background:#e9d5ff;color:#6b21a8"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83"/></svg></div>
-                <span>Settings</span>
-              </a>
-              <a class="ps-home-card" data-go="messenger">
-                <div class="ps-home-icon" style="background:#d1fae5;color:#065f46"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg></div>
-                <span>Messenger</span>
-              </a>
-            </div>
-          </div>
-
-          <!-- LIBRARY VIEW (default visible) -->
+          <!-- LIBRARY VIEW (default) -->
           <div class="ps-view active" data-view-panel="library">
             <div class="ps-topbar">
               <h3 class="ps-h">Course &amp; Content Library</h3>
@@ -693,40 +655,74 @@
               <div class="ps-cat" data-cat-filter="services"><span class="ps-cat-i">🧰</span>Services</div>
             </div>
             <div class="ps-apps" data-apps>
-              <div class="ps-app-card" data-cat="all academic"><div class="ps-app-logo-wrap"><img src="assets/images/partners/canvas-instructure.png" alt="Canvas (Instructure)" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">Canvas (Instructure)</div><div class="ps-app-desc">Open-source learning management system.</div></div>
-          <div class="ps-app-card" data-cat="all vocational"><div class="ps-app-logo-wrap"><img src="assets/images/partners/coursera.png" alt="Coursera" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">Coursera</div><div class="ps-app-desc">University-led vocational training and credentials.</div></div>
-          <div class="ps-app-card" data-cat="all academic"><div class="ps-app-logo-wrap"><img src="assets/images/partners/western-governors-university.jpg" alt="Western Governors University" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">Western Governors University</div><div class="ps-app-desc">Accredited online degree programs.</div></div>
-          <div class="ps-app-card" data-cat="all academic resources"><div class="ps-app-logo-wrap"><img src="assets/images/partners/jstor.png" alt="JSTOR" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">JSTOR</div><div class="ps-app-desc">Academic library: peer-reviewed journals.</div></div>
-          <div class="ps-app-card" data-cat="all academic"><div class="ps-app-logo-wrap"><img src="assets/images/partners/khan-academy.png" alt="Khan Academy" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">Khan Academy</div><div class="ps-app-desc">Free K-12 math, science, and economics.</div></div>
-          <div class="ps-app-card" data-cat="all services"><div class="ps-app-logo-wrap"><img src="assets/images/partners/honest-jobs.png" alt="Honest Jobs" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">Honest Jobs</div><div class="ps-app-desc">Fair-chance hiring platform.</div></div>
-          <div class="ps-app-card" data-cat="academic resources"><div class="ps-app-logo-wrap"><img src="assets/images/partners/enyclopedia-britannica.jpg" alt="Britannica" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">Britannica</div><div class="ps-app-desc">Comprehensive K-12 curriculum and reference.</div></div>
-          <div class="ps-app-card" data-cat="vocational"><div class="ps-app-logo-wrap"><img src="assets/images/partners/cdlonline.png" alt="CDLOnline" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">CDLOnline</div><div class="ps-app-desc">CDL theory training for the written test.</div></div>
-          <div class="ps-app-card" data-cat="vocational"><div class="ps-app-logo-wrap"><img src="assets/images/partners/career-safe.png" alt="Career Safe" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">Career Safe</div><div class="ps-app-desc">Industry certifications and OSHA training.</div></div>
-          <div class="ps-app-card" data-cat="vocational"><div class="ps-app-logo-wrap"><img src="assets/images/partners/nccer-pearson-books.png" alt="NCCER / Pearson Books" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">NCCER / Pearson Books</div><div class="ps-app-desc">Construction industry credentials.</div></div>
-          <div class="ps-app-card" data-cat="vocational"><div class="ps-app-logo-wrap"><img src="assets/images/partners/servsafe.png" alt="ServSafe" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">ServSafe</div><div class="ps-app-desc">Food Handler and Manager certification.</div></div>
-          <div class="ps-app-card" data-cat="vocational"><div class="ps-app-logo-wrap"><img src="assets/images/partners/360-training.png" alt="360 Training" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">360 Training</div><div class="ps-app-desc">Regulatory-approved training &amp; certifications.</div></div>
-          <div class="ps-app-card" data-cat="resources"><div class="ps-app-logo-wrap"><img src="assets/images/partners/hoopla.png" alt="Hoopla" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">Hoopla</div><div class="ps-app-desc">Digital library at your fingertips.</div></div>
-          <div class="ps-app-card" data-cat="resources"><div class="ps-app-logo-wrap"><img src="assets/images/partners/project-gutenberg.jpg" alt="Project Gutenberg" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">Project Gutenberg</div><div class="ps-app-desc">Online library of free eBooks.</div></div>
-          <div class="ps-app-card" data-cat="resources legal"><div class="ps-app-logo-wrap"><img src="assets/images/partners/the-marshall-project.png" alt="The Marshall Project" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">The Marshall Project</div><div class="ps-app-desc">Criminal-justice journalism.</div></div>
-          <div class="ps-app-card" data-cat="resources"><div class="ps-app-logo-wrap"><img src="assets/images/partners/pressreader.jpg" alt="PressReader" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">PressReader</div><div class="ps-app-desc">Digital newsstand with 7,000+ newspapers.</div></div>
-          <div class="ps-app-card" data-cat="academic resources"><div class="ps-app-logo-wrap"><img src="assets/images/partners/wikipedia-for-schools.png" alt="Wikipedia for Schools" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">Wikipedia for Schools</div><div class="ps-app-desc">Curated Wikipedia for schools.</div></div>
-          <div class="ps-app-card" data-cat="entertainment resources"><div class="ps-app-logo-wrap"><img src="assets/images/partners/ted-talks.jpg" alt="TED Talks" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">TED Talks</div><div class="ps-app-desc">Short video presentations by today&#x27;s interesting minds.</div></div>
-          <div class="ps-app-card" data-cat="academic"><div class="ps-app-logo-wrap"><img src="assets/images/partners/nroc-edready.png" alt="NROC EdReady" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">NROC EdReady</div><div class="ps-app-desc">GED and HiSET prep, math and English readiness.</div></div>
-          <div class="ps-app-card" data-cat="communications"><div class="ps-app-logo-wrap"><img src="assets/images/partners/zoom.jpg" alt="Zoom" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">Zoom</div><div class="ps-app-desc">Secure video conferencing for instructors.</div></div>
-          <div class="ps-app-card" data-cat="communications"><div class="ps-app-logo-wrap"><img src="assets/images/partners/google-meets.png" alt="Google Meets" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">Google Meets</div><div class="ps-app-desc">Video conferencing for real-time class.</div></div>
-          <div class="ps-app-card" data-cat="entertainment communications"><div class="ps-app-logo-wrap"><img src="assets/images/partners/pandoapp.jpg" alt="PandoApp" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">PandoApp</div><div class="ps-app-desc">Faith-based content and devotionals.</div></div>
-          <div class="ps-app-card" data-cat="legal"><div class="ps-app-logo-wrap"><img src="assets/images/partners/fastcase-law-library.png" alt="Fastcase" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">Fastcase</div><div class="ps-app-desc">World&#x27;s largest online legal research library.</div></div>
-          <div class="ps-app-card" data-cat="legal"><div class="ps-app-logo-wrap"><img src="assets/images/partners/lexisnexis.jpg" alt="LexisNexis" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">LexisNexis</div><div class="ps-app-desc">Legal research database and tools.</div></div>
-          <div class="ps-app-card" data-cat="vocational academic"><div class="ps-app-logo-wrap"><img src="assets/images/partners/intellezy.webp" alt="Intellezy" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">Intellezy</div><div class="ps-app-desc">11,000+ expert-led video lessons.</div></div>
-          <div class="ps-app-card" data-cat="academic"><div class="ps-app-logo-wrap"><img src="assets/images/partners/ixl-learning.jpg" alt="IXL Learning" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">IXL Learning</div><div class="ps-app-desc">Personalized K-12 learning.</div></div>
-          <div class="ps-app-card" data-cat="entertainment"><div class="ps-app-logo-wrap"><div class="ps-app-logo ps-app-text">Chess</div></div><div class="ps-app-name">Chess</div><div class="ps-app-desc">Play chess online for free.</div></div>
-          <div class="ps-app-card" data-cat="entertainment"><div class="ps-app-logo-wrap"><div class="ps-app-logo ps-app-text">iHeart Radio</div></div><div class="ps-app-name">iHeart Radio</div><div class="ps-app-desc">Live radio stations and podcasts.</div></div>
-          <div class="ps-app-card" data-cat="entertainment"><div class="ps-app-logo-wrap"><div class="ps-app-logo ps-app-text">Pluto TV</div></div><div class="ps-app-name">Pluto TV</div><div class="ps-app-desc">Free streaming TV.</div></div>
-          <div class="ps-app-card" data-cat="communications"><div class="ps-app-logo-wrap"><div class="ps-app-logo ps-app-text">Ameelio</div></div><div class="ps-app-name">Ameelio</div><div class="ps-app-desc">Connect folks in custody with loved ones.</div></div>
-          <div class="ps-app-card" data-cat="services"><div class="ps-app-logo-wrap"><div class="ps-app-logo ps-app-text">Aramark Commissary</div></div><div class="ps-app-name">Aramark Commissary</div><div class="ps-app-desc">Food and commissary services.</div></div>
-          <div class="ps-app-card" data-cat="services"><div class="ps-app-logo-wrap"><div class="ps-app-logo ps-app-text">Keefe Group</div></div><div class="ps-app-name">Keefe Group</div><div class="ps-app-desc">Commissary, food, and education services.</div></div>
-          <div class="ps-app-card" data-cat="services"><div class="ps-app-logo-wrap"><div class="ps-app-logo ps-app-text">EQUUS</div></div><div class="ps-app-name">EQUUS</div><div class="ps-app-desc">Employment toolset for job seekers.</div></div>
-          <div class="ps-app-card" data-cat="legal"><div class="ps-app-logo-wrap"><div class="ps-app-logo ps-app-text">Prisoner Legal Services</div></div><div class="ps-app-name">Prisoner Legal Services</div><div class="ps-app-desc">Form-based legal help requests.</div></div>
+              <button type="button" class="ps-app-card" data-cat="all academic" data-url="https://www.instructure.com/canvas" data-name="Canvas (Instructure)" data-logo="assets/images/partners/canvas-instructure.png"><div class="ps-app-logo-wrap"><img src="assets/images/partners/canvas-instructure.png" alt="Canvas (Instructure)" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">Canvas (Instructure)</div><div class="ps-app-desc">Open-source learning management system.</div></button>
+          <button type="button" class="ps-app-card" data-cat="all vocational" data-url="https://www.coursera.org/" data-name="Coursera" data-logo="assets/images/partners/coursera.png"><div class="ps-app-logo-wrap"><img src="assets/images/partners/coursera.png" alt="Coursera" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">Coursera</div><div class="ps-app-desc">University-led vocational training and credentials.</div></button>
+          <button type="button" class="ps-app-card" data-cat="all academic" data-url="https://www.wgu.edu/" data-name="Western Governors University" data-logo="assets/images/partners/western-governors-university.jpg"><div class="ps-app-logo-wrap"><img src="assets/images/partners/western-governors-university.jpg" alt="Western Governors University" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">Western Governors University</div><div class="ps-app-desc">Accredited online degree programs.</div></button>
+          <button type="button" class="ps-app-card" data-cat="all academic resources" data-url="https://www.jstor.org/" data-name="JSTOR" data-logo="assets/images/partners/jstor.png"><div class="ps-app-logo-wrap"><img src="assets/images/partners/jstor.png" alt="JSTOR" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">JSTOR</div><div class="ps-app-desc">Academic library: peer-reviewed journals.</div></button>
+          <button type="button" class="ps-app-card" data-cat="all academic" data-url="https://www.khanacademy.org/" data-name="Khan Academy" data-logo="assets/images/partners/khan-academy.png"><div class="ps-app-logo-wrap"><img src="assets/images/partners/khan-academy.png" alt="Khan Academy" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">Khan Academy</div><div class="ps-app-desc">Free K-12 math, science, and economics.</div></button>
+          <button type="button" class="ps-app-card" data-cat="all services" data-url="https://www.honestjobs.com/" data-name="Honest Jobs" data-logo="assets/images/partners/honest-jobs.png"><div class="ps-app-logo-wrap"><img src="assets/images/partners/honest-jobs.png" alt="Honest Jobs" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">Honest Jobs</div><div class="ps-app-desc">Fair-chance hiring platform.</div></button>
+          <button type="button" class="ps-app-card" data-cat="academic resources" data-url="https://school.britannica.com/" data-name="Britannica" data-logo="assets/images/partners/enyclopedia-britannica.jpg"><div class="ps-app-logo-wrap"><img src="assets/images/partners/enyclopedia-britannica.jpg" alt="Britannica" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">Britannica</div><div class="ps-app-desc">Comprehensive K-12 curriculum and reference.</div></button>
+          <button type="button" class="ps-app-card" data-cat="vocational" data-url="https://www.cdlonline.com/" data-name="CDLOnline" data-logo="assets/images/partners/cdlonline.png"><div class="ps-app-logo-wrap"><img src="assets/images/partners/cdlonline.png" alt="CDLOnline" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">CDLOnline</div><div class="ps-app-desc">CDL theory training for the written test.</div></button>
+          <button type="button" class="ps-app-card" data-cat="vocational" data-url="https://www.careersafeonline.com/" data-name="Career Safe" data-logo="assets/images/partners/career-safe.png"><div class="ps-app-logo-wrap"><img src="assets/images/partners/career-safe.png" alt="Career Safe" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">Career Safe</div><div class="ps-app-desc">Industry certifications and OSHA training.</div></button>
+          <button type="button" class="ps-app-card" data-cat="vocational" data-url="https://www.nccer.org/" data-name="NCCER / Pearson Books" data-logo="assets/images/partners/nccer-pearson-books.png"><div class="ps-app-logo-wrap"><img src="assets/images/partners/nccer-pearson-books.png" alt="NCCER / Pearson Books" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">NCCER / Pearson Books</div><div class="ps-app-desc">Construction industry credentials.</div></button>
+          <button type="button" class="ps-app-card" data-cat="vocational" data-url="https://www.servsafe.com/" data-name="ServSafe" data-logo="assets/images/partners/servsafe.png"><div class="ps-app-logo-wrap"><img src="assets/images/partners/servsafe.png" alt="ServSafe" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">ServSafe</div><div class="ps-app-desc">Food Handler and Manager certification.</div></button>
+          <button type="button" class="ps-app-card" data-cat="vocational" data-url="https://www.360training.com/" data-name="360 Training" data-logo="assets/images/partners/360-training.png"><div class="ps-app-logo-wrap"><img src="assets/images/partners/360-training.png" alt="360 Training" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">360 Training</div><div class="ps-app-desc">Regulatory-approved training &amp; certifications.</div></button>
+          <button type="button" class="ps-app-card" data-cat="resources" data-url="https://www.hoopladigital.com/" data-name="Hoopla" data-logo="assets/images/partners/hoopla.png"><div class="ps-app-logo-wrap"><img src="assets/images/partners/hoopla.png" alt="Hoopla" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">Hoopla</div><div class="ps-app-desc">Digital library at your fingertips.</div></button>
+          <button type="button" class="ps-app-card" data-cat="resources" data-url="https://www.gutenberg.org/" data-name="Project Gutenberg" data-logo="assets/images/partners/project-gutenberg.jpg"><div class="ps-app-logo-wrap"><img src="assets/images/partners/project-gutenberg.jpg" alt="Project Gutenberg" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">Project Gutenberg</div><div class="ps-app-desc">Online library of free eBooks.</div></button>
+          <button type="button" class="ps-app-card" data-cat="resources legal" data-url="https://www.themarshallproject.org/" data-name="The Marshall Project" data-logo="assets/images/partners/the-marshall-project.png"><div class="ps-app-logo-wrap"><img src="assets/images/partners/the-marshall-project.png" alt="The Marshall Project" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">The Marshall Project</div><div class="ps-app-desc">Criminal-justice journalism.</div></button>
+          <button type="button" class="ps-app-card" data-cat="resources" data-url="https://www.pressreader.com/" data-name="PressReader" data-logo="assets/images/partners/pressreader.jpg"><div class="ps-app-logo-wrap"><img src="assets/images/partners/pressreader.jpg" alt="PressReader" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">PressReader</div><div class="ps-app-desc">Digital newsstand with 7,000+ newspapers.</div></button>
+          <button type="button" class="ps-app-card" data-cat="academic resources" data-url="https://en.wikipedia.org/" data-name="Wikipedia for Schools" data-logo="assets/images/partners/wikipedia-for-schools.png"><div class="ps-app-logo-wrap"><img src="assets/images/partners/wikipedia-for-schools.png" alt="Wikipedia for Schools" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">Wikipedia for Schools</div><div class="ps-app-desc">Curated Wikipedia for schools.</div></button>
+          <button type="button" class="ps-app-card" data-cat="entertainment resources" data-url="https://www.ted.com/" data-name="TED Talks" data-logo="assets/images/partners/ted-talks.jpg"><div class="ps-app-logo-wrap"><img src="assets/images/partners/ted-talks.jpg" alt="TED Talks" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">TED Talks</div><div class="ps-app-desc">Short video presentations by today&#x27;s most interesting minds.</div></button>
+          <button type="button" class="ps-app-card" data-cat="academic" data-url="https://www.nroc.org/" data-name="NROC EdReady" data-logo="assets/images/partners/nroc-edready.png"><div class="ps-app-logo-wrap"><img src="assets/images/partners/nroc-edready.png" alt="NROC EdReady" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">NROC EdReady</div><div class="ps-app-desc">GED and HiSET prep, math and English readiness.</div></button>
+          <button type="button" class="ps-app-card" data-cat="communications" data-url="https://zoom.us/" data-name="Zoom" data-logo="assets/images/partners/zoom.jpg"><div class="ps-app-logo-wrap"><img src="assets/images/partners/zoom.jpg" alt="Zoom" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">Zoom</div><div class="ps-app-desc">Secure video conferencing for instructors.</div></button>
+          <button type="button" class="ps-app-card" data-cat="communications" data-url="https://meet.google.com/" data-name="Google Meets" data-logo="assets/images/partners/google-meets.png"><div class="ps-app-logo-wrap"><img src="assets/images/partners/google-meets.png" alt="Google Meets" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">Google Meets</div><div class="ps-app-desc">Video conferencing for real-time class.</div></button>
+          <button type="button" class="ps-app-card" data-cat="entertainment communications" data-url="https://pandoapp.org/" data-name="PandoApp" data-logo="assets/images/partners/pandoapp.jpg"><div class="ps-app-logo-wrap"><img src="assets/images/partners/pandoapp.jpg" alt="PandoApp" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">PandoApp</div><div class="ps-app-desc">Faith-based content and devotionals.</div></button>
+          <button type="button" class="ps-app-card" data-cat="legal" data-url="https://www.fastcase.com/" data-name="Fastcase" data-logo="assets/images/partners/fastcase-law-library.png"><div class="ps-app-logo-wrap"><img src="assets/images/partners/fastcase-law-library.png" alt="Fastcase" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">Fastcase</div><div class="ps-app-desc">World&#x27;s largest online legal research library.</div></button>
+          <button type="button" class="ps-app-card" data-cat="legal" data-url="https://www.lexisnexis.com/" data-name="LexisNexis" data-logo="assets/images/partners/lexisnexis.jpg"><div class="ps-app-logo-wrap"><img src="assets/images/partners/lexisnexis.jpg" alt="LexisNexis" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">LexisNexis</div><div class="ps-app-desc">Legal research database and tools.</div></button>
+          <button type="button" class="ps-app-card" data-cat="vocational academic" data-url="https://www.intellezy.com/" data-name="Intellezy" data-logo="assets/images/partners/intellezy.webp"><div class="ps-app-logo-wrap"><img src="assets/images/partners/intellezy.webp" alt="Intellezy" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">Intellezy</div><div class="ps-app-desc">11,000+ expert-led video lessons.</div></button>
+          <button type="button" class="ps-app-card" data-cat="academic" data-url="https://www.ixl.com/" data-name="IXL Learning" data-logo="assets/images/partners/ixl-learning.jpg"><div class="ps-app-logo-wrap"><img src="assets/images/partners/ixl-learning.jpg" alt="IXL Learning" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">IXL Learning</div><div class="ps-app-desc">Personalized K-12 learning.</div></button>
+          <button type="button" class="ps-app-card" data-cat="entertainment" data-url="https://www.chess.com/" data-name="Chess" data-logo=""><div class="ps-app-logo-wrap"><div class="ps-app-logo ps-app-text">Chess</div></div><div class="ps-app-name">Chess</div><div class="ps-app-desc">Play chess online for free.</div></button>
+          <button type="button" class="ps-app-card" data-cat="entertainment" data-url="https://www.iheart.com/" data-name="iHeart Radio" data-logo=""><div class="ps-app-logo-wrap"><div class="ps-app-logo ps-app-text">iHeart Radio</div></div><div class="ps-app-name">iHeart Radio</div><div class="ps-app-desc">Live radio stations and podcasts.</div></button>
+          <button type="button" class="ps-app-card" data-cat="entertainment" data-url="https://pluto.tv/" data-name="Pluto TV" data-logo=""><div class="ps-app-logo-wrap"><div class="ps-app-logo ps-app-text">Pluto TV</div></div><div class="ps-app-name">Pluto TV</div><div class="ps-app-desc">Free streaming TV.</div></button>
+          <button type="button" class="ps-app-card" data-cat="communications" data-url="https://www.ameelio.org/" data-name="Ameelio" data-logo=""><div class="ps-app-logo-wrap"><div class="ps-app-logo ps-app-text">Ameelio</div></div><div class="ps-app-name">Ameelio</div><div class="ps-app-desc">Connect folks in custody with loved ones.</div></button>
+          <button type="button" class="ps-app-card" data-cat="services" data-url="https://www.aramark.com/" data-name="Aramark Commissary" data-logo=""><div class="ps-app-logo-wrap"><div class="ps-app-logo ps-app-text">Aramark Commissary</div></div><div class="ps-app-name">Aramark Commissary</div><div class="ps-app-desc">Food and commissary services.</div></button>
+          <button type="button" class="ps-app-card" data-cat="services" data-url="https://www.keefegroup.com/" data-name="Keefe Group" data-logo=""><div class="ps-app-logo-wrap"><div class="ps-app-logo ps-app-text">Keefe Group</div></div><div class="ps-app-name">Keefe Group</div><div class="ps-app-desc">Commissary, food, and education services.</div></button>
+          <button type="button" class="ps-app-card" data-cat="services" data-url="https://www.equusworks.com/" data-name="EQUUS" data-logo=""><div class="ps-app-logo-wrap"><div class="ps-app-logo ps-app-text">EQUUS</div></div><div class="ps-app-name">EQUUS</div><div class="ps-app-desc">Employment toolset for job seekers.</div></button>
+          <button type="button" class="ps-app-card" data-cat="legal" data-url="https://www.aclu.org/" data-name="Prisoner Legal Services" data-logo=""><div class="ps-app-logo-wrap"><div class="ps-app-logo ps-app-text">Prisoner Legal Services</div></div><div class="ps-app-name">Prisoner Legal Services</div><div class="ps-app-desc">Form-based legal help requests.</div></button>
+            </div>
+
+            <!-- IFRAME OVERLAY (hidden by default) -->
+            <div class="ps-iframe-overlay" data-iframe-overlay>
+              <div class="ps-iframe-bar">
+                <button type="button" class="ps-iframe-back" data-iframe-back>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                  Library
+                </button>
+                <div class="ps-iframe-app">
+                  <img class="ps-iframe-logo" data-iframe-logo alt="" />
+                  <span class="ps-iframe-name" data-iframe-name></span>
+                </div>
+                <a class="ps-iframe-external" data-iframe-external href="#" target="_blank" rel="noopener">
+                  Open in new tab
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </a>
+              </div>
+              <div class="ps-iframe-stage" data-iframe-stage>
+                <div class="ps-iframe-loader" data-iframe-loader>
+                  <div class="ps-spinner"></div>
+                  <p>Loading <span data-iframe-loader-name></span>&hellip;</p>
+                </div>
+                <iframe class="ps-iframe-el" data-iframe-el title="Embedded app" sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox"></iframe>
+                <div class="ps-iframe-blocked" data-iframe-blocked>
+                  <img class="ps-iframe-blocked-logo" data-iframe-blocked-logo alt="" />
+                  <h4 data-iframe-blocked-name></h4>
+                  <p>This app prefers to open in its own window.<br/>Click below to launch it in a new tab.</p>
+                  <a class="btn btn-teal" data-iframe-blocked-link href="#" target="_blank" rel="noopener">
+                    Open <span data-iframe-blocked-name2></span>
+                    <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -737,9 +733,7 @@
               <span class="ps-chip">12 active</span>
             </div>
             <div class="ps-table">
-              <div class="ps-tr ps-th">
-                <span>Learner</span><span>Current Course</span><span>Progress</span><span>Last Active</span><span></span>
-              </div>
+              <div class="ps-tr ps-th"><span>Learner</span><span>Current Course</span><span>Progress</span><span>Last Active</span><span></span></div>
               <div class="ps-tr"><span class="ps-learner"><i style="background:#fbbf24">MJ</i> Marcus J.</span><span>HVAC Certification</span><span><div class="ps-pbar"><i style="width:68%"></i></div> 68%</span><span>2 hrs ago</span><span class="ps-link-c">View →</span></div>
               <div class="ps-tr"><span class="ps-learner"><i style="background:#22d3ee">SW</i> Sarah W.</span><span>GED Math Prep</span><span><div class="ps-pbar"><i style="width:92%"></i></div> 92%</span><span>15 min ago</span><span class="ps-link-c">View →</span></div>
               <div class="ps-tr"><span class="ps-learner"><i style="background:#a78bfa">DR</i> Derek R.</span><span>Coursera: Customer Service</span><span><div class="ps-pbar"><i style="width:45%"></i></div> 45%</span><span>1 day ago</span><span class="ps-link-c">View →</span></div>
@@ -782,24 +776,6 @@
             <div class="ps-chat-input">
               <input type="text" placeholder="Reply to Marcus J..." readonly />
               <button type="button">Send</button>
-            </div>
-          </div>
-
-          <!-- USERS VIEW (simple placeholder) -->
-          <div class="ps-view" data-view-panel="users">
-            <div class="ps-topbar"><h3 class="ps-h">Users &amp; Groups</h3><span class="ps-chip">324 learners · 18 staff</span></div>
-            <div class="ps-empty">
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#5b6680" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="4"/><path d="M2 21v-2a4 4 0 014-4h6a4 4 0 014 4v2"/><circle cx="17" cy="7" r="3"/></svg>
-              <p>Cohorts, roles, and permissions managed here.<br/><em>Live demo — click sidebar items to explore other views.</em></p>
-            </div>
-          </div>
-
-          <!-- SETTINGS VIEW (simple placeholder) -->
-          <div class="ps-view" data-view-panel="settings">
-            <div class="ps-topbar"><h3 class="ps-h">Account Settings</h3></div>
-            <div class="ps-empty">
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#5b6680" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33"/></svg>
-              <p>Identity providers, retention policies, and audit configuration.<br/><em>Live demo — click sidebar items to explore other views.</em></p>
             </div>
           </div>
 
