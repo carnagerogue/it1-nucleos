@@ -625,70 +625,184 @@
     <div class="product-shot" data-reveal="up">
       <div class="ps-frame">
         <div class="ps-frame-dots"><span></span><span></span><span></span></div>
-        <div class="ps-frame-url">achievedxp.com / library</div>
+        <div class="ps-frame-url" data-frame-url>achievedxp.com / library</div>
       </div>
       <div class="ps-app">
         <aside class="ps-side">
           <img src="assets/images/achievedxp-logo.png" alt="Achieve DXP" class="ps-side-logo" />
           <div class="ps-nav">
-            <div class="ps-nav-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> Home</div>
-            <div class="ps-nav-item active"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg> Course &amp; Content Library</div>
-            <div class="ps-nav-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> Learner Records</div>
-            <div class="ps-nav-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/></svg> Investigative Toolset</div>
-            <div class="ps-nav-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg> Messenger</div>
+            <div class="ps-nav-item" data-view="home"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> Home</div>
+            <div class="ps-nav-item active" data-view="library"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg> Course &amp; Content Library</div>
+            <div class="ps-nav-item" data-view="records"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> Learner Records</div>
+            <div class="ps-nav-item" data-view="toolset"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/></svg> Investigative Toolset</div>
+            <div class="ps-nav-item" data-view="messenger"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg> Messenger</div>
             <div class="ps-nav-divider"></div>
-            <div class="ps-nav-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-3-3.87"/><path d="M4 21v-2a4 4 0 014-4h6a4 4 0 014 4v2"/><circle cx="11" cy="7" r="4"/></svg> Users &amp; Groups</div>
-            <div class="ps-nav-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33"/></svg> Account Settings</div>
+            <div class="ps-nav-item" data-view="users"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-3-3.87"/><path d="M4 21v-2a4 4 0 014-4h6a4 4 0 014 4v2"/><circle cx="11" cy="7" r="4"/></svg> Users &amp; Groups</div>
+            <div class="ps-nav-item" data-view="settings"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33"/></svg> Account Settings</div>
           </div>
         </aside>
         <main class="ps-main">
-          <div class="ps-topbar">
-            <h3 class="ps-h">Course &amp; Content Library</h3>
-            <div class="ps-search" data-search><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> <span class="ps-search-text" data-search-text>Search</span></div>
-          </div>
-          <div class="ps-cats">
-            <div class="ps-cat active"><span class="ps-cat-i">▥</span>All</div>
-            <div class="ps-cat"><span class="ps-cat-i">🏛</span>Academic</div>
-            <div class="ps-cat"><span class="ps-cat-i">🛠</span>Vocational</div>
-            <div class="ps-cat"><span class="ps-cat-i">📚</span>Resources</div>
-            <div class="ps-cat"><span class="ps-cat-i">▶</span>Entertainment</div>
-            <div class="ps-cat"><span class="ps-cat-i">💬</span>Communications</div>
-            <div class="ps-cat"><span class="ps-cat-i">⚖</span>Legal</div>
-            <div class="ps-cat"><span class="ps-cat-i">🧰</span>Services</div>
-          </div>
-          <div class="ps-apps">
-            <div class="ps-app-card">
-              <img src="assets/images/partners/canvas-instructure.png" alt="Canvas" class="ps-app-logo" />
-              <div class="ps-app-name">Canvas (Instructure)</div>
-              <div class="ps-app-desc">Open-source learning management system for higher-ed courses and content.</div>
+          <!-- HOME VIEW -->
+          <div class="ps-view" data-view-panel="home">
+            <div class="ps-topbar">
+              <h3 class="ps-h">Welcome, admin <span style="font-size:1.4rem">👋</span></h3>
+              <span class="ps-chip">Last logged in: May 20, 2026</span>
             </div>
-            <div class="ps-app-card">
-              <img src="assets/images/partners/coursera.png" alt="Coursera" class="ps-app-logo" />
-              <div class="ps-app-name">Coursera</div>
-              <div class="ps-app-desc">University-led vocational training and industry-recognized credentials.</div>
-            </div>
-            <div class="ps-app-card">
-              <img src="assets/images/partners/western-governors-university.jpg" alt="WGU" class="ps-app-logo" />
-              <div class="ps-app-name">Western Governors University</div>
-              <div class="ps-app-desc">Accredited online degree programs with flexible, competency-based pacing.</div>
-            </div>
-            <div class="ps-app-card">
-              <img src="assets/images/partners/jstor.png" alt="JSTOR" class="ps-app-logo" />
-              <div class="ps-app-name">JSTOR</div>
-              <div class="ps-app-desc">Academic library: peer-reviewed journals and primary sources.</div>
-            </div>
-            <div class="ps-app-card">
-              <img src="assets/images/partners/khan-academy.png" alt="Khan Academy" class="ps-app-logo" onerror="this.style.display='none'" />
-              <div class="ps-app-name">Khan Academy</div>
-              <div class="ps-app-desc">Free K-12 math, science, and economics — a learner favorite.</div>
-            </div>
-            <div class="ps-app-card">
-              <img src="assets/images/partners/honest-jobs.png" alt="Honest Jobs" class="ps-app-logo" />
-              <div class="ps-app-name">Honest Jobs</div>
-              <div class="ps-app-desc">Fair-chance hiring platform for verifiable post-release matches.</div>
+            <div class="ps-home-grid">
+              <a class="ps-home-card" data-go="library">
+                <div class="ps-home-icon" style="background:#cffafe;color:#007891"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div>
+                <span>Course &amp; Content Library</span>
+              </a>
+              <a class="ps-home-card" data-go="users">
+                <div class="ps-home-icon" style="background:#dbeafe;color:#1e40af"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-3-3.87"/><path d="M4 21v-2a4 4 0 014-4h6a4 4 0 014 4v2"/><circle cx="11" cy="7" r="4"/></svg></div>
+                <span>View Users &amp; Groups</span>
+              </a>
+              <a class="ps-home-card" data-go="records">
+                <div class="ps-home-icon" style="background:#fef3c7;color:#92400e"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+                <span>Learner Records</span>
+              </a>
+              <a class="ps-home-card" data-go="toolset">
+                <div class="ps-home-icon" style="background:#fce7f3;color:#9d174d"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg></div>
+                <span>Investigative Toolset</span>
+              </a>
+              <a class="ps-home-card" data-go="settings">
+                <div class="ps-home-icon" style="background:#e9d5ff;color:#6b21a8"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83"/></svg></div>
+                <span>Settings</span>
+              </a>
+              <a class="ps-home-card" data-go="messenger">
+                <div class="ps-home-icon" style="background:#d1fae5;color:#065f46"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg></div>
+                <span>Messenger</span>
+              </a>
             </div>
           </div>
-        
+
+          <!-- LIBRARY VIEW (default visible) -->
+          <div class="ps-view active" data-view-panel="library">
+            <div class="ps-topbar">
+              <h3 class="ps-h">Course &amp; Content Library</h3>
+              <div class="ps-search" data-search><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> <span class="ps-search-text" data-search-text>Search</span></div>
+            </div>
+            <div class="ps-cats" data-cats>
+              <div class="ps-cat active" data-cat-filter="all"><span class="ps-cat-i">▥</span>All</div>
+              <div class="ps-cat" data-cat-filter="academic"><span class="ps-cat-i">🏛</span>Academic</div>
+              <div class="ps-cat" data-cat-filter="vocational"><span class="ps-cat-i">🛠</span>Vocational</div>
+              <div class="ps-cat" data-cat-filter="resources"><span class="ps-cat-i">📚</span>Resources</div>
+              <div class="ps-cat" data-cat-filter="entertainment"><span class="ps-cat-i">▶</span>Entertainment</div>
+              <div class="ps-cat" data-cat-filter="communications"><span class="ps-cat-i">💬</span>Communications</div>
+              <div class="ps-cat" data-cat-filter="legal"><span class="ps-cat-i">⚖</span>Legal</div>
+              <div class="ps-cat" data-cat-filter="services"><span class="ps-cat-i">🧰</span>Services</div>
+            </div>
+            <div class="ps-apps" data-apps>
+              <div class="ps-app-card" data-cat="all academic"><div class="ps-app-logo-wrap"><img src="assets/images/partners/canvas-instructure.png" alt="Canvas (Instructure)" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">Canvas (Instructure)</div><div class="ps-app-desc">Open-source learning management system.</div></div>
+          <div class="ps-app-card" data-cat="all vocational"><div class="ps-app-logo-wrap"><img src="assets/images/partners/coursera.png" alt="Coursera" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">Coursera</div><div class="ps-app-desc">University-led vocational training and credentials.</div></div>
+          <div class="ps-app-card" data-cat="all academic"><div class="ps-app-logo-wrap"><img src="assets/images/partners/western-governors-university.jpg" alt="Western Governors University" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">Western Governors University</div><div class="ps-app-desc">Accredited online degree programs.</div></div>
+          <div class="ps-app-card" data-cat="all academic resources"><div class="ps-app-logo-wrap"><img src="assets/images/partners/jstor.png" alt="JSTOR" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">JSTOR</div><div class="ps-app-desc">Academic library: peer-reviewed journals.</div></div>
+          <div class="ps-app-card" data-cat="all academic"><div class="ps-app-logo-wrap"><img src="assets/images/partners/khan-academy.png" alt="Khan Academy" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">Khan Academy</div><div class="ps-app-desc">Free K-12 math, science, and economics.</div></div>
+          <div class="ps-app-card" data-cat="all services"><div class="ps-app-logo-wrap"><img src="assets/images/partners/honest-jobs.png" alt="Honest Jobs" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">Honest Jobs</div><div class="ps-app-desc">Fair-chance hiring platform.</div></div>
+          <div class="ps-app-card" data-cat="academic resources"><div class="ps-app-logo-wrap"><img src="assets/images/partners/enyclopedia-britannica.jpg" alt="Britannica" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">Britannica</div><div class="ps-app-desc">Comprehensive K-12 curriculum and reference.</div></div>
+          <div class="ps-app-card" data-cat="vocational"><div class="ps-app-logo-wrap"><img src="assets/images/partners/cdlonline.png" alt="CDLOnline" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">CDLOnline</div><div class="ps-app-desc">CDL theory training for the written test.</div></div>
+          <div class="ps-app-card" data-cat="vocational"><div class="ps-app-logo-wrap"><img src="assets/images/partners/career-safe.png" alt="Career Safe" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">Career Safe</div><div class="ps-app-desc">Industry certifications and OSHA training.</div></div>
+          <div class="ps-app-card" data-cat="vocational"><div class="ps-app-logo-wrap"><img src="assets/images/partners/nccer-pearson-books.png" alt="NCCER / Pearson Books" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">NCCER / Pearson Books</div><div class="ps-app-desc">Construction industry credentials.</div></div>
+          <div class="ps-app-card" data-cat="vocational"><div class="ps-app-logo-wrap"><img src="assets/images/partners/servsafe.png" alt="ServSafe" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">ServSafe</div><div class="ps-app-desc">Food Handler and Manager certification.</div></div>
+          <div class="ps-app-card" data-cat="vocational"><div class="ps-app-logo-wrap"><img src="assets/images/partners/360-training.png" alt="360 Training" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">360 Training</div><div class="ps-app-desc">Regulatory-approved training &amp; certifications.</div></div>
+          <div class="ps-app-card" data-cat="resources"><div class="ps-app-logo-wrap"><img src="assets/images/partners/hoopla.png" alt="Hoopla" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">Hoopla</div><div class="ps-app-desc">Digital library at your fingertips.</div></div>
+          <div class="ps-app-card" data-cat="resources"><div class="ps-app-logo-wrap"><img src="assets/images/partners/project-gutenberg.jpg" alt="Project Gutenberg" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">Project Gutenberg</div><div class="ps-app-desc">Online library of free eBooks.</div></div>
+          <div class="ps-app-card" data-cat="resources legal"><div class="ps-app-logo-wrap"><img src="assets/images/partners/the-marshall-project.png" alt="The Marshall Project" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">The Marshall Project</div><div class="ps-app-desc">Criminal-justice journalism.</div></div>
+          <div class="ps-app-card" data-cat="resources"><div class="ps-app-logo-wrap"><img src="assets/images/partners/pressreader.jpg" alt="PressReader" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">PressReader</div><div class="ps-app-desc">Digital newsstand with 7,000+ newspapers.</div></div>
+          <div class="ps-app-card" data-cat="academic resources"><div class="ps-app-logo-wrap"><img src="assets/images/partners/wikipedia-for-schools.png" alt="Wikipedia for Schools" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">Wikipedia for Schools</div><div class="ps-app-desc">Curated Wikipedia for schools.</div></div>
+          <div class="ps-app-card" data-cat="entertainment resources"><div class="ps-app-logo-wrap"><img src="assets/images/partners/ted-talks.jpg" alt="TED Talks" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">TED Talks</div><div class="ps-app-desc">Short video presentations by today&#x27;s interesting minds.</div></div>
+          <div class="ps-app-card" data-cat="academic"><div class="ps-app-logo-wrap"><img src="assets/images/partners/nroc-edready.png" alt="NROC EdReady" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">NROC EdReady</div><div class="ps-app-desc">GED and HiSET prep, math and English readiness.</div></div>
+          <div class="ps-app-card" data-cat="communications"><div class="ps-app-logo-wrap"><img src="assets/images/partners/zoom.jpg" alt="Zoom" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">Zoom</div><div class="ps-app-desc">Secure video conferencing for instructors.</div></div>
+          <div class="ps-app-card" data-cat="communications"><div class="ps-app-logo-wrap"><img src="assets/images/partners/google-meets.png" alt="Google Meets" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">Google Meets</div><div class="ps-app-desc">Video conferencing for real-time class.</div></div>
+          <div class="ps-app-card" data-cat="entertainment communications"><div class="ps-app-logo-wrap"><img src="assets/images/partners/pandoapp.jpg" alt="PandoApp" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">PandoApp</div><div class="ps-app-desc">Faith-based content and devotionals.</div></div>
+          <div class="ps-app-card" data-cat="legal"><div class="ps-app-logo-wrap"><img src="assets/images/partners/fastcase-law-library.png" alt="Fastcase" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">Fastcase</div><div class="ps-app-desc">World&#x27;s largest online legal research library.</div></div>
+          <div class="ps-app-card" data-cat="legal"><div class="ps-app-logo-wrap"><img src="assets/images/partners/lexisnexis.jpg" alt="LexisNexis" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">LexisNexis</div><div class="ps-app-desc">Legal research database and tools.</div></div>
+          <div class="ps-app-card" data-cat="vocational academic"><div class="ps-app-logo-wrap"><img src="assets/images/partners/intellezy.webp" alt="Intellezy" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">Intellezy</div><div class="ps-app-desc">11,000+ expert-led video lessons.</div></div>
+          <div class="ps-app-card" data-cat="academic"><div class="ps-app-logo-wrap"><img src="assets/images/partners/ixl-learning.jpg" alt="IXL Learning" class="ps-app-logo" loading="lazy" /></div><div class="ps-app-name">IXL Learning</div><div class="ps-app-desc">Personalized K-12 learning.</div></div>
+          <div class="ps-app-card" data-cat="entertainment"><div class="ps-app-logo-wrap"><div class="ps-app-logo ps-app-text">Chess</div></div><div class="ps-app-name">Chess</div><div class="ps-app-desc">Play chess online for free.</div></div>
+          <div class="ps-app-card" data-cat="entertainment"><div class="ps-app-logo-wrap"><div class="ps-app-logo ps-app-text">iHeart Radio</div></div><div class="ps-app-name">iHeart Radio</div><div class="ps-app-desc">Live radio stations and podcasts.</div></div>
+          <div class="ps-app-card" data-cat="entertainment"><div class="ps-app-logo-wrap"><div class="ps-app-logo ps-app-text">Pluto TV</div></div><div class="ps-app-name">Pluto TV</div><div class="ps-app-desc">Free streaming TV.</div></div>
+          <div class="ps-app-card" data-cat="communications"><div class="ps-app-logo-wrap"><div class="ps-app-logo ps-app-text">Ameelio</div></div><div class="ps-app-name">Ameelio</div><div class="ps-app-desc">Connect folks in custody with loved ones.</div></div>
+          <div class="ps-app-card" data-cat="services"><div class="ps-app-logo-wrap"><div class="ps-app-logo ps-app-text">Aramark Commissary</div></div><div class="ps-app-name">Aramark Commissary</div><div class="ps-app-desc">Food and commissary services.</div></div>
+          <div class="ps-app-card" data-cat="services"><div class="ps-app-logo-wrap"><div class="ps-app-logo ps-app-text">Keefe Group</div></div><div class="ps-app-name">Keefe Group</div><div class="ps-app-desc">Commissary, food, and education services.</div></div>
+          <div class="ps-app-card" data-cat="services"><div class="ps-app-logo-wrap"><div class="ps-app-logo ps-app-text">EQUUS</div></div><div class="ps-app-name">EQUUS</div><div class="ps-app-desc">Employment toolset for job seekers.</div></div>
+          <div class="ps-app-card" data-cat="legal"><div class="ps-app-logo-wrap"><div class="ps-app-logo ps-app-text">Prisoner Legal Services</div></div><div class="ps-app-name">Prisoner Legal Services</div><div class="ps-app-desc">Form-based legal help requests.</div></div>
+            </div>
+          </div>
+
+          <!-- LEARNER RECORDS VIEW -->
+          <div class="ps-view" data-view-panel="records">
+            <div class="ps-topbar">
+              <h3 class="ps-h">Learner Records</h3>
+              <span class="ps-chip">12 active</span>
+            </div>
+            <div class="ps-table">
+              <div class="ps-tr ps-th">
+                <span>Learner</span><span>Current Course</span><span>Progress</span><span>Last Active</span><span></span>
+              </div>
+              <div class="ps-tr"><span class="ps-learner"><i style="background:#fbbf24">MJ</i> Marcus J.</span><span>HVAC Certification</span><span><div class="ps-pbar"><i style="width:68%"></i></div> 68%</span><span>2 hrs ago</span><span class="ps-link-c">View →</span></div>
+              <div class="ps-tr"><span class="ps-learner"><i style="background:#22d3ee">SW</i> Sarah W.</span><span>GED Math Prep</span><span><div class="ps-pbar"><i style="width:92%"></i></div> 92%</span><span>15 min ago</span><span class="ps-link-c">View →</span></div>
+              <div class="ps-tr"><span class="ps-learner"><i style="background:#a78bfa">DR</i> Derek R.</span><span>Coursera: Customer Service</span><span><div class="ps-pbar"><i style="width:45%"></i></div> 45%</span><span>1 day ago</span><span class="ps-link-c">View →</span></div>
+              <div class="ps-tr"><span class="ps-learner"><i style="background:#10b981">LN</i> Lisa N.</span><span>CDL Online — Theory</span><span><div class="ps-pbar"><i style="width:78%"></i></div> 78%</span><span>30 min ago</span><span class="ps-link-c">View →</span></div>
+              <div class="ps-tr"><span class="ps-learner"><i style="background:#f43f5e">AK</i> Anthony K.</span><span>NCCER Carpentry Level 1</span><span><div class="ps-pbar"><i style="width:34%"></i></div> 34%</span><span>3 hrs ago</span><span class="ps-link-c">View →</span></div>
+              <div class="ps-tr"><span class="ps-learner"><i style="background:#0099b8">MJ2</i> Maria J.</span><span>WGU: BS Business</span><span><div class="ps-pbar"><i style="width:56%"></i></div> 56%</span><span>5 hrs ago</span><span class="ps-link-c">View →</span></div>
+            </div>
+          </div>
+
+          <!-- INVESTIGATIVE TOOLSET VIEW -->
+          <div class="ps-view" data-view-panel="toolset">
+            <div class="ps-topbar">
+              <h3 class="ps-h">Investigative Toolset</h3>
+              <span class="ps-chip" style="background:#fee2e2;color:#991b1b;border-color:#fecaca">● Live</span>
+            </div>
+            <div class="ps-table ps-table-log">
+              <div class="ps-tr ps-th"><span>Time</span><span>Learner</span><span>Action</span><span>App / Content</span><span>Status</span></div>
+              <div class="ps-tr"><span class="ps-mono">14:32:08</span><span>Marcus J.</span><span>Submitted assessment</span><span>HVAC Cert · Mod 4</span><span class="ps-status ok">✓ Pass</span></div>
+              <div class="ps-tr"><span class="ps-mono">14:30:51</span><span>Sarah W.</span><span>Lesson viewed</span><span>GED Math · Algebra II</span><span class="ps-status ok">✓ Logged</span></div>
+              <div class="ps-tr"><span class="ps-mono">14:28:12</span><span>Derek R.</span><span>Message sent</span><span>Messenger</span><span class="ps-status review">⚐ Review</span></div>
+              <div class="ps-tr"><span class="ps-mono">14:25:44</span><span>Anthony K.</span><span>Search query</span><span>Library</span><span class="ps-status ok">✓ Allowlisted</span></div>
+              <div class="ps-tr"><span class="ps-mono">14:23:09</span><span>Lisa N.</span><span>Quiz attempt</span><span>CDL Online · Section 3</span><span class="ps-status ok">✓ 88%</span></div>
+              <div class="ps-tr"><span class="ps-mono">14:20:33</span><span>Maria J.</span><span>External link</span><span>WGU portal</span><span class="ps-status ok">✓ Auth'd</span></div>
+              <div class="ps-tr"><span class="ps-mono">14:18:51</span><span>Marcus J.</span><span>Course completed</span><span>HVAC · Mod 3</span><span class="ps-status ok">✓ Credit</span></div>
+            </div>
+          </div>
+
+          <!-- MESSENGER VIEW -->
+          <div class="ps-view" data-view-panel="messenger">
+            <div class="ps-topbar">
+              <h3 class="ps-h">Messenger</h3>
+              <span class="ps-chip">Marcus J. · Active</span>
+            </div>
+            <div class="ps-chat">
+              <div class="ps-msg ps-msg-them"><i>MJ</i><div><div class="ps-bubble">Hey, I just finished HVAC Module 3. Do I need to redo the safety quiz before Module 4?</div><div class="ps-time">14:18</div></div></div>
+              <div class="ps-msg ps-msg-you"><div><div class="ps-bubble">Great job! No, the safety quiz carries over. You're cleared for Module 4 — it's already unlocked on your dashboard.</div><div class="ps-time">14:21</div></div><i>YOU</i></div>
+              <div class="ps-msg ps-msg-them"><i>MJ</i><div><div class="ps-bubble">Just submitted the Module 4 assessment. Fingers crossed 🤞</div><div class="ps-time">14:32</div></div></div>
+              <div class="ps-msg ps-msg-you"><div><div class="ps-bubble">Just saw it come through — you passed with flying colors. That's the HVAC Certification, fully earned 🎉</div><div class="ps-time">14:33</div></div><i>YOU</i></div>
+            </div>
+            <div class="ps-chat-input">
+              <input type="text" placeholder="Reply to Marcus J..." readonly />
+              <button type="button">Send</button>
+            </div>
+          </div>
+
+          <!-- USERS VIEW (simple placeholder) -->
+          <div class="ps-view" data-view-panel="users">
+            <div class="ps-topbar"><h3 class="ps-h">Users &amp; Groups</h3><span class="ps-chip">324 learners · 18 staff</span></div>
+            <div class="ps-empty">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#5b6680" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="4"/><path d="M2 21v-2a4 4 0 014-4h6a4 4 0 014 4v2"/><circle cx="17" cy="7" r="3"/></svg>
+              <p>Cohorts, roles, and permissions managed here.<br/><em>Live demo — click sidebar items to explore other views.</em></p>
+            </div>
+          </div>
+
+          <!-- SETTINGS VIEW (simple placeholder) -->
+          <div class="ps-view" data-view-panel="settings">
+            <div class="ps-topbar"><h3 class="ps-h">Account Settings</h3></div>
+            <div class="ps-empty">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#5b6680" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33"/></svg>
+              <p>Identity providers, retention policies, and audit configuration.<br/><em>Live demo — click sidebar items to explore other views.</em></p>
+            </div>
+          </div>
+
           <div class="ps-toast" data-toast>
             <div class="ps-toast-icon">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>

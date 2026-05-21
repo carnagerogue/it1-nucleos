@@ -238,27 +238,104 @@
     const searchText = shot.querySelector("[data-search-text]");
     const toast = shot.querySelector("[data-toast]");
     const chart = shot.querySelector(".ps-chart");
+    const navItems = shot.querySelectorAll("[data-view]");
+    const views = shot.querySelectorAll("[data-view-panel]");
+    const frameUrl = shot.querySelector("[data-frame-url]");
+    const homeCards = shot.querySelectorAll("[data-go]");
 
-    // Auto-cycle categories
+    // State: pause auto-cycle once user interacts
+    let userInteracted = false;
+    let autoCycleTimer = null;
+    let autoAppTimer = null;
+
+    // === VIEW SWITCHER ===
+    function showView(name) {
+      views.forEach(v => v.classList.toggle("active", v.dataset.viewPanel === name));
+      navItems.forEach(n => n.classList.toggle("active", n.dataset.view === name));
+      if (frameUrl) {
+        const urls = {
+          home: "achievedxp.com",
+          library: "achievedxp.com / library",
+          records: "achievedxp.com / learner-records",
+          toolset: "achievedxp.com / investigative-toolset",
+          messenger: "achievedxp.com / messenger",
+          users: "achievedxp.com / users-and-groups",
+          settings: "achievedxp.com / account-settings",
+        };
+        frameUrl.textContent = urls[name] || "achievedxp.com";
+      }
+    }
+
+    navItems.forEach(item => {
+      item.addEventListener("click", (e) => {
+        e.preventDefault();
+        userInteracted = true;
+        if (autoCycleTimer) clearInterval(autoCycleTimer);
+        if (autoAppTimer) clearInterval(autoAppTimer);
+        apps.forEach(a => a.classList.remove("live-active"));
+        showView(item.dataset.view);
+      });
+    });
+
+    homeCards.forEach(card => {
+      card.addEventListener("click", (e) => {
+        e.preventDefault();
+        userInteracted = true;
+        if (autoCycleTimer) clearInterval(autoCycleTimer);
+        if (autoAppTimer) clearInterval(autoAppTimer);
+        apps.forEach(a => a.classList.remove("live-active"));
+        showView(card.dataset.go);
+      });
+    });
+
+    // === CATEGORY FILTER ===
+    function applyFilter(filter) {
+      apps.forEach(card => {
+        const cardCats = (card.dataset.cat || "").split(/\s+/);
+        const visible = filter === "all" || cardCats.includes(filter);
+        card.classList.toggle("hidden", !visible);
+      });
+    }
+
+    cats.forEach(c => {
+      c.addEventListener("click", () => {
+        userInteracted = true;
+        if (autoCycleTimer) clearInterval(autoCycleTimer);
+        if (autoAppTimer) clearInterval(autoAppTimer);
+        apps.forEach(a => a.classList.remove("live-active"));
+        cats.forEach(x => x.classList.remove("active"));
+        c.classList.add("active");
+        applyFilter(c.dataset.catFilter || "all");
+      });
+    });
+
+    // Initial filter (show all)
+    applyFilter("all");
+
+    // === AUTO-CYCLE (pauses on first user click) ===
     if (cats.length > 1) {
       let idx = 0;
       const startIdx = Array.from(cats).findIndex(c => c.classList.contains("active"));
       if (startIdx >= 0) idx = startIdx;
-      setInterval(() => {
+      autoCycleTimer = setInterval(() => {
+        if (userInteracted) { clearInterval(autoCycleTimer); return; }
         cats.forEach(c => c.classList.remove("active"));
         idx = (idx + 1) % cats.length;
         cats[idx].classList.add("active");
-      }, 2400);
+        applyFilter(cats[idx].dataset.catFilter || "all");
+      }, 2800);
     }
 
-    // Auto-rotate "Recently opened" badge between app cards
     if (apps.length > 1) {
       let idx = 0;
-      setInterval(() => {
+      autoAppTimer = setInterval(() => {
+        if (userInteracted) { clearInterval(autoAppTimer); return; }
         apps.forEach(a => a.classList.remove("live-active"));
-        apps[idx].classList.add("live-active");
-        idx = (idx + 1) % apps.length;
-      }, 1800);
+        const visible = Array.from(apps).filter(a => !a.classList.contains("hidden"));
+        if (visible.length === 0) return;
+        visible[idx % visible.length].classList.add("live-active");
+        idx = (idx + 1) % visible.length;
+      }, 1900);
     }
 
     // Search field typing animation
