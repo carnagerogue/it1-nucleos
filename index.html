@@ -205,6 +205,16 @@
       <div class="flow-bg" aria-hidden="true">
         <div class="flow-bg-glow flow-bg-glow-l"></div>
         <div class="flow-bg-glow flow-bg-glow-r"></div>
+        <div class="flow-sweep"></div>
+        <div class="flow-vignette"></div>
+      </div>
+
+      <!-- Cinematic scene captions — narrate the loop -->
+      <div class="flow-caption" aria-hidden="true">
+        <span data-act="1">One learner account.</span>
+        <span data-act="2">Auto-rostered into 100+ apps.</span>
+        <span data-act="3">Every credential flows back.</span>
+        <span data-act="4">One unified, audit-ready record.</span>
       </div>
 
       <!-- SVG: paths + particles -->
@@ -266,38 +276,64 @@
           <use href="#i10" class="in"/><use href="#i11" class="in"/><use href="#i12" class="in"/><use href="#i13" class="in"/>
         </g>
 
-        <!-- Outbound particles (teal) -->
+        <!-- Outbound particles (teal) — lead + 2 trail circles per path -->
         <g filter="url(#flow-glow)">
-          <circle r="3.5" fill="#2dd4e5"><animateMotion dur="3.2s" repeatCount="indefinite" begin="0s"   ><mpath href="#o1"/></animateMotion></circle>
-          <circle r="3.5" fill="#2dd4e5"><animateMotion dur="3.2s" repeatCount="indefinite" begin=".2s" ><mpath href="#o2"/></animateMotion></circle>
-          <circle r="3.5" fill="#2dd4e5"><animateMotion dur="3.2s" repeatCount="indefinite" begin=".4s" ><mpath href="#o3"/></animateMotion></circle>
-          <circle r="3.5" fill="#2dd4e5"><animateMotion dur="3.2s" repeatCount="indefinite" begin=".6s" ><mpath href="#o4"/></animateMotion></circle>
-          <circle r="3.5" fill="#2dd4e5"><animateMotion dur="3.2s" repeatCount="indefinite" begin=".8s" ><mpath href="#o5"/></animateMotion></circle>
-          <circle r="3.5" fill="#2dd4e5"><animateMotion dur="3.2s" repeatCount="indefinite" begin="1.0s"><mpath href="#o6"/></animateMotion></circle>
-          <circle r="3.5" fill="#2dd4e5"><animateMotion dur="3.2s" repeatCount="indefinite" begin="1.2s"><mpath href="#o7"/></animateMotion></circle>
-          <circle r="3.5" fill="#2dd4e5"><animateMotion dur="3.2s" repeatCount="indefinite" begin="1.4s"><mpath href="#o8"/></animateMotion></circle>
-          <circle r="3.5" fill="#2dd4e5"><animateMotion dur="3.2s" repeatCount="indefinite" begin="1.6s"><mpath href="#o9"/></animateMotion></circle>
-          <circle r="3.5" fill="#2dd4e5"><animateMotion dur="3.2s" repeatCount="indefinite" begin="1.8s"><mpath href="#o10"/></animateMotion></circle>
-          <circle r="3.5" fill="#2dd4e5"><animateMotion dur="3.2s" repeatCount="indefinite" begin="2.0s"><mpath href="#o11"/></animateMotion></circle>
-          <circle r="3.5" fill="#2dd4e5"><animateMotion dur="3.2s" repeatCount="indefinite" begin="2.2s"><mpath href="#o12"/></animateMotion></circle>
-          <circle r="3.5" fill="#2dd4e5"><animateMotion dur="3.2s" repeatCount="indefinite" begin="2.4s"><mpath href="#o13"/></animateMotion></circle>
+          <circle r="4"   fill="#2dd4e5" opacity=".95"><animateMotion dur="3.2s" repeatCount="indefinite" begin="0s"   ><mpath href="#o1"/></animateMotion></circle>
+          <circle r="2.5" fill="#2dd4e5" opacity=".55"><animateMotion dur="3.2s" repeatCount="indefinite" begin=".18s"><mpath href="#o1"/></animateMotion></circle>
+          <circle r="4"   fill="#2dd4e5" opacity=".95"><animateMotion dur="3.2s" repeatCount="indefinite" begin=".2s" ><mpath href="#o2"/></animateMotion></circle>
+          <circle r="2.5" fill="#2dd4e5" opacity=".55"><animateMotion dur="3.2s" repeatCount="indefinite" begin=".38s"><mpath href="#o2"/></animateMotion></circle>
+          <circle r="4"   fill="#2dd4e5" opacity=".95"><animateMotion dur="3.2s" repeatCount="indefinite" begin=".4s" ><mpath href="#o3"/></animateMotion></circle>
+          <circle r="2.5" fill="#2dd4e5" opacity=".55"><animateMotion dur="3.2s" repeatCount="indefinite" begin=".58s"><mpath href="#o3"/></animateMotion></circle>
+          <circle r="4"   fill="#2dd4e5" opacity=".95"><animateMotion dur="3.2s" repeatCount="indefinite" begin=".6s" ><mpath href="#o4"/></animateMotion></circle>
+          <circle r="2.5" fill="#2dd4e5" opacity=".55"><animateMotion dur="3.2s" repeatCount="indefinite" begin=".78s"><mpath href="#o4"/></animateMotion></circle>
+          <circle r="4"   fill="#2dd4e5" opacity=".95"><animateMotion dur="3.2s" repeatCount="indefinite" begin=".8s" ><mpath href="#o5"/></animateMotion></circle>
+          <circle r="2.5" fill="#2dd4e5" opacity=".55"><animateMotion dur="3.2s" repeatCount="indefinite" begin=".98s"><mpath href="#o5"/></animateMotion></circle>
+          <circle r="4"   fill="#2dd4e5" opacity=".95"><animateMotion dur="3.2s" repeatCount="indefinite" begin="1.0s"><mpath href="#o6"/></animateMotion></circle>
+          <circle r="2.5" fill="#2dd4e5" opacity=".55"><animateMotion dur="3.2s" repeatCount="indefinite" begin="1.18s"><mpath href="#o6"/></animateMotion></circle>
+          <circle r="4"   fill="#2dd4e5" opacity=".95"><animateMotion dur="3.2s" repeatCount="indefinite" begin="1.2s"><mpath href="#o7"/></animateMotion></circle>
+          <circle r="2.5" fill="#2dd4e5" opacity=".55"><animateMotion dur="3.2s" repeatCount="indefinite" begin="1.38s"><mpath href="#o7"/></animateMotion></circle>
+          <circle r="4"   fill="#2dd4e5" opacity=".95"><animateMotion dur="3.2s" repeatCount="indefinite" begin="1.4s"><mpath href="#o8"/></animateMotion></circle>
+          <circle r="2.5" fill="#2dd4e5" opacity=".55"><animateMotion dur="3.2s" repeatCount="indefinite" begin="1.58s"><mpath href="#o8"/></animateMotion></circle>
+          <circle r="4"   fill="#2dd4e5" opacity=".95"><animateMotion dur="3.2s" repeatCount="indefinite" begin="1.6s"><mpath href="#o9"/></animateMotion></circle>
+          <circle r="2.5" fill="#2dd4e5" opacity=".55"><animateMotion dur="3.2s" repeatCount="indefinite" begin="1.78s"><mpath href="#o9"/></animateMotion></circle>
+          <circle r="4"   fill="#2dd4e5" opacity=".95"><animateMotion dur="3.2s" repeatCount="indefinite" begin="1.8s"><mpath href="#o10"/></animateMotion></circle>
+          <circle r="2.5" fill="#2dd4e5" opacity=".55"><animateMotion dur="3.2s" repeatCount="indefinite" begin="1.98s"><mpath href="#o10"/></animateMotion></circle>
+          <circle r="4"   fill="#2dd4e5" opacity=".95"><animateMotion dur="3.2s" repeatCount="indefinite" begin="2.0s"><mpath href="#o11"/></animateMotion></circle>
+          <circle r="2.5" fill="#2dd4e5" opacity=".55"><animateMotion dur="3.2s" repeatCount="indefinite" begin="2.18s"><mpath href="#o11"/></animateMotion></circle>
+          <circle r="4"   fill="#2dd4e5" opacity=".95"><animateMotion dur="3.2s" repeatCount="indefinite" begin="2.2s"><mpath href="#o12"/></animateMotion></circle>
+          <circle r="2.5" fill="#2dd4e5" opacity=".55"><animateMotion dur="3.2s" repeatCount="indefinite" begin="2.38s"><mpath href="#o12"/></animateMotion></circle>
+          <circle r="4"   fill="#2dd4e5" opacity=".95"><animateMotion dur="3.2s" repeatCount="indefinite" begin="2.4s"><mpath href="#o13"/></animateMotion></circle>
+          <circle r="2.5" fill="#2dd4e5" opacity=".55"><animateMotion dur="3.2s" repeatCount="indefinite" begin="2.58s"><mpath href="#o13"/></animateMotion></circle>
         </g>
 
-        <!-- Inbound particles (gold/teal-soft = "data coming home") -->
+        <!-- Inbound particles (gold = credentials coming home) -->
         <g filter="url(#flow-glow)">
-          <circle r="3.5" fill="#fbbf24"><animateMotion dur="3.4s" repeatCount="indefinite" begin="1.0s"><mpath href="#i1"/></animateMotion></circle>
-          <circle r="3.5" fill="#fbbf24"><animateMotion dur="3.4s" repeatCount="indefinite" begin="1.2s"><mpath href="#i2"/></animateMotion></circle>
-          <circle r="3.5" fill="#fbbf24"><animateMotion dur="3.4s" repeatCount="indefinite" begin="1.4s"><mpath href="#i3"/></animateMotion></circle>
-          <circle r="3.5" fill="#fbbf24"><animateMotion dur="3.4s" repeatCount="indefinite" begin="1.6s"><mpath href="#i4"/></animateMotion></circle>
-          <circle r="3.5" fill="#fbbf24"><animateMotion dur="3.4s" repeatCount="indefinite" begin="1.8s"><mpath href="#i5"/></animateMotion></circle>
-          <circle r="3.5" fill="#fbbf24"><animateMotion dur="3.4s" repeatCount="indefinite" begin="2.0s"><mpath href="#i6"/></animateMotion></circle>
-          <circle r="3.5" fill="#fbbf24"><animateMotion dur="3.4s" repeatCount="indefinite" begin="2.2s"><mpath href="#i7"/></animateMotion></circle>
-          <circle r="3.5" fill="#fbbf24"><animateMotion dur="3.4s" repeatCount="indefinite" begin="2.4s"><mpath href="#i8"/></animateMotion></circle>
-          <circle r="3.5" fill="#fbbf24"><animateMotion dur="3.4s" repeatCount="indefinite" begin="2.6s"><mpath href="#i9"/></animateMotion></circle>
-          <circle r="3.5" fill="#fbbf24"><animateMotion dur="3.4s" repeatCount="indefinite" begin="2.8s"><mpath href="#i10"/></animateMotion></circle>
-          <circle r="3.5" fill="#fbbf24"><animateMotion dur="3.4s" repeatCount="indefinite" begin="3.0s"><mpath href="#i11"/></animateMotion></circle>
-          <circle r="3.5" fill="#fbbf24"><animateMotion dur="3.4s" repeatCount="indefinite" begin="3.2s"><mpath href="#i12"/></animateMotion></circle>
-          <circle r="3.5" fill="#fbbf24"><animateMotion dur="3.4s" repeatCount="indefinite" begin="3.4s"><mpath href="#i13"/></animateMotion></circle>
+          <circle r="4"   fill="#fbbf24" opacity=".95"><animateMotion dur="3.4s" repeatCount="indefinite" begin="1.0s"><mpath href="#i1"/></animateMotion></circle>
+          <circle r="2.5" fill="#fbbf24" opacity=".55"><animateMotion dur="3.4s" repeatCount="indefinite" begin="1.18s"><mpath href="#i1"/></animateMotion></circle>
+          <circle r="4"   fill="#fbbf24" opacity=".95"><animateMotion dur="3.4s" repeatCount="indefinite" begin="1.2s"><mpath href="#i2"/></animateMotion></circle>
+          <circle r="2.5" fill="#fbbf24" opacity=".55"><animateMotion dur="3.4s" repeatCount="indefinite" begin="1.38s"><mpath href="#i2"/></animateMotion></circle>
+          <circle r="4"   fill="#fbbf24" opacity=".95"><animateMotion dur="3.4s" repeatCount="indefinite" begin="1.4s"><mpath href="#i3"/></animateMotion></circle>
+          <circle r="2.5" fill="#fbbf24" opacity=".55"><animateMotion dur="3.4s" repeatCount="indefinite" begin="1.58s"><mpath href="#i3"/></animateMotion></circle>
+          <circle r="4"   fill="#fbbf24" opacity=".95"><animateMotion dur="3.4s" repeatCount="indefinite" begin="1.6s"><mpath href="#i4"/></animateMotion></circle>
+          <circle r="2.5" fill="#fbbf24" opacity=".55"><animateMotion dur="3.4s" repeatCount="indefinite" begin="1.78s"><mpath href="#i4"/></animateMotion></circle>
+          <circle r="4"   fill="#fbbf24" opacity=".95"><animateMotion dur="3.4s" repeatCount="indefinite" begin="1.8s"><mpath href="#i5"/></animateMotion></circle>
+          <circle r="2.5" fill="#fbbf24" opacity=".55"><animateMotion dur="3.4s" repeatCount="indefinite" begin="1.98s"><mpath href="#i5"/></animateMotion></circle>
+          <circle r="4"   fill="#fbbf24" opacity=".95"><animateMotion dur="3.4s" repeatCount="indefinite" begin="2.0s"><mpath href="#i6"/></animateMotion></circle>
+          <circle r="2.5" fill="#fbbf24" opacity=".55"><animateMotion dur="3.4s" repeatCount="indefinite" begin="2.18s"><mpath href="#i6"/></animateMotion></circle>
+          <circle r="4"   fill="#fbbf24" opacity=".95"><animateMotion dur="3.4s" repeatCount="indefinite" begin="2.2s"><mpath href="#i7"/></animateMotion></circle>
+          <circle r="2.5" fill="#fbbf24" opacity=".55"><animateMotion dur="3.4s" repeatCount="indefinite" begin="2.38s"><mpath href="#i7"/></animateMotion></circle>
+          <circle r="4"   fill="#fbbf24" opacity=".95"><animateMotion dur="3.4s" repeatCount="indefinite" begin="2.4s"><mpath href="#i8"/></animateMotion></circle>
+          <circle r="2.5" fill="#fbbf24" opacity=".55"><animateMotion dur="3.4s" repeatCount="indefinite" begin="2.58s"><mpath href="#i8"/></animateMotion></circle>
+          <circle r="4"   fill="#fbbf24" opacity=".95"><animateMotion dur="3.4s" repeatCount="indefinite" begin="2.6s"><mpath href="#i9"/></animateMotion></circle>
+          <circle r="2.5" fill="#fbbf24" opacity=".55"><animateMotion dur="3.4s" repeatCount="indefinite" begin="2.78s"><mpath href="#i9"/></animateMotion></circle>
+          <circle r="4"   fill="#fbbf24" opacity=".95"><animateMotion dur="3.4s" repeatCount="indefinite" begin="2.8s"><mpath href="#i10"/></animateMotion></circle>
+          <circle r="2.5" fill="#fbbf24" opacity=".55"><animateMotion dur="3.4s" repeatCount="indefinite" begin="2.98s"><mpath href="#i10"/></animateMotion></circle>
+          <circle r="4"   fill="#fbbf24" opacity=".95"><animateMotion dur="3.4s" repeatCount="indefinite" begin="3.0s"><mpath href="#i11"/></animateMotion></circle>
+          <circle r="2.5" fill="#fbbf24" opacity=".55"><animateMotion dur="3.4s" repeatCount="indefinite" begin="3.18s"><mpath href="#i11"/></animateMotion></circle>
+          <circle r="4"   fill="#fbbf24" opacity=".95"><animateMotion dur="3.4s" repeatCount="indefinite" begin="3.2s"><mpath href="#i12"/></animateMotion></circle>
+          <circle r="2.5" fill="#fbbf24" opacity=".55"><animateMotion dur="3.4s" repeatCount="indefinite" begin="3.38s"><mpath href="#i12"/></animateMotion></circle>
+          <circle r="4"   fill="#fbbf24" opacity=".95"><animateMotion dur="3.4s" repeatCount="indefinite" begin="3.4s"><mpath href="#i13"/></animateMotion></circle>
+          <circle r="2.5" fill="#fbbf24" opacity=".55"><animateMotion dur="3.4s" repeatCount="indefinite" begin="3.58s"><mpath href="#i13"/></animateMotion></circle>
         </g>
 
         <!-- HUB (left) -->
@@ -305,8 +341,12 @@
           <circle class="hub-ring r1" r="42"/>
           <circle class="hub-ring r2" r="42"/>
           <circle class="hub-ring r3" r="42"/>
-          <circle r="42" fill="url(#hub-grad)" stroke="rgba(255,255,255,.25)" stroke-width="1.5"/>
-          <text x="0" y="6" text-anchor="middle" fill="#fff" font-size="18" font-weight="700" font-family="Inter, system-ui, sans-serif">MJ</text>
+          <circle r="42" fill="url(#hub-grad)" stroke="rgba(255,255,255,.35)" stroke-width="1.5"/>
+          <!-- Person silhouette icon -->
+          <g fill="#fff">
+            <circle cx="0" cy="-7" r="8"/>
+            <path d="M -16 18 a 16 16 0 0 1 32 0 z"/>
+          </g>
         </g>
 
         <!-- RECORD HUB (right) -->
@@ -394,6 +434,53 @@
   @keyframes flow-pulse-glow{
     0%,100%{opacity:.4;transform:translateY(-50%) scale(1);}
     50%    {opacity:.7;transform:translateY(-50%) scale(1.1);}
+  }
+
+  /* Cinematic light sweep across the stage */
+  .flow-sweep{
+    position:absolute;inset:-20% -40%;pointer-events:none;
+    background:linear-gradient(115deg,
+      transparent 38%,
+      rgba(45,212,229,.10) 47%,
+      rgba(255,255,255,.06) 50%,
+      rgba(251,191,36,.10) 53%,
+      transparent 62%);
+    filter:blur(8px);
+    animation:flow-sweep-x 12s linear infinite;
+    mix-blend-mode:screen;
+  }
+  @keyframes flow-sweep-x{
+    0%   { transform: translateX(-30%); }
+    100% { transform: translateX(30%); }
+  }
+
+  /* Vignette for cinematic depth */
+  .flow-vignette{
+    position:absolute;inset:0;pointer-events:none;
+    background:radial-gradient(120% 90% at 50% 50%, transparent 55%, rgba(0,0,0,.55) 100%);
+  }
+
+  /* Scene captions — scripted narration */
+  .flow-caption{
+    position:absolute;top:1.5rem;left:50%;transform:translateX(-50%);
+    height:1.2rem;z-index:4;pointer-events:none;
+  }
+  .flow-caption span{
+    position:absolute;left:50%;top:0;transform:translateX(-50%);
+    white-space:nowrap;opacity:0;
+    font-size:.78rem;font-weight:700;letter-spacing:.22em;
+    text-transform:uppercase;color:#fff;
+    text-shadow:0 0 14px rgba(45,212,229,.5), 0 1px 2px rgba(0,0,0,.6);
+    animation:caption-cycle 12s ease-in-out infinite;
+  }
+  .flow-caption span[data-act="1"]{animation-delay:0s;}
+  .flow-caption span[data-act="2"]{animation-delay:3s;}
+  .flow-caption span[data-act="3"]{animation-delay:6s;color:#fff;text-shadow:0 0 14px rgba(251,191,36,.5),0 1px 2px rgba(0,0,0,.6);}
+  .flow-caption span[data-act="4"]{animation-delay:9s;color:#fff;text-shadow:0 0 14px rgba(251,191,36,.5),0 1px 2px rgba(0,0,0,.6);}
+  @keyframes caption-cycle{
+    0%,  1.7%   { opacity:0; transform:translate(-50%, 10px); filter:blur(6px) }
+    8%,  22%    { opacity:1; transform:translate(-50%, 0);    filter:blur(0) }
+    27%, 100%   { opacity:0; transform:translate(-50%, -10px); filter:blur(6px) }
   }
 
   .flow-svg{
