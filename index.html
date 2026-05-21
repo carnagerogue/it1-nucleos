@@ -209,12 +209,13 @@
         <div class="flow-vignette"></div>
       </div>
 
-      <!-- Cinematic scene captions — narrate the loop -->
+      <!-- Cinematic scene captions — five acts narrating the 22s journey -->
       <div class="flow-caption" aria-hidden="true">
         <span data-act="1">Inside the learner network.</span>
-        <span data-act="2">One account. Auto-rostered into 100+ apps.</span>
-        <span data-act="3">Every credential flows back.</span>
-        <span data-act="4">One unified, audit-ready record.</span>
+        <span data-act="2">Routing through 100+ integrations.</span>
+        <span data-act="3">Coursera. Canvas. JSTOR. WGU. Cisco…</span>
+        <span data-act="4">Every credential. Every transcript. Every hour.</span>
+        <span data-act="5">One unified, audit-ready record.</span>
       </div>
 
       <!-- Cinematic data tunnel — visible during POV phase (camera flying through the network) -->
@@ -268,30 +269,42 @@
         <div class="ft-streak" style="--a:292deg;--sd:.9s"></div>
         <div class="ft-streak" style="--a:337deg;--sd:1.05s"></div>
 
-        <!-- Brand logos flying past the camera as we travel through the network -->
-        <div class="ft-flyby-wrap" style="--fx:-230px;--fy:-110px;--td:0s">
+        <!-- Brand logos flying past the camera as we travel through the network (12 brands on a 4s loop) -->
+        <div class="ft-flyby-wrap" style="--fx:-280px;--fy:-130px;--td:0s">
           <div class="ft-flyby"><img src="https://cdn.simpleicons.org/coursera/ffffff" alt="" onerror="this.style.display='none'"/>Coursera</div>
         </div>
-        <div class="ft-flyby-wrap" style="--fx:220px;--fy:-90px;--td:.35s">
+        <div class="ft-flyby-wrap" style="--fx:240px;--fy:-110px;--td:.33s">
           <div class="ft-flyby"><img src="https://cdn.simpleicons.org/instructure/ffffff" alt="" onerror="this.style.display='none'"/>Canvas</div>
         </div>
-        <div class="ft-flyby-wrap" style="--fx:-180px;--fy:120px;--td:.7s">
+        <div class="ft-flyby-wrap" style="--fx:-200px;--fy:140px;--td:.66s">
           <div class="ft-flyby"><img src="https://cdn.simpleicons.org/khanacademy/ffffff" alt="" onerror="this.style.display='none'"/>Khan Academy</div>
         </div>
-        <div class="ft-flyby-wrap" style="--fx:200px;--fy:130px;--td:1.05s">
+        <div class="ft-flyby-wrap" style="--fx:220px;--fy:160px;--td:1s">
           <div class="ft-flyby"><img src="https://cdn.simpleicons.org/jstor/ffffff" alt="" onerror="this.style.display='none'"/>JSTOR</div>
         </div>
-        <div class="ft-flyby-wrap" style="--fx:0;--fy:-200px;--td:1.4s">
+        <div class="ft-flyby-wrap" style="--fx:0;--fy:-220px;--td:1.33s">
           <div class="ft-flyby"><img src="https://cdn.simpleicons.org/edx/ffffff" alt="" onerror="this.style.display='none'"/>edX</div>
         </div>
-        <div class="ft-flyby-wrap" style="--fx:-280px;--fy:30px;--td:1.75s">
+        <div class="ft-flyby-wrap" style="--fx:-320px;--fy:20px;--td:1.66s">
           <div class="ft-flyby"><img src="https://cdn.simpleicons.org/cisco/ffffff" alt="" onerror="this.style.display='none'"/>Cisco NetAcad</div>
         </div>
-        <div class="ft-flyby-wrap" style="--fx:280px;--fy:-30px;--td:2.1s">
+        <div class="ft-flyby-wrap" style="--fx:320px;--fy:-20px;--td:2s">
           <div class="ft-flyby"><img src="https://cdn.simpleicons.org/linkedin/ffffff" alt="" onerror="this.style.display='none'"/>LinkedIn Learning</div>
         </div>
-        <div class="ft-flyby-wrap" style="--fx:0;--fy:200px;--td:2.45s">
+        <div class="ft-flyby-wrap" style="--fx:0;--fy:220px;--td:2.33s">
           <div class="ft-flyby"><img src="https://cdn.simpleicons.org/pearson/ffffff" alt="" onerror="this.style.display='none'"/>Pearson VUE</div>
+        </div>
+        <div class="ft-flyby-wrap" style="--fx:-150px;--fy:-90px;--td:2.66s">
+          <div class="ft-flyby"><img src="https://cdn.simpleicons.org/udemy/ffffff" alt="" onerror="this.style.display='none'"/>Udemy</div>
+        </div>
+        <div class="ft-flyby-wrap" style="--fx:160px;--fy:-70px;--td:3s">
+          <div class="ft-flyby"><img src="https://cdn.simpleicons.org/duolingo/ffffff" alt="" onerror="this.style.display='none'"/>Duolingo</div>
+        </div>
+        <div class="ft-flyby-wrap" style="--fx:-130px;--fy:110px;--td:3.33s">
+          <div class="ft-flyby"><img src="https://cdn.simpleicons.org/codecademy/ffffff" alt="" onerror="this.style.display='none'"/>Codecademy</div>
+        </div>
+        <div class="ft-flyby-wrap" style="--fx:140px;--fy:130px;--td:3.66s">
+          <div class="ft-flyby"><img src="https://cdn.simpleicons.org/skillshare/ffffff" alt="" onerror="this.style.display='none'"/>Skillshare</div>
         </div>
       </div>
 
@@ -522,21 +535,27 @@
     50%    {opacity:.7;transform:translateY(-50%) scale(1.1);}
   }
 
-  /* World layer — the camera transforms this whole group on a 14s journey */
+  /* World layer — the camera transforms this whole group on a 22s journey */
   .flow-world{
     position:absolute;inset:0;z-index:1;
     transform-origin:0 0;
-    animation: flow-camera 14s cubic-bezier(.65,.05,.35,1) infinite;
+    animation: flow-camera 22s cubic-bezier(.65,.05,.35,1) infinite;
     will-change:transform;
   }
-  /* Camera journey — POV at hub → pull back → reveal → pan to record → fade & reset
+  /* Camera journey (22s):
+     0-45%   POV inside the tunnel (~9.9s of immersive travel)
+     45-60%  Slow pull-back, constellation emerges (~3.3s)
+     60-72%  Full view of the network (~2.6s)
+     72-85%  Pan toward unified record (~2.9s)
+     85-93%  Hold close-up on record (~1.8s)
+     93-100% Reset to POV (covered by fade overlay)
      Math: for hub at (12%,50%) zoom S=2.6 → translate(7.23%,-30.77%);
      for record at (88%,50%) zoom S=1.3 → translate(-49.5%,-11.5%); */
   @keyframes flow-camera{
-    0%,  18%  { transform: scale(2.6) translate(7.23%, -30.77%); }
-    45%, 60%  { transform: scale(1)   translate(0, 0); }
-    78%, 93%  { transform: scale(1.3) translate(-49.5%, -11.5%); }
-    95%, 100% { transform: scale(2.6) translate(7.23%, -30.77%); }
+    0%,  45%  { transform: scale(2.6) translate(7.23%, -30.77%); }
+    60%, 72%  { transform: scale(1)   translate(0, 0); }
+    85%, 93%  { transform: scale(1.3) translate(-49.5%, -11.5%); }
+    96%, 100% { transform: scale(2.6) translate(7.23%, -30.77%); }
   }
 
   /* ============================================================
@@ -547,12 +566,24 @@
     perspective:520px;
     perspective-origin:50% 50%;
     opacity:0;
-    animation: flow-tunnel-fade 14s linear infinite;
+    animation:
+      flow-tunnel-fade 22s linear infinite,
+      flow-tunnel-twist 22s ease-in-out infinite;
     transform-style:preserve-3d;
   }
   @keyframes flow-tunnel-fade{
-    0%, 20%   { opacity: 1; }
-    32%, 100% { opacity: 0; }
+    0%, 45%   { opacity: 1; }   /* visible throughout the long tunnel POV */
+    55%, 100% { opacity: 0; }   /* fades out as the camera pulls back */
+  }
+  /* Camera twists and rolls as it winds through the tunnel corridor */
+  @keyframes flow-tunnel-twist{
+    0%   { transform: rotate(0deg); }
+    10%  { transform: rotate(-8deg); }
+    18%  { transform: rotate(3deg); }
+    26%  { transform: rotate(-11deg); }
+    34%  { transform: rotate(6deg); }
+    42%  { transform: rotate(-2deg); }
+    50%, 100% { transform: rotate(0deg); }   /* straight for the rest of the loop */
   }
 
   /* Glowing vanishing-point at the tunnel mouth */
@@ -661,7 +692,7 @@
     backdrop-filter:blur(12px);
     -webkit-backdrop-filter:blur(12px);
     transform: translateZ(-3500px);
-    animation: ft-flyby-fly 3s linear infinite var(--td, 0s);
+    animation: ft-flyby-fly 4s linear infinite var(--td, 0s);
   }
   .ft-flyby img{
     width:26px;height:26px;flex:none;
@@ -669,9 +700,9 @@
   }
   @keyframes ft-flyby-fly{
     0%   { transform: translateZ(-3500px); opacity:0; }
-    8%   { opacity:.4; }
-    40%  { opacity:1; }
-    80%  { opacity:1; }
+    6%   { opacity:.35; }
+    30%  { opacity:1; }
+    82%  { opacity:1; }
     100% { transform: translateZ(460px); opacity:0; }
   }
 
@@ -680,11 +711,11 @@
     position:absolute;inset:0;z-index:9;pointer-events:none;
     background:#04101f;
     opacity:0;
-    animation: flow-fade-cycle 14s linear infinite;
+    animation: flow-fade-cycle 22s linear infinite;
   }
   @keyframes flow-fade-cycle{
-    0%, 89%      { opacity: 0; }
-    94%, 97%     { opacity: 1; }
+    0%, 92%      { opacity: 0; }
+    96%, 98%     { opacity: 1; }
     100%         { opacity: 0; }
   }
 
@@ -698,7 +729,7 @@
       rgba(251,191,36,.10) 53%,
       transparent 62%);
     filter:blur(8px);
-    animation:flow-sweep-x 14s linear infinite;
+    animation:flow-sweep-x 22s linear infinite;
     mix-blend-mode:screen;
   }
   @keyframes flow-sweep-x{
@@ -712,7 +743,7 @@
     background:radial-gradient(120% 90% at 50% 50%, transparent 55%, rgba(0,0,0,.55) 100%);
   }
 
-  /* Scene captions — scripted narration synced to the 14s camera loop */
+  /* Scene captions — scripted narration synced to the 22s camera loop */
   .flow-caption{
     position:absolute;top:1.5rem;left:50%;transform:translateX(-50%);
     height:1.2rem;z-index:5;pointer-events:none;
@@ -723,16 +754,18 @@
     font-size:.78rem;font-weight:700;letter-spacing:.22em;
     text-transform:uppercase;color:#fff;
     text-shadow:0 0 14px rgba(45,212,229,.5), 0 1px 2px rgba(0,0,0,.6);
-    animation:caption-cycle 14s ease-in-out infinite;
+    animation:caption-cycle 22s ease-in-out infinite;
   }
+  /* Five acts pacing the 22s journey */
   .flow-caption span[data-act="1"]{animation-delay:0s;}
-  .flow-caption span[data-act="2"]{animation-delay:3.5s;}
-  .flow-caption span[data-act="3"]{animation-delay:7s;color:#fff;text-shadow:0 0 14px rgba(251,191,36,.5),0 1px 2px rgba(0,0,0,.6);}
-  .flow-caption span[data-act="4"]{animation-delay:10.5s;color:#fff;text-shadow:0 0 14px rgba(251,191,36,.5),0 1px 2px rgba(0,0,0,.6);}
+  .flow-caption span[data-act="2"]{animation-delay:4.5s;}
+  .flow-caption span[data-act="3"]{animation-delay:9.5s;}
+  .flow-caption span[data-act="4"]{animation-delay:14s;color:#fff;text-shadow:0 0 14px rgba(251,191,36,.5),0 1px 2px rgba(0,0,0,.6);}
+  .flow-caption span[data-act="5"]{animation-delay:18s;color:#fff;text-shadow:0 0 14px rgba(251,191,36,.5),0 1px 2px rgba(0,0,0,.6);}
   @keyframes caption-cycle{
-    0%,  1.5%   { opacity:0; transform:translate(-50%, 10px); filter:blur(6px) }
-    7%,  20%    { opacity:1; transform:translate(-50%, 0);    filter:blur(0) }
-    24%, 100%   { opacity:0; transform:translate(-50%, -10px); filter:blur(6px) }
+    0%,  1%     { opacity:0; transform:translate(-50%, 10px); filter:blur(6px) }
+    4%,  17%    { opacity:1; transform:translate(-50%, 0);    filter:blur(0) }
+    21%, 100%   { opacity:0; transform:translate(-50%, -10px); filter:blur(6px) }
   }
 
   /* App chip logo + brand-color dot fallback */
@@ -800,17 +833,21 @@
       inset 0 1px 0 rgba(255,255,255,.1);
     white-space:nowrap;
     opacity:0;
-    animation: flow-app-cycle 14s ease-in-out infinite;
+    animation: flow-app-cycle 22s ease-in-out infinite;
     animation-delay: var(--d, 0s);
   }
-  /* Synced reveal: hidden during tunnel POV, fade in during pull-back, fade out during reset */
+  /* Synced reveal for the 22s loop:
+     0-50%   hidden (long tunnel POV phase)
+     50-60%  fade in as camera pulls back, constellation emerges
+     60-90%  visible with gentle float (full view, pan to record)
+     94-100% fade out during the reset overlay */
   @keyframes flow-app-cycle{
-    0%, 16%   { opacity: 0; transform: translate(-50%, calc(-50% + 16px)); filter: blur(8px); }
-    28%       { opacity: 1; transform: translate(-50%, -50%);              filter: blur(0); }
-    50%       { opacity: 1; transform: translate(-50%, calc(-50% - 5px));  filter: blur(0); }
-    70%       { opacity: 1; transform: translate(-50%, calc(-50% + 2px));  filter: blur(0); }
-    88%       { opacity: 1; transform: translate(-50%, -50%);              filter: blur(0); }
-    94%, 100% { opacity: 0; transform: translate(-50%, calc(-50% - 14px)); filter: blur(8px); }
+    0%, 50%   { opacity: 0; transform: translate(-50%, calc(-50% + 16px)); filter: blur(8px); }
+    60%       { opacity: 1; transform: translate(-50%, -50%);              filter: blur(0); }
+    72%       { opacity: 1; transform: translate(-50%, calc(-50% - 5px));  filter: blur(0); }
+    82%       { opacity: 1; transform: translate(-50%, calc(-50% + 2px));  filter: blur(0); }
+    90%       { opacity: 1; transform: translate(-50%, -50%);              filter: blur(0); }
+    95%, 100% { opacity: 0; transform: translate(-50%, calc(-50% - 14px)); filter: blur(8px); }
   }
   .fapp i{
     width:8px;height:8px;border-radius:50%;
