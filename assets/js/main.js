@@ -312,59 +312,34 @@
       if (autoCycleTimer) clearInterval(autoCycleTimer);
       if (autoAppTimer) clearInterval(autoAppTimer);
 
-      // Reset states
+      // No iframe — go straight to the preview card.
+      // Modern SaaS apps (Canvas, Coursera, TED, etc.) almost universally
+      // set X-Frame-Options DENY or CSP frame-ancestors restrictions,
+      // making iframe embedding unreliable and ugly. The clean UX is to
+      // always show a preview card and launch the app in a new tab.
       iframeEl.classList.remove("loaded");
-      if (blocked) blocked.classList.remove("show");
-      if (loader) loader.classList.remove("hide");
+      iframeEl.src = "about:blank";
+      if (loader) loader.classList.add("hide");
 
-      // Set chrome
+      // Populate the preview card
       if (iframeName) iframeName.textContent = name;
-      if (loaderName) loaderName.textContent = name;
       if (blockedName) blockedName.textContent = name;
       if (blockedName2) blockedName2.textContent = name;
       if (iframeLogo) {
-        if (logo) {
-          iframeLogo.src = logo;
-          iframeLogo.style.display = "";
-        } else {
-          iframeLogo.style.display = "none";
-        }
+        if (logo) { iframeLogo.src = logo; iframeLogo.style.display = ""; }
+        else { iframeLogo.style.display = "none"; }
       }
       if (blockedLogo) {
-        if (logo) {
-          blockedLogo.src = logo;
-          blockedLogo.style.display = "";
-        } else {
-          blockedLogo.style.display = "none";
-        }
+        if (logo) { blockedLogo.src = logo; blockedLogo.style.display = ""; }
+        else { blockedLogo.style.display = "none"; }
       }
       if (externalLink) externalLink.href = url || "#";
       if (blockedLink) blockedLink.href = url || "#";
 
       overlay.classList.add("open");
 
-      // Try to load the iframe
-      let loaded = false;
-      let blockedTimer = null;
-
-      function showBlocked() {
-        if (loaded) return;
-        if (loader) loader.classList.add("hide");
-        if (blocked) blocked.classList.add("show");
-      }
-
-      iframeEl.onload = () => {
-        loaded = true;
-        if (blockedTimer) clearTimeout(blockedTimer);
-        if (loader) loader.classList.add("hide");
-        iframeEl.classList.add("loaded");
-      };
-      iframeEl.onerror = showBlocked;
-
-      // After 4 seconds, if iframe hasn't loaded, assume blocked
-      blockedTimer = setTimeout(showBlocked, 4500);
-
-      iframeEl.src = url || "about:blank";
+      // Show the preview card immediately
+      if (blocked) blocked.classList.add("show");
     }
 
     function closeOverlay() {

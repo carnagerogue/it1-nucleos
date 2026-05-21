@@ -4059,3 +4059,29 @@ h4 {
 .hero-photo, .hero-photo-badge, .hero-photo-stat, .hero-photo-caption, .hero-photo-overlay {
   display: none;
 }
+
+/* Meta pills below the preview-card button */
+.ps-iframe-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 0.4rem;
+}
+.ps-iframe-meta-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.3rem 0.65rem;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--ink-mute);
+  letter-spacing: 0.02em;
+}
+.ps-iframe-meta-pill svg { color: var(--teal); }
+
+/* Hide the iframe and loader since we always show the preview card */
+.ps-iframe-el, .ps-iframe-loader { display: none !important; }
