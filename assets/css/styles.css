@@ -146,6 +146,7 @@ button { font-family: inherit; cursor: pointer; }
   gap: 0.7rem;
   text-decoration: none;
   color: var(--navy);
+  flex-shrink: 0;
 }
 
 .brand-tag {
@@ -163,7 +164,7 @@ button { font-family: inherit; cursor: pointer; }
   flex-shrink: 0;
 }
 
-.brand-logo { height: 32px; width: auto; display: block; }
+.brand-logo { height: 32px; width: auto; display: block; flex-shrink: 0; object-fit: contain; }
 
 .nav-links {
   display: flex;
@@ -191,6 +192,47 @@ button { font-family: inherit; cursor: pointer; }
   border-radius: 2px;
   background: var(--teal);
 }
+
+.nav-sep {
+  width: 1px;
+  height: 22px;
+  background: var(--line-strong);
+  padding: 0;
+}
+
+.nav-links a.nav-app {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #fff;
+  background: var(--app-color);
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.14);
+  transition: filter 160ms, box-shadow 160ms, transform 160ms;
+}
+.nav-links a.nav-app::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+}
+.nav-links a.nav-app::after {
+  content: "↗";
+  font-size: 0.82em;
+  font-weight: 700;
+  opacity: 0.85;
+}
+.nav-links a.nav-app:hover {
+  filter: brightness(1.08);
+  box-shadow: 0 4px 12px var(--app-shadow);
+  transform: translateY(-1px);
+}
+.nav-app--workforce { --app-color: var(--teal); --app-shadow: rgba(0, 153, 184, 0.32); }
+.nav-app--grants { --app-color: var(--dxp-orange); --app-shadow: rgba(239, 108, 58, 0.32); }
 
 .nav-cta { display: flex; gap: 0.75rem; align-items: center; }
 
@@ -424,6 +466,60 @@ h4 {
   gap: 0.75rem;
   margin-top: 2rem;
   flex-wrap: wrap;
+}
+
+.hero-products { margin-top: 2rem; }
+.hero-products-label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  opacity: 0.7;
+  margin-bottom: 0.75rem;
+}
+.hero-products-row {
+  display: flex;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+.btn-product {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 200px;
+  padding: 0.85rem 1.1rem;
+  border-radius: 14px;
+  background: #fff;
+  border: 1px solid var(--line-strong);
+  position: relative;
+  transition: border-color 160ms, box-shadow 160ms, transform 160ms;
+}
+.btn-product::after {
+  content: "↗";
+  position: absolute;
+  top: 0.85rem;
+  right: 1rem;
+  font-weight: 700;
+  color: var(--teal);
+  opacity: 0.75;
+  transition: transform 160ms;
+}
+.btn-product:hover {
+  border-color: var(--teal);
+  box-shadow: 0 8px 22px rgba(0, 153, 184, 0.16);
+  transform: translateY(-2px);
+}
+.btn-product:hover::after { transform: translate(2px, -2px); }
+.btn-product-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--navy);
+}
+.btn-product-sub {
+  font-size: 0.82rem;
+  color: var(--ink-soft);
 }
 
 .hero-trust {
@@ -1188,6 +1284,26 @@ h4 {
   color: var(--navy);
 }
 .mobile-panel a:hover { color: var(--teal); }
+.mobile-panel a.mobile-app {
+  color: var(--app-color);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.mobile-panel a.mobile-app::before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--app-color);
+}
+.mobile-panel a.mobile-app::after {
+  content: "↗";
+  font-size: 0.85em;
+  opacity: 0.8;
+}
+.mobile-app--workforce { --app-color: var(--teal); }
+.mobile-app--grants { --app-color: var(--dxp-orange); }
 .mobile-panel .btn { margin-top: 1.5rem; align-self: flex-start; }
 .mobile-panel .close {
   position: absolute;

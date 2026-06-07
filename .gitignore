@@ -10,6 +10,11 @@ Thumbs.db
 # Claude Code workspace
 .claude/
 
+# Secrets / environment
+.env
+.env.*
+!.env.example
+
 # Temporary
 *.tmp
 *.log
